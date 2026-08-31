@@ -22,6 +22,7 @@ In development.
 | [zunia-mobile](https://github.com/Zunia-Lab/zunia-mobile) | Mobile wallet |
 | [zunia-dashboard](https://github.com/Zunia-Lab/zunia-dashboard) | Web portfolio |
 | [zunia-brand](https://github.com/Zunia-Lab/zunia-brand) | Brand assets |
+| [zunia-ui](https://github.com/Zunia-Lab/zunia-ui) | Shared UI components |
 
 ## Quick start
 
