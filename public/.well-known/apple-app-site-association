@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAMID.com.zuniawallet.zuniaMobile",
+        "paths": ["/wc", "/wc/*", "/connect", "/connect/*"]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["TEAMID.com.zuniawallet.zuniaMobile"]
+  }
+}

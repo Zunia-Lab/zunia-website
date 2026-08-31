@@ -1,0 +1,13 @@
+# Contact: security@zuniawallet.com
+# Prefers-Encryption: (add OpenPGP key URL when issued)
+# Canonical: https://zuniawallet.com/.well-known/security.txt
+# Expires: 2027-08-31T00:00:00.000Z
+# Acknowledgments: https://zuniawallet.com/security/acknowledgments
+# Policy: https://github.com/Zunia-Lab/.github/blob/main/SECURITY.md
+# Hiring: https://zuniawallet.com
+
+Contact: mailto:security@zuniawallet.com
+Expires: 2027-08-31T00:00:00.000Z
+Canonical: https://zuniawallet.com/.well-known/security.txt
+Policy: https://github.com/Zunia-Lab/.github/blob/main/SECURITY.md
+Preferred-Languages: en
