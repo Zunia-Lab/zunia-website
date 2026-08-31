@@ -7,7 +7,7 @@ export default function Home() {
         <span className="text-xl font-medium tracking-tight">zunia</span>
         <nav className="flex gap-6 text-sm text-[#A8BADE]">
           <Link href="https://docs.zuniawallet.com">Docs</Link>
-          <Link href="https://github.com/zunialab">GitHub</Link>
+          <Link href="https://github.com/Zunia-Lab">GitHub</Link>
         </nav>
       </header>
 
@@ -27,13 +27,13 @@ export default function Home() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
             className="rounded-full bg-[#2050C4] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#3B6BFF]"
-            href="https://github.com/zunialab/zunia-extension"
+            href="https://github.com/Zunia-Lab/zunia-extension"
           >
             Browser extension
           </a>
           <a
             className="rounded-full border border-[#C7D2EA]/30 px-6 py-3 text-sm font-medium text-[#F4F5F7] transition hover:border-[#6FA8FF]"
-            href="https://github.com/zunialab/zunia-mobile"
+            href="https://github.com/Zunia-Lab/zunia-mobile"
           >
             Mobile wallet
           </a>

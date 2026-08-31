@@ -2,12 +2,12 @@
 
 > Marketing site for Zunia at [zuniawallet.com](https://zuniawallet.com).
 
-[![License](https://img.shields.io/github/license/zunialab/zunia-website)](LICENSE)
+[![License](https://img.shields.io/github/license/Zunia-Lab/zunia-website)](LICENSE)
 [![Website](https://img.shields.io/badge/website-zuniawallet.com-2050C4)](https://zuniawallet.com)
 
 ## Overview
 
-Next.js site for product marketing, download CTAs, and developer links. Brand colors and typography follow [zunia-brand](https://github.com/zunialab/zunia-brand).
+Next.js site for product marketing, download CTAs, and developer links. Brand colors and typography follow [zunia-brand](https://github.com/Zunia-Lab/zunia-brand).
 
 ## Status
 
@@ -17,11 +17,11 @@ In development.
 
 | Repository | Description |
 |------------|-------------|
-| [zunia-docs](https://github.com/zunialab/zunia-docs) | Documentation (`docs.zuniawallet.com`) |
-| [zunia-extension](https://github.com/zunialab/zunia-extension) | Browser extension |
-| [zunia-mobile](https://github.com/zunialab/zunia-mobile) | Mobile wallet |
-| [zunia-dashboard](https://github.com/zunialab/zunia-dashboard) | Web portfolio |
-| [zunia-brand](https://github.com/zunialab/zunia-brand) | Brand assets |
+| [zunia-docs](https://github.com/Zunia-Lab/zunia-docs) | Documentation (`docs.zuniawallet.com`) |
+| [zunia-extension](https://github.com/Zunia-Lab/zunia-extension) | Browser extension |
+| [zunia-mobile](https://github.com/Zunia-Lab/zunia-mobile) | Mobile wallet |
+| [zunia-dashboard](https://github.com/Zunia-Lab/zunia-dashboard) | Web portfolio |
+| [zunia-brand](https://github.com/Zunia-Lab/zunia-brand) | Brand assets |
 
 ## Quick start
 
@@ -51,11 +51,11 @@ vercel --prod
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/zunialab/.github/blob/main/CONTRIBUTING.md).
+See [CONTRIBUTING.md](https://github.com/Zunia-Lab/.github/blob/main/CONTRIBUTING.md).
 
 ## Security
 
-See [SECURITY.md](https://github.com/zunialab/.github/blob/main/SECURITY.md).
+See [SECURITY.md](https://github.com/Zunia-Lab/.github/blob/main/SECURITY.md).
 
 ## License
 
