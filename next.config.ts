@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  transpilePackages: ["@zunialab/ui", "@zunialab/tokens", "@zunialab/fonts"],
   async headers() {
     return [
       {

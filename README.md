@@ -40,6 +40,16 @@ Open [http://localhost:3000](http://localhost:3000).
 | `npm run dev` | Next.js dev server |
 | `npm run build` | Production build |
 | `npm run start` | Serve production build |
+| `npm run sync:chains` | Refresh chain names, logos and coverage counts from the chain registry |
+
+### Chain data
+
+The featured chain list, the logos in `public/chains` and the chain counts shown
+on the page are generated from [zunia-chain-registry](https://github.com/Zunia-Lab/zunia-chain-registry)
+into `src/content/chains.generated.ts`. Edit `FEATURED` in
+`scripts/sync-chains.mjs` and re-run `npm run sync:chains`; the script needs a
+checkout of the registry beside this repo, or `ZUNIA_CHAIN_REGISTRY` pointing at
+one, and it fails rather than emit a chain the registry does not carry.
 
 ## Deployment
 

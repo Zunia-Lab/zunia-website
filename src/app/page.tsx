@@ -1,51 +1,92 @@
-import Link from "next/link";
+import { Rule } from "@/components/site/Layout";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { Hero } from "@/components/sections/Hero";
+import { Overview } from "@/components/sections/Overview";
+import { Chains } from "@/components/sections/Chains";
+import { Capabilities } from "@/components/sections/Capabilities";
+import { Platforms } from "@/components/sections/Platforms";
+import { Security } from "@/components/sections/Security";
+import { Verify } from "@/components/sections/Verify";
+import { Developers } from "@/components/sections/Developers";
+import { FaqSection } from "@/components/sections/Faq";
+import { Support } from "@/components/sections/Support";
+import { Download } from "@/components/sections/Download";
+import { FAQ, LINKS, SITE } from "@/content/site";
+
+/**
+ * Structured data. The FAQ and the application entry are the two things search
+ * engines and assistants can surface directly, and both were absent before.
+ */
+function StructuredData() {
+  const graph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        name: SITE.name,
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "Chrome, Brave, Edge, Firefox, iOS 15+, Android 8+",
+        url: SITE.url,
+        description: SITE.description,
+        license: "https://www.apache.org/licenses/LICENSE-2.0",
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        publisher: {
+          "@type": "Organization",
+          name: SITE.legalName,
+          url: SITE.url,
+          sameAs: [LINKS.github, LINKS.x],
+        },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: FAQ.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: item.a },
+        })),
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      // Content is a literal object built above, not user input.
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
+    />
+  );
+}
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#10214F] text-[#F4F5F7]">
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8">
-        <span className="text-xl font-medium tracking-tight">zunia</span>
-        <nav className="flex gap-6 text-sm text-[#A8BADE]">
-          <Link href="https://docs.zuniawallet.com">Docs</Link>
-          <Link href="https://github.com/Zunia-Lab">GitHub</Link>
-        </nav>
-      </header>
-
-      <main className="mx-auto max-w-4xl px-6 py-24 text-center">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#6FA8FF]">
-          Cosmos multi-chain wallet
-        </p>
-        <h1 className="mt-6 text-5xl font-medium leading-tight tracking-tight sm:text-6xl">
-          One wallet for
-          <br />
-          <span className="text-[#6FA8FF]">every Cosmos chain.</span>
-        </h1>
-        <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[#A8BADE]">
-          Zunia is a multi-chain wallet for the Cosmos ecosystem, running as a
-          browser extension and a mobile app on the same keys.
-        </p>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a
-            className="rounded-full bg-[#2050C4] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#3B6BFF]"
-            href="https://github.com/Zunia-Lab/zunia-extension"
-          >
-            Browser extension
-          </a>
-          <a
-            className="rounded-full border border-[#C7D2EA]/30 px-6 py-3 text-sm font-medium text-[#F4F5F7] transition hover:border-[#6FA8FF]"
-            href="https://github.com/Zunia-Lab/zunia-mobile"
-          >
-            Mobile wallet
-          </a>
-        </div>
+    <>
+      <StructuredData />
+      <a
+        href="#main"
+        className="zw-skip rounded-full bg-accent px-5 py-3 text-[13px] font-medium text-accent-fg"
+      >
+        Skip to content
+      </a>
+      <SiteHeader />
+      <main id="main" className="flex-1">
+        <Hero />
+        <Overview />
+        <Rule />
+        <Chains />
+        <Rule />
+        <Capabilities />
+        <Platforms />
+        <Security />
+        <Verify />
+        <Developers />
+        <Rule />
+        <FaqSection />
+        <Support />
+        <Rule />
+        <Download />
       </main>
-
-      <footer className="mx-auto max-w-6xl border-t border-white/10 px-6 py-8 text-sm text-[#6E80AE]">
-        <p>
-          © {new Date().getFullYear()} Zunia Lab ·{" "}
-          <a href="mailto:hello@zuniawallet.com">hello@zuniawallet.com</a>
-        </p>
-      </footer>
-    </div>
+      <SiteFooter />
+    </>
   );
 }
