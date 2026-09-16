@@ -102,7 +102,7 @@ export function Security() {
             href={LINKS.securityEmail}
             className="text-fg underline decoration-[var(--z-line-strong)] underline-offset-4 hover:decoration-current"
           >
-            security@zuniawallet.com
+            security@zunialab.com
           </a>{" "}
           or read the{" "}
           <a

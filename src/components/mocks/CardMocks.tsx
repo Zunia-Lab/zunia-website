@@ -339,7 +339,7 @@ export function ApprovalCard() {
   );
 }
 
-/** Web portfolio: the read-only view at wallet.zuniawallet.com. */
+/** Web portfolio: the read-only view at wallet.zunialab.com. */
 export function PortfolioCard() {
   const reduced = usePrefersReducedMotion();
   const [points, setPoints] = useState([18, 26, 23, 39, 34, 51, 46, 63, 58, 74, 78]);
@@ -360,7 +360,7 @@ export function PortfolioCard() {
   }, [reduced]);
 
   return (
-    <BrowserFrame label="wallet.zuniawallet.com · portfolio">
+    <BrowserFrame label="wallet.zunialab.com · portfolio">
       <div className="flex flex-col gap-2.5 p-3">
         <div className="grid gap-2.5 sm:grid-cols-3">
           {[

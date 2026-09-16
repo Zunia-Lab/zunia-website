@@ -19,9 +19,37 @@ import { FAQ, LINKS, SITE } from "@/content/site";
  * engines and assistants can surface directly, and both were absent before.
  */
 function StructuredData() {
+  const logoUrl = `${SITE.url}/icon`;
+  const imageUrl = `${SITE.url}/opengraph-image`;
+
+  const organization = {
+    "@type": "Organization",
+    "@id": `${SITE.url}/#organization`,
+    name: SITE.legalName,
+    url: SITE.url,
+    logo: {
+      "@type": "ImageObject",
+      url: logoUrl,
+    },
+    sameAs: [LINKS.github],
+    email: "support@zunialab.com",
+  };
+
+  const website = {
+    "@type": "WebSite",
+    "@id": `${SITE.url}/#website`,
+    name: SITE.name,
+    url: SITE.url,
+    description: SITE.description,
+    publisher: { "@id": `${SITE.url}/#organization` },
+    inLanguage: "en",
+  };
+
   const graph = {
     "@context": "https://schema.org",
     "@graph": [
+      organization,
+      website,
       {
         "@type": "SoftwareApplication",
         name: SITE.name,
@@ -29,14 +57,10 @@ function StructuredData() {
         operatingSystem: "Chrome, Brave, Edge, Firefox, iOS 15+, Android 8+",
         url: SITE.url,
         description: SITE.description,
+        image: imageUrl,
         license: "https://www.apache.org/licenses/LICENSE-2.0",
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        publisher: {
-          "@type": "Organization",
-          name: SITE.legalName,
-          url: SITE.url,
-          sameAs: [LINKS.github, LINKS.x],
-        },
+        publisher: { "@id": `${SITE.url}/#organization` },
       },
       {
         "@type": "FAQPage",

@@ -4,10 +4,10 @@
 
 # zunia-website
 
-> Marketing site for Zunia at [zuniawallet.com](https://zuniawallet.com).
+> Marketing site for Zunia at [zunialab.com](https://zunialab.com).
 
 [![License](https://img.shields.io/github/license/Zunia-Lab/zunia-website)](LICENSE)
-[![Website](https://img.shields.io/badge/website-zuniawallet.com-FF1B0C)](https://zuniawallet.com)
+[![Website](https://img.shields.io/badge/website-zunialab.com-FF1B0C)](https://zunialab.com)
 
 ## Overview
 
@@ -21,7 +21,7 @@ In development.
 
 | Repository | Description |
 |------------|-------------|
-| [zunia-docs](https://github.com/Zunia-Lab/zunia-docs) | Documentation (`docs.zuniawallet.com`) |
+| [zunia-docs](https://github.com/Zunia-Lab/zunia-docs) | Documentation (`docs.zunialab.com`) |
 | [zunia-extension](https://github.com/Zunia-Lab/zunia-extension) | Browser extension |
 | [zunia-mobile](https://github.com/Zunia-Lab/zunia-mobile) | Mobile wallet |
 | [zunia-dashboard](https://github.com/Zunia-Lab/zunia-dashboard) | Web portfolio |
@@ -57,7 +57,7 @@ one, and it fails rather than emit a chain the registry does not carry.
 
 ## Deployment
 
-Deploy to Vercel and attach the custom domain `zuniawallet.com`. See [DEPLOY.md](../DEPLOY.md) in the workspace for DNS records.
+Deploy to Vercel and attach the custom domain `zunialab.com`. See [DEPLOY.md](../DEPLOY.md) in the workspace for DNS records.
 
 ```bash
 # Example

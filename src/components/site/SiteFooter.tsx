@@ -17,6 +17,22 @@ function FooterLink({ href, children }: { href: string; children: string }) {
   );
 }
 
+/**
+ * A footer entry whose destination does not exist yet.
+ *
+ * Rendered as text rather than a link, with the reason next to the label: a
+ * navigation item that resolves to nothing is worse than one that says why,
+ * and a reader cannot tell a broken link from a slow one until they have
+ * already left the page.
+ */
+function FooterPending({ label, reason }: { label: string; reason: string }) {
+  return (
+    <span className="text-[13px] text-fg-dim">
+      {label}, {reason}
+    </span>
+  );
+}
+
 export function SiteFooter() {
   return (
     <footer className="relative border-t border-[var(--z-line)] px-5 pb-14 pt-16 sm:px-8 lg:px-11">
@@ -43,7 +59,11 @@ export function SiteFooter() {
               <ul className="mt-4 flex list-none flex-col gap-3 p-0">
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    <FooterLink href={link.href}>{link.label}</FooterLink>
+                    {link.href ? (
+                      <FooterLink href={link.href}>{link.label}</FooterLink>
+                    ) : (
+                      <FooterPending label={link.label} reason={link.pending ?? "not available yet"} />
+                    )}
                   </li>
                 ))}
               </ul>
@@ -75,9 +95,11 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {SITE.legalName} · not custodial, not an exchange
           </p>
           <div className="flex flex-wrap gap-5 md:ml-auto">
-            <FooterLink href={LINKS.securityEmail}>security@zuniawallet.com</FooterLink>
-            <FooterLink href={LINKS.supportEmail}>support@zuniawallet.com</FooterLink>
-            <FooterLink href={LINKS.x}>X</FooterLink>
+            <FooterLink href={LINKS.securityEmail}>security@zunialab.com</FooterLink>
+            <FooterLink href={LINKS.supportEmail}>support@zunialab.com</FooterLink>
+            {/* x.com/zuniawallet is reserved but not published, so the entry
+                states that rather than sending the reader to an X 404. */}
+            <span className="text-[13px] text-fg-dim">X, account not published yet</span>
           </div>
         </div>
       </div>

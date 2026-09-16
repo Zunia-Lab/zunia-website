@@ -15,8 +15,8 @@ import { CHAINS, REGISTRY_STATS } from "./chains.generated";
 export const SITE = {
   name: "Zunia",
   legalName: "Zunia Lab",
-  domain: "zuniawallet.com",
-  url: "https://zuniawallet.com",
+  domain: "zunialab.com",
+  url: "https://zunialab.com",
   tagline: "Hold, send, stake, across every chain.",
   description:
     "Zunia is a multi-chain wallet for the Cosmos ecosystem, running as a browser extension and a mobile app on the same keys.",
@@ -25,42 +25,78 @@ export const SITE = {
   releaseChannel: "1.0 release candidate",
 } as const;
 
+/**
+ * docs.zunialab.com has no DNS record yet: every name under it resolves
+ * NXDOMAIN, so a reader who clicks one gets a browser error page rather than a
+ * 404 we could style. The documentation itself is written and public, in the
+ * repository the docs site is built from, so the docs links point at the source
+ * of each page until the host is provisioned. Rendered Markdown on GitHub is
+ * the same text the docs site will serve.
+ *
+ * Provisioning docs.zunialab.com is then a change confined to this block:
+ * DOCS_HOME becomes "https://docs.zunialab.com", DOCS_PAGE becomes
+ * DOCS_HOME, and the ".md" suffixes come off, since each path below is already
+ * the docs route for that file.
+ */
+const DOCS_HOME = "https://github.com/Zunia-Lab/zunia-docs";
+const DOCS_PAGE = `${DOCS_HOME}/blob/main/docs`;
+
+/**
+ * Every destination the site can send a reader to, so a dead one is corrected
+ * in one place. Each entry was resolved before it was written down; a host that
+ * does not exist yet is absent from this list rather than present and broken.
+ */
 export const LINKS = {
-  docs: "https://docs.zuniawallet.com",
-  docsChains: "https://docs.zuniawallet.com/chains",
-  docsIntegrate: "https://docs.zuniawallet.com/connect/sdk",
-  docsRecovery: "https://docs.zuniawallet.com/wallet/recovery",
-  docsFees: "https://docs.zuniawallet.com/wallet/fees",
-  docsReproducible: "https://docs.zuniawallet.com/security/reproducible-builds",
-  docsRpc: "https://docs.zuniawallet.com/security/endpoints",
-  dashboard: "https://wallet.zuniawallet.com",
-  status: "https://status.zuniawallet.com",
+  docs: DOCS_HOME,
+  docsChains: `${DOCS_PAGE}/chain-registry/overview.md`,
+  docsIntegrate: `${DOCS_PAGE}/connect/sdk.md`,
+  /* There is no wallet/recovery page. Backing up and restoring a phrase is
+     covered by keys-and-accounts, which is what the recovery link promises. */
+  docsRecovery: `${DOCS_PAGE}/wallet/keys-and-accounts.md`,
+  docsFees: `${DOCS_PAGE}/wallet/fees.md`,
+  /* Filed under developers/, not security/, in the docs tree. */
+  docsReproducible: `${DOCS_PAGE}/developers/reproducible-builds.md`,
+  /* There is no security/endpoints page; custom-chains is the one that lists
+     and explains replacing the default RPC endpoints. */
+  docsRpc: `${DOCS_PAGE}/wallet/custom-chains.md`,
   github: "https://github.com/Zunia-Lab",
   githubExtension: "https://github.com/Zunia-Lab/zunia-extension",
   githubMobile: "https://github.com/Zunia-Lab/zunia-mobile",
   githubRegistry: "https://github.com/Zunia-Lab/zunia-chain-registry",
   githubUi: "https://github.com/Zunia-Lab/zunia-ui",
+  /* wallet.zunialab.com is not provisioned either, so the only public thing
+     to point at for the web portfolio is the repository it is built from. */
+  githubDashboard: "https://github.com/Zunia-Lab/zunia-dashboard",
   githubIssues: "https://github.com/Zunia-Lab/zunia-extension/issues",
   brand: "https://github.com/Zunia-Lab/zunia-brand",
   license: "https://github.com/Zunia-Lab/zunia-extension/blob/main/LICENSE",
   securityPolicy: "https://github.com/Zunia-Lab/.github/blob/main/SECURITY.md",
   securityTxt: "/.well-known/security.txt",
-  privacy: "/privacy",
-  terms: "/terms",
-  disclosures: "/disclosures",
-  supportEmail: "mailto:support@zuniawallet.com",
-  securityEmail: "mailto:security@zuniawallet.com",
-  brandEmail: "mailto:brand@zuniawallet.com",
-  x: "https://x.com/zuniawallet",
+  privacy: "/legal/privacy",
+  terms: "/legal/terms",
+  supportEmail: "mailto:support@zunialab.com",
+  securityEmail: "mailto:security@zunialab.com",
+  brandEmail: "mailto:brand@zunialab.com",
 } as const;
 
+/**
+ * Fragments are written root-relative because the header and footer also render
+ * on /legal/*, where a bare "#chains" would resolve to nothing.
+ *
+ * On the home page the browser treats "/#chains" as a same-document jump only
+ * while the current URL carries no query string: the HTML navigation algorithm
+ * compares the two URLs with fragments excluded, so arriving on
+ * "/?utm_source=twitter" and clicking a nav item would otherwise be a full
+ * document reload that drops the query. `SameDocumentFragments` in the root
+ * layout restores the same-document behaviour for that case.
+ */
 export const NAV = [
-  { label: "Wallet", href: "#wallet" },
-  { label: "Chains", href: "#chains" },
-  { label: "Platforms", href: "#platforms" },
-  { label: "Security", href: "#security" },
-  { label: "Developers", href: "#developers" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Wallet", href: "/#wallet" },
+  { label: "Chains", href: "/#chains" },
+  { label: "Platforms", href: "/#platforms" },
+  { label: "Security", href: "/#security" },
+  { label: "Developers", href: "/#developers" },
+  { label: "FAQ", href: "/#faq" },
 ] as const;
 
 /* -------------------------------------------------------------------------- */
@@ -154,11 +190,20 @@ export const DOWNLOADS: DownloadTarget[] = [
  * `DOWNLOADS`: the store status and the minimum-version line under the hero
  * describe only things you install. Named the way the docs name it, so the
  * header, the hero and the documentation do not each invent a label.
+ *
+ * `href` is the repository, not wallet.zunialab.com: that host has no DNS
+ * record, so the hero and header buttons were sending every visitor who clicked
+ * them to a browser error page. The repository at least exists and says what
+ * the surface is. It is still the wrong promise for a button labelled "Open" —
+ * see `unavailable`, which the two controls that render this should show
+ * instead of behaving like a live product.
  */
 export const WEB_APP = {
   label: "Web dashboard",
-  href: LINKS.dashboard,
+  href: LINKS.githubDashboard,
   availability: "development" as Availability,
+  /** Visible reason for a control that cannot open anything yet. */
+  unavailable: "in development, not deployed yet",
   requirement: "Nothing to install",
   blurb:
     "Balances, activity and staking in the browser. It connects to the extension or the phone over WalletConnect, so the keys never reach it.",
@@ -381,7 +426,7 @@ export const TRANSPARENCY: TransparencyItem[] = [
   },
   {
     label: "Responsible disclosure",
-    value: "security@zuniawallet.com, 90-day coordinated window, acknowledgements page.",
+    value: "security@zunialab.com, 90-day coordinated window, acknowledgements page.",
     status: "available",
     href: LINKS.securityPolicy,
   },
@@ -404,13 +449,19 @@ export interface ProvenanceItem {
   mono?: boolean;
 }
 
+/*
+ * The block only protects anyone if the statuses are true. The two subdomains
+ * below do not resolve yet, and the Firefox add-on is not published, so they
+ * carry the planned badge: an identifier marked available that does not exist
+ * teaches the reader to trust whatever turns up at that name first.
+ */
 export const PROVENANCE: ProvenanceItem[] = [
-  { label: "Only official domain", value: "zuniawallet.com", status: "available", mono: true },
-  { label: "Web portfolio", value: "wallet.zuniawallet.com", status: "available", mono: true },
-  { label: "Documentation", value: "docs.zuniawallet.com", status: "available", mono: true },
+  { label: "Only official domain", value: "zunialab.com", status: "available", mono: true },
+  { label: "Web portfolio", value: "wallet.zunialab.com", status: "planned", mono: true },
+  { label: "Documentation", value: "docs.zunialab.com", status: "planned", mono: true },
   { label: "Android package", value: "com.zuniawallet.zunia_mobile", status: "available", mono: true },
   { label: "iOS bundle", value: "com.zuniawallet.zuniaMobile", status: "available", mono: true },
-  { label: "Firefox add-on id", value: "extension@zuniawallet.com", status: "available", mono: true },
+  { label: "Firefox add-on id", value: "extension@zunialab.com", status: "planned", mono: true },
   { label: "Chrome extension id", value: "Published with the store listing", status: "planned" },
   { label: "APK SHA-256", value: "Published in each GitHub release, signed", status: "planned" },
 ];
@@ -587,10 +638,14 @@ export const FAQ: FaqItem[] = [
 
 export const SUPPORT_CHANNELS = [
   { label: "Documentation", value: "Guides, chain list and integration reference", href: LINKS.docs },
-  { label: "Support", value: "support@zuniawallet.com, one business day", href: LINKS.supportEmail },
-  { label: "Security", value: "security@zuniawallet.com, coordinated disclosure", href: LINKS.securityEmail },
+  { label: "Support", value: "support@zunialab.com, one business day", href: LINKS.supportEmail },
+  { label: "Security", value: "security@zunialab.com, coordinated disclosure", href: LINKS.securityEmail },
   { label: "Bugs", value: "GitHub issues, public triage", href: LINKS.githubIssues },
-  { label: "Network status", value: "Endpoint and indexer availability", href: LINKS.status },
+  /* There was a "Network status" card here pointing at status.zunialab.com.
+     No status page exists on any host, so the card was claiming a channel we do
+     not operate on the one section that says these are the only channels we
+     operate. Removed rather than repointed. */
+  { label: "Chain registry", value: "Request or correct a chain, public repository", href: LINKS.githubRegistry },
   { label: "Brand", value: "Logo, wordmark and usage rules", href: LINKS.brand },
 ] as const;
 
@@ -601,14 +656,32 @@ export const RISK_DISCLOSURE = [
   "Nothing on this site is investment advice. Staking locks funds for an unbonding period and can lose value through slashing.",
 ] as const;
 
-export const FOOTER_COLUMNS = [
+/**
+ * A footer entry either navigates somewhere that exists or says why it does
+ * not. The union enforces that: drop `href` and the compiler demands `pending`,
+ * so an entry cannot become a silent dead link the way "Web portfolio" did
+ * while it pointed at a host with no DNS record.
+ */
+export type FooterEntry =
+  | { label: string; href: string; pending?: never }
+  | { label: string; href?: never; pending: string };
+
+export interface FooterColumn {
+  title: string;
+  links: FooterEntry[];
+}
+
+export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Product",
     links: [
-      { label: "Browser extension", href: "#platforms" },
-      { label: "Mobile wallet", href: "#platforms" },
-      { label: "Web portfolio", href: LINKS.dashboard },
-      { label: "Supported chains", href: "#chains" },
+      { label: "Browser extension", href: "/#platforms" },
+      { label: "Mobile wallet", href: "/#platforms" },
+      /* wallet.zunialab.com does not resolve and the surface is still in
+         development, so there is nothing to open. The footer prints the reason
+         instead of shipping a link to a host with no DNS record. */
+      { label: "Web portfolio", pending: WEB_APP.unavailable },
+      { label: "Supported chains", href: "/#chains" },
     ],
   },
   {
@@ -623,8 +696,8 @@ export const FOOTER_COLUMNS = [
   {
     title: "Trust",
     links: [
-      { label: "Security", href: "#security" },
-      { label: "Verify your install", href: "#verify" },
+      { label: "Security", href: "/#security" },
+      { label: "Verify your install", href: "/#verify" },
       { label: "Disclosure policy", href: LINKS.securityPolicy },
       { label: "security.txt", href: LINKS.securityTxt },
     ],
@@ -634,11 +707,10 @@ export const FOOTER_COLUMNS = [
     links: [
       { label: "Privacy", href: LINKS.privacy },
       { label: "Terms", href: LINKS.terms },
-      { label: "Disclosures", href: LINKS.disclosures },
       { label: "Brand", href: LINKS.brand },
     ],
   },
-] as const;
+];
 
 export const AVAILABILITY_LABEL: Record<Availability, string> = {
   available: "Available",
