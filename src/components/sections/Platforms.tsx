@@ -1,18 +1,25 @@
 import { cn } from "@zunialab/ui";
 import { Reveal } from "@/components/site/Reveal";
-import { BlockLabel, Container, Glow, Section } from "@/components/site/Layout";
+import { Container, Eyebrow, Glow, Section, SectionTitle } from "@/components/site/Layout";
 import { AvailabilityBadge, SpecList } from "@/components/site/Frames";
-import { PhoneHome } from "@/components/mocks/PhoneMocks";
 import { AVAILABILITY_LABEL, PLATFORMS } from "@/content/site";
 
 export function Platforms() {
   return (
-    <Section id="platforms" label="Platforms" className="pb-32 pt-0">
+    <Section id="platforms" label="Platforms">
       <Glow className="right-[-260px] top-[-120px]" size={760} strength={0.28} />
 
-      <Container className="relative grid gap-5 lg:grid-cols-2">
+      <Container className="relative">
+        <div className="mb-14 max-w-[640px]">
+          <Eyebrow>Platforms</Eyebrow>
+          <Reveal className="mt-6">
+            <SectionTitle lead="Two clients." trail="The same keys." />
+          </Reveal>
+        </div>
+
+        <div className="grid items-stretch gap-5 lg:grid-cols-2">
         {PLATFORMS.map((platform, index) => (
-          <Reveal key={platform.id} delay={index * 0.08}>
+          <Reveal key={platform.id} delay={index * 0.08} className="h-full">
             <article
               className={cn(
                 "relative flex h-full flex-col overflow-hidden rounded-[26px] border border-[var(--z-line)]",
@@ -85,13 +92,7 @@ export function Platforms() {
             </article>
           </Reveal>
         ))}
-      </Container>
-
-      <Container className="relative mt-16">
-        <BlockLabel>The phone, for real</BlockLabel>
-        <Reveal className="mt-6 flex justify-center">
-          <PhoneHome caption="Mobile · home" />
-        </Reveal>
+        </div>
       </Container>
     </Section>
   );

@@ -10,7 +10,7 @@ import { SUPPORT_CHANNELS } from "@/content/site";
  */
 export function Support() {
   return (
-    <Section label="Support" className="pb-28 pt-0">
+    <Section label="Support">
       <Container className="relative">
         <div className="flex flex-col gap-4 md:flex-row md:items-end">
           <div>

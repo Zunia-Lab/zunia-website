@@ -20,26 +20,20 @@ export const SITE = {
   tagline: "Hold, send, stake, across every chain.",
   description:
     "Zunia is a multi-chain wallet for the Cosmos ecosystem, running as a browser extension and a mobile app on the same keys.",
+  /** Search and link-preview copy. Longer than the hero line, still the same claims. */
+  metaDescription:
+    "Self-custody wallet for the Cosmos ecosystem. Hold, send, and stake from a browser extension and a phone that share the same keys. No account, no token.",
   /** Date the factual claims below were last reviewed. Shown next to the stats. */
   claimsReviewedAt: "2026-08-31",
   releaseChannel: "1.0 release candidate",
 } as const;
 
 /**
- * docs.zunialab.com has no DNS record yet: every name under it resolves
- * NXDOMAIN, so a reader who clicks one gets a browser error page rather than a
- * 404 we could style. The documentation itself is written and public, in the
- * repository the docs site is built from, so the docs links point at the source
- * of each page until the host is provisioned. Rendered Markdown on GitHub is
- * the same text the docs site will serve.
- *
- * Provisioning docs.zunialab.com is then a change confined to this block:
- * DOCS_HOME becomes "https://docs.zunialab.com", DOCS_PAGE becomes
- * DOCS_HOME, and the ".md" suffixes come off, since each path below is already
- * the docs route for that file.
+ * Public docs host. Paths match the Docusaurus routes in zunia-docs (no `.md`
+ * suffix). Until DNS for docs.zunialab.com is live, the local docs app serves
+ * the same routes on :3005.
  */
-const DOCS_HOME = "https://github.com/Zunia-Lab/zunia-docs";
-const DOCS_PAGE = `${DOCS_HOME}/blob/main/docs`;
+const DOCS_HOME = "https://docs.zunialab.com";
 
 /**
  * Every destination the site can send a reader to, so a dead one is corrected
@@ -48,17 +42,17 @@ const DOCS_PAGE = `${DOCS_HOME}/blob/main/docs`;
  */
 export const LINKS = {
   docs: DOCS_HOME,
-  docsChains: `${DOCS_PAGE}/chain-registry/overview.md`,
-  docsIntegrate: `${DOCS_PAGE}/connect/sdk.md`,
+  docsChains: `${DOCS_HOME}/chain-registry/overview`,
+  docsIntegrate: `${DOCS_HOME}/connect/sdk`,
   /* There is no wallet/recovery page. Backing up and restoring a phrase is
      covered by keys-and-accounts, which is what the recovery link promises. */
-  docsRecovery: `${DOCS_PAGE}/wallet/keys-and-accounts.md`,
-  docsFees: `${DOCS_PAGE}/wallet/fees.md`,
+  docsRecovery: `${DOCS_HOME}/wallet/keys-and-accounts`,
+  docsFees: `${DOCS_HOME}/wallet/fees`,
   /* Filed under developers/, not security/, in the docs tree. */
-  docsReproducible: `${DOCS_PAGE}/developers/reproducible-builds.md`,
+  docsReproducible: `${DOCS_HOME}/developers/reproducible-builds`,
   /* There is no security/endpoints page; custom-chains is the one that lists
      and explains replacing the default RPC endpoints. */
-  docsRpc: `${DOCS_PAGE}/wallet/custom-chains.md`,
+  docsRpc: `${DOCS_HOME}/wallet/custom-chains`,
   github: "https://github.com/Zunia-Lab",
   githubExtension: "https://github.com/Zunia-Lab/zunia-extension",
   githubMobile: "https://github.com/Zunia-Lab/zunia-mobile",
@@ -74,7 +68,7 @@ export const LINKS = {
   securityTxt: "/.well-known/security.txt",
   privacy: "/legal/privacy",
   terms: "/legal/terms",
-  supportEmail: "mailto:support@zunialab.com",
+  supportEmail: "mailto:dev@zunialab.com",
   securityEmail: "mailto:security@zunialab.com",
   brandEmail: "mailto:brand@zunialab.com",
 } as const;
@@ -612,7 +606,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "Which chains are supported?",
-    a: "Over forty IBC chains from the Cosmos chain registry, including Safrochain, updated without an app release. Custom chains can be added by RPC endpoint.",
+    a: `${CHAIN_COVERAGE.total} chains from the Zunia chain registry: ${CHAIN_COVERAGE.breakdown.replace(/\.$/, "")}, including Safrochain. The list updates without an app release. Custom chains can be added by RPC endpoint.`,
   },
   {
     q: "What does it cost?",
@@ -638,7 +632,7 @@ export const FAQ: FaqItem[] = [
 
 export const SUPPORT_CHANNELS = [
   { label: "Documentation", value: "Guides, chain list and integration reference", href: LINKS.docs },
-  { label: "Support", value: "support@zunialab.com, one business day", href: LINKS.supportEmail },
+  { label: "Support", value: "dev@zunialab.com, one business day", href: LINKS.supportEmail },
   { label: "Security", value: "security@zunialab.com, coordinated disclosure", href: LINKS.securityEmail },
   { label: "Bugs", value: "GitHub issues, public triage", href: LINKS.githubIssues },
   /* There was a "Network status" card here pointing at status.zunialab.com.

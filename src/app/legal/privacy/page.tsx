@@ -6,11 +6,13 @@ import { LINKS } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy (Draft)",
+  description:
+    "Draft privacy policy for Zunia. Not in force. Questions go to dev@zunialab.com.",
   /* The root layout sets `canonical: "/"` and Next merges metadata field by
      field, so without this the page declares itself a duplicate of the home
      page the moment it stops being noindex. */
   alternates: { canonical: "/legal/privacy" },
-  robots: { index: false, follow: false },
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPage() {
@@ -49,7 +51,7 @@ export default function PrivacyPage() {
                   href={LINKS.supportEmail}
                   className="rounded-sm text-fg underline underline-offset-4 transition-colors duration-[var(--z-duration-base)] hover:text-fg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--z-focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--z-bg)]"
                 >
-                  support@zunialab.com
+                  dev@zunialab.com
                 </a>
                 .
               </p>

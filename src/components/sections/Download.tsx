@@ -1,13 +1,14 @@
-import { Button, Mark } from "@zunialab/ui";
+import { Mark } from "@zunialab/ui";
 import { Container, Glow, Section } from "@/components/site/Layout";
 import { AvailabilityBadge } from "@/components/site/Frames";
 import { CHANNEL_ICONS } from "@/components/site/Icons";
+import { ComingSoonButton } from "@/components/site/ComingSoon";
 import { Reveal } from "@/components/site/Reveal";
 import { DOWNLOADS, LINKS, SITE } from "@/content/site";
 
 export function Download() {
   return (
-    <Section id="download" label="Download Zunia" className="pb-36 pt-0 text-center">
+    <Section id="download" label="Download Zunia" className="py-28 text-center lg:py-36">
       <Glow className="bottom-[-680px] left-1/2 -ml-[560px]" size={1120} strength={0.4} />
 
       <Container className="relative max-w-[900px]">
@@ -30,26 +31,21 @@ export function Download() {
             const Icon = CHANNEL_ICONS[target.id as keyof typeof CHANNEL_ICONS];
             const variant = target.id === "chrome" ? "primary" : "secondary";
             return (
-              <Button
+              <ComingSoonButton
                 key={target.id}
-                asChild
                 size="lg"
                 variant={variant}
                 className="h-[54px] px-5 sm:px-6"
+                label={target.label}
+                aria-label={
+                  target.availability === "planned"
+                    ? `${target.label}, planned`
+                    : target.label
+                }
               >
-                <a
-                  href={target.href}
-                  rel="noreferrer"
-                  aria-label={
-                    target.availability === "planned"
-                      ? `${target.label}, planned`
-                      : target.label
-                  }
-                >
-                  {Icon ? <Icon size={18} /> : null}
-                  {target.label}
-                </a>
-              </Button>
+                {Icon ? <Icon size={18} /> : null}
+                {target.label}
+              </ComingSoonButton>
             );
           })}
         </div>

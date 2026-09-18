@@ -312,7 +312,7 @@ export function PhoneMissions({ caption }: { caption?: string }) {
               className={cn(
                 "flex items-center gap-2.5 rounded-[12px] p-2 transition-colors duration-500",
                 done && "bg-[var(--z-state-selected)]",
-                active && "ring-1 ring-inset ring-[rgba(var(--zw-cobalt-bright),0.45)]",
+                active && "ring-1 ring-inset ring-[rgba(var(--zw-cobalt-bright),0.28)]",
               )}
             >
               <span
@@ -393,7 +393,7 @@ export function HeroPhone() {
             className="pointer-events-none absolute -left-[60px] -top-[40px] size-[300px] rounded-full"
             style={{
               background:
-                "radial-gradient(circle, rgba(var(--zw-cobalt),.55) 0%, rgba(var(--zw-cobalt),0) 68%)",
+                "radial-gradient(circle, rgba(var(--zw-cobalt),.18) 0%, rgba(var(--zw-cobalt),0) 68%)",
             }}
           />
           <div className="relative flex items-center justify-between font-mono text-[12px] font-medium text-fg">

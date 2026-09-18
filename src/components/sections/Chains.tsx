@@ -1,6 +1,6 @@
 import { cn } from "@zunialab/ui";
 import { Reveal } from "@/components/site/Reveal";
-import { BlockLabel, Container, Glow, Section } from "@/components/site/Layout";
+import { Container, Eyebrow, Glow, Section } from "@/components/site/Layout";
 import { ChainTicker, Marquee } from "@/components/site/Marquee";
 import { BridgeCard, IbcTransferCard } from "@/components/mocks/CardMocks";
 import { CHAINS, CHAIN_COVERAGE } from "@/content/site";
@@ -11,11 +11,12 @@ export function Chains() {
   const bottomRow = CHAINS.slice(half);
 
   return (
-    <Section id="chains" label="Supported chains" className="py-24">
+    <Section id="chains" label="Supported chains">
       <Glow className="left-1/2 top-[-300px] -ml-[400px]" size={800} strength={0.34} />
 
       <Container className="relative max-w-[1100px] text-center">
-        <h2 className="m-0 text-[clamp(22px,2.4vw,30px)] font-medium leading-tight tracking-[-0.03em] text-fg">
+        <Eyebrow>Chains</Eyebrow>
+        <h2 className="zw-block-title m-0 mt-6 font-medium text-fg">
           Chains Zunia already speaks
         </h2>
 
@@ -53,11 +54,14 @@ export function Chains() {
       </Container>
 
       <Container className="relative mt-16">
-        <BlockLabel>Bridge and IBC</BlockLabel>
-        <Reveal className="mt-6 flex flex-wrap items-start justify-center gap-6">
-          <BridgeCard />
-          <IbcTransferCard />
-        </Reveal>
+        <div className="grid items-stretch gap-5 lg:grid-cols-2">
+          <Reveal className="h-full">
+            <IbcTransferCard />
+          </Reveal>
+          <Reveal className="h-full" delay={0.08}>
+            <BridgeCard />
+          </Reveal>
+        </div>
       </Container>
     </Section>
   );

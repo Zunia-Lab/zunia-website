@@ -96,7 +96,7 @@ export function SiteFooter() {
           </p>
           <div className="flex flex-wrap gap-5 md:ml-auto">
             <FooterLink href={LINKS.securityEmail}>security@zunialab.com</FooterLink>
-            <FooterLink href={LINKS.supportEmail}>support@zunialab.com</FooterLink>
+            <FooterLink href={LINKS.supportEmail}>dev@zunialab.com</FooterLink>
             {/* x.com/zuniawallet is reserved but not published, so the entry
                 states that rather than sending the reader to an X 404. */}
             <span className="text-[13px] text-fg-dim">X, account not published yet</span>

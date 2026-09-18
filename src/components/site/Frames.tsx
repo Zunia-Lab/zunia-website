@@ -36,7 +36,7 @@ export function PhoneFrame({
             className="pointer-events-none absolute -right-[60px] top-[60px] size-[250px] rounded-full"
             style={{
               background:
-                "radial-gradient(circle, rgba(var(--zw-cobalt-bright),.35) 0%, rgba(var(--zw-cobalt),0) 68%)",
+                "radial-gradient(circle, rgba(var(--zw-cobalt-bright),.14) 0%, rgba(var(--zw-cobalt),0) 68%)",
             }}
           />
           <div className="relative flex items-center justify-between px-4 pt-3 font-mono text-[10px] text-fg">

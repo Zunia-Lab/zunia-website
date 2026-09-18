@@ -1,5 +1,6 @@
-import { Button, Mark, cn } from "@zunialab/ui";
+import { Mark, cn } from "@zunialab/ui";
 import { CHANNEL_ICONS } from "@/components/site/Icons";
+import { ComingSoonButton } from "@/components/site/ComingSoon";
 import { HeroPhone } from "@/components/mocks/PhoneMocks";
 import { DOWNLOADS, SITE, WEB_APP, type DownloadTarget } from "@/content/site";
 
@@ -41,15 +42,18 @@ export function Hero() {
             {stores.map((target) => (
               <DownloadButton key={target.id} target={target} />
             ))}
-            <Button asChild size="lg" variant="secondary" className="h-[54px] px-6">
-              <a href={WEB_APP.href} rel="noreferrer">
-                <Mark size={17} />
-                {WEB_APP.label}
-                <span aria-hidden className="text-[13px] opacity-70">
-                  ↗
-                </span>
-              </a>
-            </Button>
+            <ComingSoonButton
+              size="lg"
+              variant="secondary"
+              className="h-[54px] px-6"
+              label={WEB_APP.label}
+            >
+              <Mark size={17} />
+              {WEB_APP.label}
+              <span aria-hidden className="text-[13px] opacity-70">
+                ↗
+              </span>
+            </ComingSoonButton>
           </div>
         </div>
       </div>
@@ -87,21 +91,21 @@ function HeroAura() {
         className="zw-breathe absolute left-1/2 top-0 aspect-square w-[min(1400px,175vw)] -translate-x-1/2 -translate-y-[55%] rounded-full blur-[22px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(var(--zw-cobalt),0) 38%, rgba(var(--zw-cobalt),.45) 50%, rgba(var(--zw-cobalt-bright),1) 59%, rgba(var(--zw-cobalt),.6) 66%, rgba(var(--zw-void),.16) 78%, rgba(var(--zw-void),0) 88%)",
+            "radial-gradient(circle, rgba(var(--zw-cobalt),0) 42%, rgba(var(--zw-cobalt),.16) 54%, rgba(var(--zw-cobalt-bright),.28) 62%, rgba(var(--zw-cobalt),.12) 72%, rgba(var(--zw-void),.1) 82%, rgba(var(--zw-void),0) 90%)",
         }}
       />
       <div
         className="absolute left-1/2 top-0 aspect-square w-[min(860px,115vw)] -translate-x-1/2 -translate-y-[55%] rounded-full blur-2xl"
         style={{
           background:
-            "radial-gradient(circle, rgba(var(--zw-void),.94) 42%, rgba(var(--zw-cobalt),.18) 62%, rgba(var(--zw-void),0) 76%)",
+            "radial-gradient(circle, rgba(var(--zw-void),.94) 46%, rgba(var(--zw-cobalt),.08) 64%, rgba(var(--zw-void),0) 78%)",
         }}
       />
       <div
         className="absolute right-[-12%] top-[-8%] aspect-square w-[min(640px,80vw)] rounded-full blur-[30px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(var(--zw-cobalt),.36) 0%, rgba(var(--zw-cobalt),0) 66%)",
+            "radial-gradient(circle, rgba(var(--zw-cobalt),.12) 0%, rgba(var(--zw-cobalt),0) 66%)",
         }}
       />
       <div
@@ -120,19 +124,19 @@ function DownloadButton({ target }: { target: DownloadTarget }) {
   const variant = target.id === "chrome" ? "primary" : "secondary";
 
   return (
-    <Button asChild size="lg" variant={variant} className="h-[54px] px-5 sm:px-6">
-      <a
-        href={target.href}
-        rel="noreferrer"
-        aria-label={
-          target.availability === "planned"
-            ? `${target.label}, planned`
-            : target.label
-        }
-      >
-        {Icon ? <Icon size={18} /> : null}
-        {target.label}
-      </a>
-    </Button>
+    <ComingSoonButton
+      size="lg"
+      variant={variant}
+      className="h-[54px] px-5 sm:px-6"
+      label={target.label}
+      aria-label={
+        target.availability === "planned"
+          ? `${target.label}, planned`
+          : target.label
+      }
+    >
+      {Icon ? <Icon size={18} /> : null}
+      {target.label}
+    </ComingSoonButton>
   );
 }

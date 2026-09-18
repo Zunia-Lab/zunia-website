@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button, Mark, cn } from "@zunialab/ui";
-import { NAV, WEB_APP } from "@/content/site";
+import { Mark, cn } from "@zunialab/ui";
+import { ComingSoonButton } from "@/components/site/ComingSoon";
+import { NAV } from "@/content/site";
 
 /**
  * Top bar.
@@ -70,11 +71,15 @@ export function SiteHeader() {
         </a>
 
         <div className="ml-auto flex items-center gap-3">
-          <Button asChild size="sm" className="h-11 px-6 text-[15px]">
-            <a href={WEB_APP.href} rel="noreferrer">
-              Open
-            </a>
-          </Button>
+          <ComingSoonButton
+            size="sm"
+            variant="primary"
+            className="h-11 px-6 text-[15px]"
+            label="Developers"
+            description="Developer tools and docs access from here are coming very soon."
+          >
+            Developers
+          </ComingSoonButton>
 
           <div className="relative xl:hidden">
             <button
@@ -133,18 +138,17 @@ export function SiteHeader() {
                   {item.label}
                 </a>
               ))}
-              <a
-                href={WEB_APP.href}
-                rel="noreferrer"
-                onClick={() => setMenuOpen(false)}
-                className={cn(
-                  "mt-1.5 border-t border-[var(--z-line)] rounded-[11px] px-3.5 pb-3 pt-4 text-[15px] text-fg",
-                  "transition-colors duration-[var(--z-duration-base)] hover:bg-[var(--z-state-hover)]",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--z-focus-ring)] focus-visible:ring-inset",
-                )}
-              >
-                Open {WEB_APP.label.toLowerCase()}
-              </a>
+              <div className="mt-1.5 border-t border-[var(--z-line)] pt-2">
+                <ComingSoonButton
+                  size="sm"
+                  variant="secondary"
+                  className="h-auto w-full justify-start rounded-[11px] px-3.5 py-3 text-[15px]"
+                  label="Developers"
+                  description="Developer tools and docs access from here are coming very soon."
+                >
+                  Developers
+                </ComingSoonButton>
+              </div>
             </div>
           </div>
         </div>

@@ -39,13 +39,13 @@ export function Section({
 }
 
 /**
- * Accent bloom used across the landing page. Strength is the peak opacity of
- * `rgba(255,27,12)`, matching the warm accent washes rather than a monochrome tint.
+ * Soft wash behind sections. Strength is peak opacity of the muted accent,
+ * kept low so the page does not read as a red field.
  */
 export function Glow({
   className,
   size = 900,
-  strength = 0.34,
+  strength = 0.14,
   breathe = false,
   style,
 }: {
@@ -62,7 +62,7 @@ export function Glow({
       style={{
         width: size,
         height: size,
-        background: `radial-gradient(circle, rgba(var(--zw-cobalt), ${strength}) 0%, rgba(var(--zw-cobalt), 0) 68%)`,
+        background: `radial-gradient(circle, rgba(var(--zw-cobalt), ${Math.min(strength, 0.16)}) 0%, rgba(var(--zw-cobalt), 0) 68%)`,
         filter: "blur(28px)",
         ...style,
       }}
@@ -137,6 +137,59 @@ export function BlockLabel({ children, className }: { children: ReactNode; class
       )}
     >
       {children}
+    </div>
+  );
+}
+
+/**
+ * Copy on one side, one product visual on the other. The visual stays second
+ * in the document so narrow screens read the claim before the mock.
+ */
+export function Split({
+  visual,
+  children,
+  reverse = false,
+  className,
+}: {
+  visual: ReactNode;
+  children: ReactNode;
+  reverse?: boolean;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "grid items-center gap-12 lg:grid-cols-2 lg:gap-20",
+        reverse && "lg:[&>div:first-child]:order-2",
+        className,
+      )}
+    >
+      <div className="min-w-0">{children}</div>
+      <div className="min-w-0">{visual}</div>
+    </div>
+  );
+}
+
+/** Quiet well for a single product mock. One glow, one float, nothing else. */
+export function Stage({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <div
+      className={cn(
+        "relative flex w-full items-center justify-center",
+        "rounded-[32px] border border-[var(--z-line)] bg-[var(--z-surface-sunken)] px-6 py-10",
+        className,
+      )}
+    >
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden rounded-[32px]">
+        <div
+          className="zw-breathe absolute left-1/2 top-1/2 size-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(var(--zw-cobalt), 0.2) 0%, rgba(var(--zw-cobalt), 0) 68%)",
+          }}
+        />
+      </div>
+      <div className="zw-float-soft relative">{children}</div>
     </div>
   );
 }

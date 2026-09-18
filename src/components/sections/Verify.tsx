@@ -19,7 +19,7 @@ import { PROVENANCE, PROVENANCE_WARNINGS } from "@/content/site";
  */
 export function Verify() {
   return (
-    <Section id="verify" label="Verify your install" className="pb-32 pt-0">
+    <Section id="verify" label="Verify your install">
       <Glow className="left-[-260px] top-[-100px]" size={820} strength={0.3} />
 
       <Container className="relative">

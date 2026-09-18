@@ -118,7 +118,7 @@ export function IbcTransferCard() {
   const to = SAFRO;
 
   return (
-    <CardShell title="IBC transfer" className="w-[min(360px,100%)]">
+    <CardShell title="IBC transfer" className="h-full w-full">
       <div className="mt-3.5 rounded-[14px] border border-[var(--z-line)] bg-[var(--z-glass)] p-3.5">
         <div className="font-mono text-[9px] uppercase tracking-[0.14em] text-fg-dim">Route</div>
         <div className="mt-3.5 flex items-center gap-2.5">
@@ -132,7 +132,7 @@ export function IbcTransferCard() {
           </span>
           <span aria-hidden className="relative h-px flex-1 overflow-visible bg-[var(--z-line-strong)]">
             <span
-              className="absolute top-1/2 size-2 -translate-y-1/2 rounded-full bg-[rgb(var(--zw-cobalt-bright))] shadow-[0_0_12px_rgba(var(--zw-cobalt-bright),0.8)]"
+              className="absolute top-1/2 size-2 -translate-y-1/2 rounded-full bg-[rgb(var(--zw-cobalt-bright))] shadow-[0_0_8px_rgba(var(--zw-cobalt-bright),0.35)]"
               style={{
                 left: `${reduced ? 50 : pulse}%`,
                 transition: reduced ? undefined : "left 40ms linear",
@@ -202,7 +202,7 @@ export function BridgeCard() {
   return (
     <CardShell
       title="Bridge"
-      className="w-[min(420px,100%)]"
+      className="h-full w-full"
       aside={<StaticSegmented options={[...modes]} value={modes[modeIndex]} />}
     >
       <div
@@ -430,7 +430,7 @@ export function PortfolioCard() {
 }
 
 /** Device pairing: gated by the passcode, then a code with a short life. */
-export function PairingCard() {
+export function PairingCard({ className }: { className?: string } = {}) {
   const reduced = usePrefersReducedMotion();
   const [seconds, setSeconds] = useState(48);
   const [seed, setSeed] = useState(0x5af70);
@@ -452,7 +452,7 @@ export function PairingCard() {
   const urgent = seconds <= 12;
 
   return (
-    <CardShell title="Pair a device" className="w-[min(300px,100%)]">
+    <CardShell title="Pair a device" className={cn("w-[min(300px,100%)]", className)}>
       <QrFrame size={132} className="mt-4">
         <MockQr size={118} seed={seed} className="text-fg" />
       </QrFrame>
