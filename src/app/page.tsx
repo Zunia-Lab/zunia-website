@@ -51,7 +51,7 @@ function StructuredData() {
         availableLanguage: ["en"],
       },
     ],
-    sameAs: [LINKS.github],
+    sameAs: [LINKS.github, LINKS.x],
   };
 
   const website = {

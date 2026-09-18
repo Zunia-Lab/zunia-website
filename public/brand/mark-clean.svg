@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 120" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="zunia-a" x1="0.1" y1="0" x2="0.95" y2="0.9">
+      <stop offset="0" stop-color="#FF1B0C"/>
+      <stop offset=".55" stop-color="#FF4E12"/>
+      <stop offset="1" stop-color="#FF8A17"/>
+    </linearGradient>
+    <linearGradient id="zunia-b" x1="0.1" y1="1" x2="0.95" y2="0.1">
+      <stop offset="0" stop-color="#FF9A05"/>
+      <stop offset=".55" stop-color="#FFBE14"/>
+      <stop offset="1" stop-color="#FFE05C"/>
+    </linearGradient>
+    <linearGradient id="zunia-x" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D42800"/>
+      <stop offset="1" stop-color="#FF6A05"/>
+    </linearGradient>
+    <mask id="zunia-mc" maskUnits="userSpaceOnUse" x="0" y="0" width="96" height="120">
+      <path d="M26 20 L70 46 L26 72" fill="none" stroke="#fff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <path d="M26 20 L70 46 L26 72" stroke="url(#zunia-a)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26 48 L70 74 L26 100" stroke="url(#zunia-b)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <g mask="url(#zunia-mc)">
+    <path d="M26 48 L70 74 L26 100" stroke="url(#zunia-x)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

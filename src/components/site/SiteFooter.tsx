@@ -1,4 +1,5 @@
 import { Mark, cn } from "@zunialab/ui";
+import { SocialLinks } from "@/components/site/SocialLinks";
 import { FOOTER_COLUMNS, LINKS, RISK_DISCLOSURE, SITE } from "@/content/site";
 
 function FooterLink({ href, children }: { href: string; children: string }) {
@@ -97,9 +98,7 @@ export function SiteFooter() {
           <div className="flex flex-wrap gap-5 md:ml-auto">
             <FooterLink href={LINKS.securityEmail}>security@zunialab.com</FooterLink>
             <FooterLink href={LINKS.supportEmail}>dev@zunialab.com</FooterLink>
-            {/* x.com/zuniawallet is reserved but not published, so the entry
-                states that rather than sending the reader to an X 404. */}
-            <span className="text-[13px] text-fg-dim">X, account not published yet</span>
+            <SocialLinks />
           </div>
         </div>
       </div>

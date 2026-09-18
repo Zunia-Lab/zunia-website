@@ -4,8 +4,7 @@ import { SITE } from "@/content/site";
 /**
  * Open to search and to AI citation crawlers. The named agents repeat the
  * default allow so a reader of this file can see the policy without guessing.
- * Legal drafts stay out of the index via page-level noindex, not Disallow:
- * a disallowed URL can linger in an index because the crawler never sees noindex.
+ * Legal pages are indexable. They describe the product that is actually shipped.
  */
 export default function robots(): MetadataRoute.Robots {
   const allowAll = { allow: "/" as const };

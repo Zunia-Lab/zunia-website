@@ -3,8 +3,10 @@ import {
   siAppstore,
   siBrave,
   siFirefoxbrowser,
+  siGithub,
   siGooglechrome,
   siGoogleplay,
+  siX,
   type SimpleIcon,
 } from "simple-icons";
 
@@ -100,6 +102,14 @@ function BrandIcon({
       <path d={icon.path} />
     </svg>
   );
+}
+
+export function IconX(props: IconProps) {
+  return <BrandIcon icon={siX} title="X" {...props} />;
+}
+
+export function IconGitHub(props: IconProps) {
+  return <BrandIcon icon={siGithub} title="GitHub" {...props} />;
 }
 
 export function IconChrome(props: IconProps) {

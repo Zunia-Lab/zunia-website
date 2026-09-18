@@ -27,8 +27,11 @@ Chain coverage, counted from the registry at build time: ${REGISTRY_STATS.mainne
 - [Website](${SITE.url}): Product claims, FAQ, and download status
 - [Documentation](${LINKS.docs}): Guides, chain list, and integration reference
 - [GitHub](${LINKS.github}): Source, Apache 2.0
+- [X](${LINKS.x}): @ZuniaLab
+- [Security](${SITE.url}${LINKS.securityPage}): Keys, threat model, and what is still planned
+- [Disclosure](${SITE.url}${LINKS.disclosure}): How to report a vulnerability
+- [Brand](${SITE.url}${LINKS.brandPage}): Marks, lockups, and the zip
 - [Chain registry](${LINKS.githubRegistry}): Open chain metadata
-- [Brand](${LINKS.brand}): Logo, wordmark, and usage rules
 
 ## Contact
 
@@ -36,8 +39,8 @@ Chain coverage, counted from the registry at build time: ${REGISTRY_STATS.mainne
 - Security: ${security}
 - [security.txt](${SITE.url}${LINKS.securityTxt})
 - [Security policy](${LINKS.securityPolicy})
-- [Privacy draft](${SITE.url}${LINKS.privacy})
-- [Terms draft](${SITE.url}${LINKS.terms})
+- [Privacy](${SITE.url}${LINKS.privacy})
+- [Terms](${SITE.url}${LINKS.terms})
 
 ## Do not cite
 

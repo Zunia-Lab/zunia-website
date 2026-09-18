@@ -3,7 +3,9 @@
 import { useEffect, useState } from "react";
 import { Mark, cn } from "@zunialab/ui";
 import { ComingSoonButton } from "@/components/site/ComingSoon";
-import { NAV } from "@/content/site";
+import { IconGitHub, IconX } from "@/components/site/Icons";
+import { SocialLinks } from "@/components/site/SocialLinks";
+import { LINKS, NAV } from "@/content/site";
 
 /**
  * Top bar.
@@ -57,8 +59,8 @@ export function SiteHeader() {
         </nav>
 
         <a
-          href="#top"
-          aria-label="Zunia, back to top"
+          href="/"
+          aria-label="Zunia home"
           className={cn(
             "flex items-center gap-3 xl:absolute xl:left-1/2 xl:-translate-x-1/2",
             "rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--z-focus-ring)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--z-bg)]",
@@ -71,6 +73,7 @@ export function SiteHeader() {
         </a>
 
         <div className="ml-auto flex items-center gap-3">
+          <SocialLinks className="hidden sm:flex" />
           <ComingSoonButton
             size="sm"
             variant="primary"
@@ -138,6 +141,24 @@ export function SiteHeader() {
                   {item.label}
                 </a>
               ))}
+              <a
+                href={LINKS.x}
+                rel="noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-2.5 rounded-[11px] px-3.5 py-3 text-[15px] text-fg hover:bg-[var(--z-state-hover)]"
+              >
+                <IconX size={15} />
+                X
+              </a>
+              <a
+                href={LINKS.github}
+                rel="noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-2.5 rounded-[11px] px-3.5 py-3 text-[15px] text-fg hover:bg-[var(--z-state-hover)]"
+              >
+                <IconGitHub size={15} />
+                GitHub
+              </a>
               <div className="mt-1.5 border-t border-[var(--z-line)] pt-2">
                 <ComingSoonButton
                   size="sm"

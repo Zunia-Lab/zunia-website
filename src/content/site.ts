@@ -30,8 +30,7 @@ export const SITE = {
 
 /**
  * Public docs host. Paths match the Docusaurus routes in zunia-docs (no `.md`
- * suffix). Until DNS for docs.zunialab.com is live, the local docs app serves
- * the same routes on :3005.
+ * suffix).
  */
 const DOCS_HOME = "https://docs.zunialab.com";
 
@@ -54,6 +53,7 @@ export const LINKS = {
      and explains replacing the default RPC endpoints. */
   docsRpc: `${DOCS_HOME}/wallet/custom-chains`,
   github: "https://github.com/Zunia-Lab",
+  x: "https://x.com/ZuniaLab",
   githubExtension: "https://github.com/Zunia-Lab/zunia-extension",
   githubMobile: "https://github.com/Zunia-Lab/zunia-mobile",
   githubRegistry: "https://github.com/Zunia-Lab/zunia-chain-registry",
@@ -63,6 +63,9 @@ export const LINKS = {
   githubDashboard: "https://github.com/Zunia-Lab/zunia-dashboard",
   githubIssues: "https://github.com/Zunia-Lab/zunia-extension/issues",
   brand: "https://github.com/Zunia-Lab/zunia-brand",
+  brandPage: "/brand",
+  securityPage: "/security",
+  disclosure: "/legal/disclosure",
   license: "https://github.com/Zunia-Lab/zunia-extension/blob/main/LICENSE",
   securityPolicy: "https://github.com/Zunia-Lab/.github/blob/main/SECURITY.md",
   securityTxt: "/.well-known/security.txt",
@@ -640,7 +643,7 @@ export const SUPPORT_CHANNELS = [
      not operate on the one section that says these are the only channels we
      operate. Removed rather than repointed. */
   { label: "Chain registry", value: "Request or correct a chain, public repository", href: LINKS.githubRegistry },
-  { label: "Brand", value: "Logo, wordmark and usage rules", href: LINKS.brand },
+  { label: "Brand", value: "Logo, wordmark and usage rules", href: LINKS.brandPage },
 ] as const;
 
 export const RISK_DISCLOSURE = [
@@ -690,9 +693,9 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Trust",
     links: [
-      { label: "Security", href: "/#security" },
+      { label: "Security", href: LINKS.securityPage },
       { label: "Verify your install", href: "/#verify" },
-      { label: "Disclosure policy", href: LINKS.securityPolicy },
+      { label: "Disclosure policy", href: LINKS.disclosure },
       { label: "security.txt", href: LINKS.securityTxt },
     ],
   },
@@ -701,7 +704,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: "Privacy", href: LINKS.privacy },
       { label: "Terms", href: LINKS.terms },
-      { label: "Brand", href: LINKS.brand },
+      { label: "Brand", href: LINKS.brandPage },
     ],
   },
 ];
