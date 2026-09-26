@@ -36,11 +36,11 @@
   --z-glass-2: rgba(241, 240, 238, 0.1);
   --z-state-hover: rgba(241, 240, 238, 0.08);
   --z-state-press: rgba(241, 240, 238, 0.12);
-  /* Crimson, not the brand vermilion. #ff1b0c leans orange on black;
-     this is the same red family, cooled just past pure red, used flat. */
-  --z-accent: #c81018;
-  --z-accent-fg: #f6f3ef;
-  --z-accent-gradient: linear-gradient(#c81018, #c81018);
+  /* Crimson, not the brand vermilion. Deep enough that white labels clear
+     7.48:1. #ff1b0c leans orange on black and swallows both ink and cream. */
+  --z-accent: #a81818;
+  --z-accent-fg: #ffffff;
+  --z-accent-gradient: linear-gradient(120deg, #9a1016 0%, #b42218 52%, #a43216 100%);
   --z-accent-glow: 0 6px 14px rgba(200, 16, 24, 0.2);
   --z-focus-ring: #f03a44;
   --z-state-selected: rgba(200, 16, 24, 0.22);
