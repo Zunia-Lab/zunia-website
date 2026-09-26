@@ -705,6 +705,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Privacy", href: LINKS.privacy },
       { label: "Terms", href: LINKS.terms },
       { label: "Brand", href: LINKS.brandPage },
+      { label: "Updates", href: "https://updates.zunialab.com" },
     ],
   },
 ];
