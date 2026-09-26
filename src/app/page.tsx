@@ -88,7 +88,7 @@ function StructuredData() {
         "@id": `${SITE.url}/#app`,
         name: SITE.name,
         applicationCategory: "FinanceApplication",
-        operatingSystem: "Chrome, Brave, Edge, iOS 15+, Android 8+",
+        operatingSystem: "Chrome, Brave, Edge, Safari, iOS 15+, Android 8+",
         url: SITE.url,
         description: SITE.metaDescription,
         image: imageUrl,

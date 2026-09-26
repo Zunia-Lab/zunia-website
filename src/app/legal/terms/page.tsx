@@ -87,7 +87,7 @@ export default function TermsPage() {
 
       <H2>Stores, browsers, and what is actually shipping</H2>
       <P>
-        The extension is the desktop client. Firefox support is planned, not shipped. Mobile
+        The extension is the desktop client, including Safari on macOS and iOS. Firefox support is planned, not shipped. Mobile
         builds for the Apple App Store and Google Play are in review. Until a store lists
         them, there is no official store download, and a link that claims otherwise is not
         ours. The web dashboard is not a public URL.

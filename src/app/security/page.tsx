@@ -101,7 +101,7 @@ export default function SecurityPage() {
       <P>
         The clients are open source under Apache 2.0. You can read the repositories. Official
         builds, once a store or a browser listing is live, should match the tag we publish.
-        Firefox is planned, not shipped. The phone builds are in store review. The dashboard is
+        The extension build covers Chrome, Brave, Edge, and Safari. Firefox is planned, not shipped. The phone builds are in store review. The dashboard is
         not deployed. Until a listing exists, a download that claims to be the official store
         build is not one we published.
       </P>

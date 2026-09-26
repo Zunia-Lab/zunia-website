@@ -6,6 +6,7 @@ import {
   siGithub,
   siGooglechrome,
   siGoogleplay,
+  siSafari,
   siX,
   type SimpleIcon,
 } from "simple-icons";
@@ -124,6 +125,10 @@ export function IconFirefox(props: IconProps) {
   return <BrandIcon icon={siFirefoxbrowser} title="Firefox" {...props} />;
 }
 
+export function IconSafari(props: IconProps) {
+  return <BrandIcon icon={siSafari} title="Safari" {...props} />;
+}
+
 export function IconAppStore(props: IconProps) {
   return <BrandIcon icon={siAppstore} title="App Store" {...props} />;
 }
@@ -230,6 +235,7 @@ export const CAPABILITY_GLYPHS = {
 export const CHANNEL_ICONS = {
   chrome: IconChrome,
   brave: IconBrave,
+  safari: IconSafari,
   firefox: IconFirefox,
   ios: IconAppStore,
   android: IconPlayStore,

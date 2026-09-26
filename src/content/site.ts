@@ -126,8 +126,8 @@ export interface DownloadTarget {
 
 /**
  * One button per install surface. The Chromium build covers Chrome, Brave and
- * Edge today; Firefox is listed separately because it ships as its own add-on
- * and is still planned. Labels stay short so six buttons still fit the hero.
+ * Edge. Safari is the same extension, for macOS and iOS. Firefox is listed
+ * separately because it ships as its own add-on and is still planned.
  */
 export const DOWNLOADS: DownloadTarget[] = [
   {
@@ -156,6 +156,15 @@ export const DOWNLOADS: DownloadTarget[] = [
     kind: "browser",
     requirement: "Edge 120 and later",
     requirementShort: "Edge",
+  },
+  {
+    id: "safari",
+    label: "Safari",
+    href: LINKS.githubExtension,
+    availability: "review",
+    kind: "browser",
+    requirement: "Safari on macOS and iOS",
+    requirementShort: "Safari",
   },
   {
     id: "firefox",
@@ -353,6 +362,7 @@ export const PLATFORMS: Platform[] = [
       { label: "Chrome", availability: "review" },
       { label: "Brave", availability: "review" },
       { label: "Edge", availability: "review" },
+      { label: "Safari", availability: "review" },
       { label: "Firefox", availability: "planned" },
     ],
     specs: [
