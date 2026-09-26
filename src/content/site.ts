@@ -71,6 +71,10 @@ export const LINKS = {
   securityTxt: "/.well-known/security.txt",
   privacy: "/legal/privacy",
   terms: "/legal/terms",
+  updates: "https://updates.zunialab.com",
+  updatesVersions: "https://updates.zunialab.com/versions",
+  updatesRequests: "https://updates.zunialab.com/requests",
+  updatesReport: "https://updates.zunialab.com/requests/new",
   supportEmail: "mailto:dev@zunialab.com",
   securityEmail: "mailto:security@zunialab.com",
   brandEmail: "mailto:brand@zunialab.com",
@@ -705,7 +709,15 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Privacy", href: LINKS.privacy },
       { label: "Terms", href: LINKS.terms },
       { label: "Brand", href: LINKS.brandPage },
-      { label: "Updates", href: "https://updates.zunialab.com" },
+    ],
+  },
+  {
+    title: "Updates",
+    links: [
+      { label: "Changelog", href: LINKS.updates },
+      { label: "Versions", href: LINKS.updatesVersions },
+      { label: "Requests", href: LINKS.updatesRequests },
+      { label: "Report", href: LINKS.updatesReport },
     ],
   },
 ];

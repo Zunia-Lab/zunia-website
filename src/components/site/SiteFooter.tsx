@@ -38,7 +38,7 @@ export function SiteFooter() {
   return (
     <footer className="relative border-t border-[var(--z-line)] px-5 pb-14 pt-16 sm:px-8 lg:px-11">
       <div className="mx-auto w-full max-w-[1240px]">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_repeat(4,minmax(0,1fr))]">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_repeat(5,minmax(0,1fr))]">
           <div>
             <div className="flex items-center gap-3 text-fg">
               <Mark size={26} />
@@ -96,6 +96,7 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {SITE.legalName} · not custodial, not an exchange
           </p>
           <div className="flex flex-wrap gap-5 md:ml-auto">
+            <FooterLink href={LINKS.updates}>updates.zunialab.com</FooterLink>
             <FooterLink href={LINKS.securityEmail}>security@zunialab.com</FooterLink>
             <FooterLink href={LINKS.supportEmail}>dev@zunialab.com</FooterLink>
             <SocialLinks />
