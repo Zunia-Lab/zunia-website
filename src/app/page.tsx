@@ -42,6 +42,7 @@ function StructuredData() {
         "@type": "ContactPoint",
         contactType: "customer support",
         email: support,
+        url: `${SITE.url}${LINKS.supportPage}`,
         availableLanguage: ["en"],
       },
       {

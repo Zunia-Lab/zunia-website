@@ -1,7 +1,7 @@
 import { cn } from "@zunialab/ui";
 import { Container, Eyebrow, Section } from "@/components/site/Layout";
 import { Reveal } from "@/components/site/Reveal";
-import { SUPPORT_CHANNELS } from "@/content/site";
+import { LINKS, SUPPORT_CHANNELS } from "@/content/site";
 
 /**
  * Where to get help. The mockup offered no contact route at all, which is a
@@ -21,7 +21,11 @@ export function Support() {
           </div>
           <p className="m-0 max-w-[420px] text-[14px] leading-relaxed text-fg-muted md:ml-auto md:text-right">
             These are the only channels we operate. We never open a conversation with you and we
-            never ask for a recovery phrase.
+            never ask for a recovery phrase.{" "}
+            <a href={LINKS.supportPage} className="text-fg underline decoration-[var(--z-line-strong)] underline-offset-4">
+              Browse support topics
+            </a>
+            .
           </p>
         </div>
 

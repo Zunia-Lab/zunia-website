@@ -64,6 +64,7 @@ export const LINKS = {
   githubIssues: "https://github.com/Zunia-Lab/zunia-extension/issues",
   brand: "https://github.com/Zunia-Lab/zunia-brand",
   brandPage: "/brand",
+  supportPage: "/support",
   securityPage: "/security",
   disclosure: "/legal/disclosure",
   license: "https://github.com/Zunia-Lab/zunia-extension/blob/main/LICENSE",
@@ -472,7 +473,7 @@ export const PROVENANCE: ProvenanceItem[] = [
   { label: "Documentation", value: "docs.zunialab.com", status: "planned", mono: true },
   { label: "Android package", value: "com.zuniawallet.zunia_mobile", status: "available", mono: true },
   { label: "iOS bundle", value: "com.zuniawallet.zuniaMobile", status: "available", mono: true },
-  { label: "Firefox add-on id", value: "extension@zunialab.com", status: "planned", mono: true },
+  { label: "Firefox add-on id", value: "wallet@zunialab.com", status: "planned", mono: true },
   { label: "Chrome extension id", value: "Published with the store listing", status: "planned" },
   { label: "APK SHA-256", value: "Published in each GitHub release, signed", status: "planned" },
 ];
@@ -716,6 +717,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Company",
     links: [
+      { label: "Support", href: LINKS.supportPage },
       { label: "Privacy", href: LINKS.privacy },
       { label: "Terms", href: LINKS.terms },
       { label: "Brand", href: LINKS.brandPage },
