@@ -38,8 +38,8 @@ export function Platforms() {
                 {platform.body}
               </p>
 
-              {/* Per-target availability. The mockup listed Chrome, Brave, Edge
-                  and Firefox as equals; Firefox is not shipped. */}
+              {/* Per-target availability. Chrome, Safari, and Firefox are listed.
+                  Firefox is not shipped. */}
               <ul className="mt-7 flex list-none flex-wrap gap-2.5 p-0">
                 {platform.targets.map((target) => (
                   <li

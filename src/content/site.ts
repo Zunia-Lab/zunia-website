@@ -126,9 +126,9 @@ export interface DownloadTarget {
 }
 
 /**
- * One button per install surface. The Chromium build covers Chrome, Brave and
- * Edge. Safari is the same extension, for macOS and iOS. Firefox is listed
- * separately because it ships as its own add-on and is still planned.
+ * One button per install surface. Chrome, Safari, and Firefox are the browsers
+ * the listing names. Safari is the same extension, for macOS and iOS. Firefox
+ * ships as its own add-on and is still planned.
  */
 export const DOWNLOADS: DownloadTarget[] = [
   {
@@ -139,24 +139,6 @@ export const DOWNLOADS: DownloadTarget[] = [
     kind: "browser",
     requirement: "Chrome 120 and later",
     requirementShort: "Chrome 120+",
-  },
-  {
-    id: "brave",
-    label: "Brave",
-    href: LINKS.githubExtension,
-    availability: "review",
-    kind: "browser",
-    requirement: "Brave with Chromium 120+",
-    requirementShort: "Brave",
-  },
-  {
-    id: "edge",
-    label: "Edge",
-    href: LINKS.githubExtension,
-    availability: "review",
-    kind: "browser",
-    requirement: "Edge 120 and later",
-    requirementShort: "Edge",
   },
   {
     id: "safari",
@@ -361,13 +343,11 @@ export const PLATFORMS: Platform[] = [
     availability: "review",
     targets: [
       { label: "Chrome", availability: "review" },
-      { label: "Brave", availability: "review" },
-      { label: "Edge", availability: "review" },
       { label: "Safari", availability: "review" },
       { label: "Firefox", availability: "planned" },
     ],
     specs: [
-      { label: "Minimum browser", value: "Chrome 120 or Chromium equivalent" },
+      { label: "Minimum browser", value: "Chrome 120, Safari, Firefox" },
       { label: "Permissions", value: "Storage and active tab, per-site approval" },
       { label: "Package", value: "Reproducible build, checksum published per release" },
     ],

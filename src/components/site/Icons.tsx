@@ -1,7 +1,6 @@
 import type { SVGProps } from "react";
 import {
   siAppstore,
-  siBrave,
   siFirefoxbrowser,
   siGithub,
   siGooglechrome,
@@ -17,9 +16,7 @@ import {
  *
  * Vendor marks come from Simple Icons, the same set the landing mockup already
  * pointed at via cdn.simpleicons.org. Paths are read from the package at build
- * time rather than invented here. Edge has no mark: Simple Icons removed every
- * Microsoft brand after trademark guidance, and the mockup already rendered
- * Edge as text-only for that reason.
+ * time rather than invented here.
  */
 
 type IconProps = SVGProps<SVGSVGElement> & { size?: number };
@@ -115,10 +112,6 @@ export function IconGitHub(props: IconProps) {
 
 export function IconChrome(props: IconProps) {
   return <BrandIcon icon={siGooglechrome} title="Google Chrome" {...props} />;
-}
-
-export function IconBrave(props: IconProps) {
-  return <BrandIcon icon={siBrave} title="Brave" {...props} />;
 }
 
 export function IconFirefox(props: IconProps) {
@@ -228,13 +221,8 @@ export const CAPABILITY_GLYPHS = {
   dashboard: GlyphDashboard,
 } as const;
 
-/**
- * Edge is intentionally absent: Simple Icons no longer ships a Microsoft Edge
- * mark, and the mockup already showed Edge as a text-only chip.
- */
 export const CHANNEL_ICONS = {
   chrome: IconChrome,
-  brave: IconBrave,
   safari: IconSafari,
   firefox: IconFirefox,
   ios: IconAppStore,
