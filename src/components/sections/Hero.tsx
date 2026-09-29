@@ -1,8 +1,8 @@
 import { Mark, cn } from "@zunialab/ui";
-import { CHANNEL_ICONS } from "@/components/site/Icons";
 import { ComingSoonButton } from "@/components/site/ComingSoon";
+import { DownloadControl } from "@/components/site/DownloadControl";
 import { HeroPhone } from "@/components/mocks/PhoneMocks";
-import { DOWNLOADS, SITE, WEB_APP, type DownloadTarget } from "@/content/site";
+import { DOWNLOADS, SITE, WEB_APP } from "@/content/site";
 
 export function Hero() {
   const browsers = DOWNLOADS.filter((target) => target.kind === "browser");
@@ -35,12 +35,12 @@ export function Hero() {
         >
           <div className="flex flex-wrap items-center justify-center gap-3">
             {browsers.map((target) => (
-              <DownloadButton key={target.id} target={target} />
+              <DownloadControl key={target.id} target={target} />
             ))}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-3">
             {stores.map((target) => (
-              <DownloadButton key={target.id} target={target} />
+              <DownloadControl key={target.id} target={target} />
             ))}
             <ComingSoonButton
               size="lg"
@@ -119,24 +119,3 @@ function HeroAura() {
   );
 }
 
-function DownloadButton({ target }: { target: DownloadTarget }) {
-  const Icon = CHANNEL_ICONS[target.id as keyof typeof CHANNEL_ICONS];
-  const variant = target.id === "chrome" ? "primary" : "secondary";
-
-  return (
-    <ComingSoonButton
-      size="lg"
-      variant={variant}
-      className="h-[54px] px-5 sm:px-6"
-      label={target.label}
-      aria-label={
-        target.availability === "planned"
-          ? `${target.label}, planned`
-          : target.label
-      }
-    >
-      {Icon ? <Icon size={18} /> : null}
-      {target.label}
-    </ComingSoonButton>
-  );
-}

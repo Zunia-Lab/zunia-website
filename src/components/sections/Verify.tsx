@@ -70,15 +70,29 @@ export function Verify() {
                     {item.status === "planned" ? (
                       <AvailabilityBadge status="planned" />
                     ) : null}
-                    <span
-                      className={
-                        item.mono
-                          ? "break-all font-mono text-[12.5px] text-fg"
-                          : "text-right text-[12.5px] text-fg-muted"
-                      }
-                    >
-                      {item.value}
-                    </span>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        rel="noreferrer"
+                        className={
+                          item.mono
+                            ? "break-all font-mono text-[12.5px] text-fg underline decoration-[var(--z-line-strong)] underline-offset-4 hover:decoration-current"
+                            : "text-right text-[12.5px] text-fg underline decoration-[var(--z-line-strong)] underline-offset-4 hover:decoration-current"
+                        }
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <span
+                        className={
+                          item.mono
+                            ? "break-all font-mono text-[12.5px] text-fg"
+                            : "text-right text-[12.5px] text-fg-muted"
+                        }
+                      >
+                        {item.value}
+                      </span>
+                    )}
                   </dd>
                 </div>
               ))}

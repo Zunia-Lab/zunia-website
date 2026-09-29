@@ -101,6 +101,8 @@ function StructuredData() {
           "Hardware wallets: Ledger and Keystone",
           "Keys generated and encrypted on device",
         ],
+        downloadUrl: LINKS.chromeWebStore,
+        installUrl: LINKS.chromeWebStore,
         isAccessibleForFree: true,
         license: "https://www.apache.org/licenses/LICENSE-2.0",
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <DocumentPage eyebrow="Terms" title="Terms of Service" updated="19 September 2026">
+    <DocumentPage eyebrow="Terms" title="Terms of Service" updated="29 September 2026">
       <Note>
         These terms cover the website, the documentation, and the Zunia clients published by
         Zunia Lab. They do not make Zunia a custodian, an exchange, or a bank. If you need a
@@ -87,10 +87,13 @@ export default function TermsPage() {
 
       <H2>Stores, browsers, and what is actually shipping</H2>
       <P>
-        The extension is the desktop client, including Safari on macOS and iOS. Firefox support is planned, not shipped. Mobile
-        builds for the Apple App Store and Google Play are in review. Until a store lists
-        them, there is no official store download, and a link that claims otherwise is not
-        ours. The web dashboard is not a public URL.
+        The Chrome extension is published on the{" "}
+        <a href={LINKS.chromeWebStore} rel="noreferrer">Chrome Web Store</a>. That listing is
+        the only official Chrome download. Safari on macOS and iOS is in review. Firefox
+        support is planned, not shipped. Mobile builds for the Apple App Store and Google
+        Play are in review. Until those stores list them, a link that claims to be an
+        official Safari, Firefox, or phone download is not ours. The web dashboard is not a
+        public URL.
       </P>
       <P>
         A store can reject, delay, or remove a build under its own rules. We do not control

@@ -1,6 +1,6 @@
 import { LINKS } from "@/content/site";
 
-export type SupportTopic = "keys" | "safari" | "transactions" | "safety";
+export type SupportTopic = "keys" | "chrome" | "safari" | "transactions" | "safety";
 
 export interface SupportArticle {
   id: string;
@@ -8,11 +8,14 @@ export interface SupportArticle {
   title: string;
   summary: string;
   body: string[];
+  href?: string;
+  linkLabel?: string;
 }
 
 export const SUPPORT_TOPICS: { id: SupportTopic | "all"; label: string }[] = [
   { id: "all", label: "All" },
   { id: "keys", label: "Keys" },
+  { id: "chrome", label: "Chrome" },
   { id: "safari", label: "Safari" },
   { id: "transactions", label: "Transactions" },
   { id: "safety", label: "Safety" },
@@ -24,6 +27,18 @@ export const SUPPORT_TOPICS: { id: SupportTopic | "all"; label: string }[] = [
  * the Safari extension living inside the Zunia app.
  */
 export const SUPPORT_ARTICLES: SupportArticle[] = [
+  {
+    id: "chrome-install",
+    topic: "chrome",
+    title: "Install Zunia in Chrome",
+    summary: "The official Chrome build is the Chrome Web Store listing.",
+    href: LINKS.chromeWebStore,
+    linkLabel: "Add to Chrome",
+    body: [
+      "Add Zunia from the Chrome Web Store. That listing is the only official Chrome download.",
+      "The extension id on the listing is ngokakoekdogobjmokipglbcclelgajk. If an install shows a different id, it is not this release.",
+    ],
+  },
   {
     id: "phrase",
     topic: "safety",

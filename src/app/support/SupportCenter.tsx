@@ -124,6 +124,15 @@ export function SupportCenter() {
                       {paragraph}
                     </p>
                   ))}
+                  {article.href ? (
+                    <a
+                      href={article.href}
+                      rel="noreferrer"
+                      className="text-fg underline decoration-[var(--z-line-strong)] underline-offset-4 hover:decoration-current"
+                    >
+                      {article.linkLabel ?? article.href}
+                    </a>
+                  ) : null}
                 </div>
               </details>
             </li>

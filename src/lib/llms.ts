@@ -18,13 +18,14 @@ export function llmsTxt() {
 
 ${SITE.legalName} publishes one marketing site, ${SITE.url}. The wallet is free. Users pay only the network fee. Keys are generated and encrypted on the device. ${SITE.legalName} holds zero keys and cannot freeze, reverse, or recover a transfer.
 
-Chrome and Safari, plus the App Store and Google Play, are in store review. Firefox is planned. The web dashboard is ${WEB_APP.unavailable}. It connects over WalletConnect and cannot sign.
+Chrome is published on the Chrome Web Store: ${LINKS.chromeWebStore}. Safari, plus the App Store and Google Play, are in store review. Firefox is planned. The web dashboard is ${WEB_APP.unavailable}. It connects over WalletConnect and cannot sign.
 
 Chain coverage, counted from the registry at build time: ${REGISTRY_STATS.mainnet} mainnet chains (${CHAIN_COVERAGE.breakdown.replace(/\.$/, "")}). Testnets are excluded. Custom chains can be added by RPC endpoint.
 
 ## Official
 
 - [Website](${SITE.url}): Product claims, FAQ, and download status
+- [Chrome](${LINKS.chromeWebStore}): Official Chrome install, extension id ngokakoekdogobjmokipglbcclelgajk
 - [Documentation](${LINKS.docs}): Guides, chain list, and integration reference
 - [GitHub](${LINKS.github}): Source, Apache 2.0
 - [X](${LINKS.x}): @ZuniaLab

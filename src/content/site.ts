@@ -24,7 +24,7 @@ export const SITE = {
   metaDescription:
     "Self-custody wallet for the Cosmos ecosystem. Hold, send, and stake from a browser extension and a phone that share the same keys. No account, no token.",
   /** Date the factual claims below were last reviewed. Shown next to the stats. */
-  claimsReviewedAt: "2026-08-31",
+  claimsReviewedAt: "2026-09-29",
   releaseChannel: "1.0 release candidate",
 } as const;
 
@@ -55,6 +55,8 @@ export const LINKS = {
   github: "https://github.com/Zunia-Lab",
   x: "https://x.com/ZuniaLab",
   githubExtension: "https://github.com/Zunia-Lab/zunia-extension",
+  chromeWebStore:
+    "https://chromewebstore.google.com/detail/zunia/ngokakoekdogobjmokipglbcclelgajk",
   githubMobile: "https://github.com/Zunia-Lab/zunia-mobile",
   githubRegistry: "https://github.com/Zunia-Lab/zunia-chain-registry",
   githubUi: "https://github.com/Zunia-Lab/zunia-ui",
@@ -126,16 +128,16 @@ export interface DownloadTarget {
 }
 
 /**
- * One button per install surface. Chrome, Safari, and Firefox are the browsers
- * the listing names. Safari is the same extension, for macOS and iOS. Firefox
- * ships as its own add-on and is still planned.
+ * One button per install surface. Chrome is the Chrome Web Store listing.
+ * Safari is the same extension, for macOS and iOS, and is still in review.
+ * Firefox ships as its own add-on and is still planned.
  */
 export const DOWNLOADS: DownloadTarget[] = [
   {
     id: "chrome",
     label: "Chrome",
-    href: LINKS.githubExtension,
-    availability: "review",
+    href: LINKS.chromeWebStore,
+    availability: "available",
     kind: "browser",
     requirement: "Chrome 120 and later",
     requirementShort: "Chrome 120+",
@@ -329,7 +331,7 @@ export interface Platform {
   meta: string;
   body: string;
   availability: Availability;
-  targets: { label: string; availability: Availability }[];
+  targets: { label: string; availability: Availability; href?: string }[];
   specs: PlatformSpec[];
   href: string;
 }
@@ -342,7 +344,7 @@ export const PLATFORMS: Platform[] = [
     body: "Signs where you work. Every transaction is decoded into plain language before you approve it, with the exact chain, fee and destination.",
     availability: "review",
     targets: [
-      { label: "Chrome", availability: "review" },
+      { label: "Chrome", availability: "available", href: LINKS.chromeWebStore },
       { label: "Safari", availability: "review" },
       { label: "Firefox", availability: "planned" },
     ],
@@ -439,6 +441,8 @@ export interface ProvenanceItem {
   value: string;
   status: Availability;
   mono?: boolean;
+  /** When set, the value opens this official listing. */
+  href?: string;
 }
 
 /*
@@ -454,7 +458,13 @@ export const PROVENANCE: ProvenanceItem[] = [
   { label: "Android package", value: "com.zuniawallet.zunia_mobile", status: "available", mono: true },
   { label: "iOS bundle", value: "com.zuniawallet.zuniaMobile", status: "available", mono: true },
   { label: "Firefox add-on id", value: "wallet@zunialab.com", status: "planned", mono: true },
-  { label: "Chrome extension id", value: "Published with the store listing", status: "planned" },
+  {
+    label: "Chrome extension id",
+    value: "ngokakoekdogobjmokipglbcclelgajk",
+    status: "available",
+    mono: true,
+    href: LINKS.chromeWebStore,
+  },
   { label: "APK SHA-256", value: "Published in each GitHub release, signed", status: "planned" },
 ];
 
@@ -667,6 +677,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Product",
     links: [
+      { label: "Chrome", href: LINKS.chromeWebStore },
       { label: "Browser extension", href: "/#platforms" },
       { label: "Mobile wallet", href: "/#platforms" },
       /* wallet.zunialab.com does not resolve and the surface is still in

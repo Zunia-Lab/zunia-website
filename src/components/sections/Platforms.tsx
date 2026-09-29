@@ -38,36 +38,58 @@ export function Platforms() {
                 {platform.body}
               </p>
 
-              {/* Per-target availability. Chrome, Safari, and Firefox are listed.
+              {/* Per-target availability. Chrome links to the store listing.
                   Firefox is not shipped. */}
               <ul className="mt-7 flex list-none flex-wrap gap-2.5 p-0">
-                {platform.targets.map((target) => (
-                  <li
-                    key={target.label}
-                    className={cn(
-                      "inline-flex items-center gap-2 rounded-full border px-4 py-2.5 font-mono text-[12px]",
-                      target.availability === "planned"
-                        ? "border-[var(--z-line)] text-fg-dim"
-                        : "border-[var(--z-line-strong)] bg-[var(--z-glass)] text-fg",
-                    )}
-                    title={`${target.label}: ${AVAILABILITY_LABEL[target.availability]}`}
-                  >
-                    <span
-                      aria-hidden
-                      className={cn(
-                        "size-1.5 rounded-full",
-                        target.availability === "available" && "bg-[var(--z-success)]",
-                        target.availability === "review" && "bg-[var(--z-warning)]",
-                        target.availability === "planned" && "bg-[var(--z-fg-faint)]",
+                {platform.targets.map((target) => {
+                  const className = cn(
+                    "inline-flex items-center gap-2 rounded-full border px-4 py-2.5 font-mono text-[12px]",
+                    target.availability === "planned"
+                      ? "border-[var(--z-line)] text-fg-dim"
+                      : "border-[var(--z-line-strong)] bg-[var(--z-glass)] text-fg",
+                    target.href &&
+                      "transition-opacity duration-[var(--z-duration-base)] hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--z-focus-ring)]",
+                  );
+                  const body = (
+                    <>
+                      <span
+                        aria-hidden
+                        className={cn(
+                          "size-1.5 rounded-full",
+                          target.availability === "available" && "bg-[var(--z-success)]",
+                          target.availability === "review" && "bg-[var(--z-warning)]",
+                          target.availability === "planned" && "bg-[var(--z-fg-faint)]",
+                        )}
+                      />
+                      {target.label}
+                      <span className="sr-only">
+                        {" "}
+                        {AVAILABILITY_LABEL[target.availability]}
+                      </span>
+                    </>
+                  );
+                  return (
+                    <li key={target.label}>
+                      {target.href ? (
+                        <a
+                          href={target.href}
+                          rel="noreferrer"
+                          className={className}
+                          title={`${target.label}: ${AVAILABILITY_LABEL[target.availability]}`}
+                        >
+                          {body}
+                        </a>
+                      ) : (
+                        <span
+                          className={className}
+                          title={`${target.label}: ${AVAILABILITY_LABEL[target.availability]}`}
+                        >
+                          {body}
+                        </span>
                       )}
-                    />
-                    {target.label}
-                    <span className="sr-only">
-                      {" "}
-                      {AVAILABILITY_LABEL[target.availability]}
-                    </span>
-                  </li>
-                ))}
+                    </li>
+                  );
+                })}
               </ul>
 
               <div className="mt-7 border-t border-[var(--z-line)] pt-1">

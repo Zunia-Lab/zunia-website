@@ -1,8 +1,7 @@
 import { Mark } from "@zunialab/ui";
 import { Container, Glow, Section } from "@/components/site/Layout";
 import { AvailabilityBadge } from "@/components/site/Frames";
-import { CHANNEL_ICONS } from "@/components/site/Icons";
-import { ComingSoonButton } from "@/components/site/ComingSoon";
+import { DownloadControl } from "@/components/site/DownloadControl";
 import { Reveal } from "@/components/site/Reveal";
 import { DOWNLOADS, LINKS, SITE } from "@/content/site";
 
@@ -27,27 +26,9 @@ export function Download() {
         </p>
 
         <div className="mt-9 flex flex-wrap justify-center gap-3">
-          {DOWNLOADS.map((target) => {
-            const Icon = CHANNEL_ICONS[target.id as keyof typeof CHANNEL_ICONS];
-            const variant = target.id === "chrome" ? "primary" : "secondary";
-            return (
-              <ComingSoonButton
-                key={target.id}
-                size="lg"
-                variant={variant}
-                className="h-[54px] px-5 sm:px-6"
-                label={target.label}
-                aria-label={
-                  target.availability === "planned"
-                    ? `${target.label}, planned`
-                    : target.label
-                }
-              >
-                {Icon ? <Icon size={18} /> : null}
-                {target.label}
-              </ComingSoonButton>
-            );
-          })}
+          {DOWNLOADS.map((target) => (
+            <DownloadControl key={target.id} target={target} />
+          ))}
         </div>
 
         {/* System requirements belong next to the download, not in a support

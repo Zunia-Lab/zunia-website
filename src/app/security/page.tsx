@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function SecurityPage() {
   return (
-    <DocumentPage eyebrow="Trust" title="Security" updated="19 September 2026">
+    <DocumentPage eyebrow="Trust" title="Security" updated="29 September 2026">
       <Note>
         The useful security property of Zunia is narrow and concrete: the signing keys are
         created and kept on your device. We cannot sign for you, and we cannot take the keys
@@ -101,9 +101,11 @@ export default function SecurityPage() {
       <P>
         The clients are open source under Apache 2.0. You can read the repositories. Official
         builds, once a store or a browser listing is live, should match the tag we publish.
-        The extension build covers Chrome and Safari. Firefox is planned, not shipped. The phone builds are in store review. The dashboard is
-        not deployed. Until a listing exists, a download that claims to be the official store
-        build is not one we published.
+        The Chrome build is published on the{" "}
+        <a href={LINKS.chromeWebStore} rel="noreferrer">Chrome Web Store</a>. Safari is in
+        review. Firefox is planned, not shipped. The phone builds are in store review. The
+        dashboard is not deployed. A download that claims to be an official store build, other
+        than that Chrome listing, is not one we published.
       </P>
       <P>
         Reproducible builds are planned, so a third party can rebuild a release and compare it
