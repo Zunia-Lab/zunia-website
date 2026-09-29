@@ -79,6 +79,8 @@ export const LINKS = {
   updatesRequests: "https://updates.zunialab.com/requests",
   updatesReport: "https://updates.zunialab.com/requests/new",
   supportEmail: "mailto:dev@zunialab.com",
+  helloEmail: "mailto:hello@zunialab.com",
+  gmail: "mailto:zunialab@gmail.com",
   securityEmail: "mailto:security@zunialab.com",
   brandEmail: "mailto:brand@zunialab.com",
 } as const;

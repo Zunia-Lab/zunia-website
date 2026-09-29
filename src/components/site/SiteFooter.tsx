@@ -99,6 +99,8 @@ export function SiteFooter() {
             <FooterLink href={LINKS.updates}>updates.zunialab.com</FooterLink>
             <FooterLink href={LINKS.securityEmail}>security@zunialab.com</FooterLink>
             <FooterLink href={LINKS.supportEmail}>dev@zunialab.com</FooterLink>
+            <FooterLink href={LINKS.helloEmail}>hello@zunialab.com</FooterLink>
+            <FooterLink href={LINKS.gmail}>zunialab@gmail.com</FooterLink>
             <SocialLinks />
           </div>
         </div>
