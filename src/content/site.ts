@@ -74,6 +74,7 @@ export const LINKS = {
   securityTxt: "/.well-known/security.txt",
   privacy: "/legal/privacy",
   terms: "/legal/terms",
+  mapZone: "https://ibcmap.zunialab.com",
   updates: "https://updates.zunialab.com",
   updatesVersions: "https://updates.zunialab.com/versions",
   updatesRequests: "https://updates.zunialab.com/requests",
@@ -687,6 +688,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
          instead of shipping a link to a host with no DNS record. */
       { label: "Web portfolio", pending: WEB_APP.unavailable },
       { label: "Supported chains", href: "/#chains" },
+      { label: "Map Zone", href: LINKS.mapZone },
     ],
   },
   {
