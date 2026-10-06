@@ -104,9 +104,11 @@ export default function TermsPage() {
       <H2>Fees</H2>
       <P>
         The wallet is free to install, and there is no premium tier. The only charge from Zunia
-        Lab is a commission of 0.5% on each swap you make in the Zunia wallet. The commission is
-        taken in the same transaction as the swap, in the token you sell, and sent to Zunia Lab.
-        The client shows it before you sign.
+        Lab is a commission of 0.5% on each swap you make with the Swap screen of the Zunia
+        browser extension. The commission is taken in the same transaction as the swap, in the
+        token you sell, and sent to Zunia Lab. The extension shows it before you sign. A swap
+        you make on another website or dApp and only sign with Zunia carries no Zunia
+        commission.
       </P>
       <P>
         When your funds start on another chain and the swap runs on Osmosis, the commission is

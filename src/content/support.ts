@@ -115,13 +115,13 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
   {
     id: "fees",
     topic: "transactions",
-    title: "Only swaps carry a Zunia commission",
-    summary: "Swaps in the wallet carry 0.5%, shown before you sign. Sends, IBC transfers, and staking pay only the network fee.",
+    title: "Only the extension's own swaps carry a Zunia commission",
+    summary: "Swaps made with the extension's Swap screen carry 0.5%, shown before you sign. Sends, IBC transfers, and staking pay only the network fee.",
     href: LINKS.docsFees,
     linkLabel: "Fees in the documentation",
     body: [
       "The wallet is free to install, and there is no premium tier. Network fees go to the chain, not to Zunia, and each one is shown before you sign.",
-      "A swap made in the Zunia wallet also carries a 0.5% commission paid to Zunia. It is taken in the same transaction as the swap, in the token you sell, and shown before you sign.",
+      "A swap made with the Swap screen of the Zunia browser extension also carries a 0.5% commission paid to Zunia. It is taken in the same transaction as the swap, in the token you sell, and shown before you sign. A swap you make on a dApp and only sign with Zunia carries no Zunia commission.",
       "When the funds start on another chain and the swap runs on Osmosis, the commission is taken on that chain when the transfer is sent. If the swap then fails on Osmosis, the amount swapped comes back. The commission does not.",
       "Sends, IBC transfers, and staking carry no commission. You pay only the network fee, and Zunia takes no cut of staking rewards.",
     ],
