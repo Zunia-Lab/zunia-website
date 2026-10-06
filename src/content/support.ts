@@ -67,7 +67,6 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
     summary: "Nothing to sign up for, and nothing called a Zunia token, airdrop, or presale.",
     body: [
       "You do not create a Zunia login. The wallet is the keys on your device.",
-      "The wallet is free. You pay only the network fee, and that fee is shown before you sign. Zunia takes no cut of a transfer or of staking rewards.",
       "Anything selling a Zunia token is a scam, whoever it appears to come from.",
     ],
   },
@@ -111,6 +110,20 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
     body: [
       "A Cosmos site can ask to connect an account or request a signature. Nothing is signed until you confirm that request in Zunia.",
       "Read the prompt. A page cannot read the recovery phrase through the connection, but it can still spend if you approve a transaction you did not mean to sign.",
+    ],
+  },
+  {
+    id: "fees",
+    topic: "transactions",
+    title: "Only swaps carry a Zunia commission",
+    summary: "Swaps in the wallet carry 0.5%, shown before you sign. Sends, IBC transfers, and staking pay only the network fee.",
+    href: LINKS.docsFees,
+    linkLabel: "Fees in the documentation",
+    body: [
+      "The wallet is free to install, and there is no premium tier. Network fees go to the chain, not to Zunia, and each one is shown before you sign.",
+      "A swap made in the Zunia wallet also carries a 0.5% commission paid to Zunia. It is taken in the same transaction as the swap, in the token you sell, and shown before you sign.",
+      "When the funds start on another chain and the swap runs on Osmosis, the commission is taken on that chain when the transfer is sent. If the swap then fails on Osmosis, the amount swapped comes back. The commission does not.",
+      "Sends, IBC transfers, and staking carry no commission. You pay only the network fee, and Zunia takes no cut of staking rewards.",
     ],
   },
   {

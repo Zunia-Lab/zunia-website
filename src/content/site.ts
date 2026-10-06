@@ -46,7 +46,8 @@ export const LINKS = {
   /* There is no wallet/recovery page. Backing up and restoring a phrase is
      covered by keys-and-accounts, which is what the recovery link promises. */
   docsRecovery: `${DOCS_HOME}/wallet/keys-and-accounts`,
-  docsFees: `${DOCS_HOME}/wallet/fees`,
+  /* Docusaurus serves pages under /docs/, so the segment is part of the path. */
+  docsFees: `${DOCS_HOME}/docs/use-wallet/fees`,
   /* Filed under developers/, not security/, in the docs tree. */
   docsReproducible: `${DOCS_HOME}/developers/reproducible-builds`,
   /* There is no security/endpoints page; custom-chains is the one that lists
@@ -621,7 +622,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "What does it cost?",
-    a: "The wallet is free. You pay only the network fee for each transaction, shown before you sign. Zunia takes no cut of transfers or staking rewards, and there is no premium tier.",
+    a: "The wallet is free to install, and there is no premium tier. You pay the network fee for each transaction, shown before you sign. Swaps made in the wallet also carry a 0.5% commission paid to Zunia, taken in the same transaction from the token you sell and shown before you sign. When the funds start on another chain and the swap runs on Osmosis, the commission is taken on that chain when the transfer is sent. If the swap then fails on Osmosis, the amount swapped comes back but the commission does not. Sends, IBC transfers and staking carry no commission, and Zunia takes no cut of staking rewards.",
   },
   {
     q: "Is the code public?",

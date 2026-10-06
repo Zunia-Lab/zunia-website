@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <DocumentPage eyebrow="Terms" title="Terms of Service" updated="29 September 2026">
+    <DocumentPage eyebrow="Terms" title="Terms of Service" updated="6 October 2026">
       <Note>
         These terms cover the website, the documentation, and the Zunia clients published by
         Zunia Lab. They do not make Zunia a custodian, an exchange, or a bank. If you need a
@@ -103,10 +103,22 @@ export default function TermsPage() {
 
       <H2>Fees</H2>
       <P>
-        Zunia Lab does not charge a wallet fee on this site. Chains charge fees, and staking
-        has commission set by the validator you pick. Those amounts are not ours. Fiat prices
-        shown in a client are indicative, from third-party feeds, and can be wrong. Nothing on
-        the site is a quote, an offer, or investment advice.
+        The wallet is free to install, and there is no premium tier. The only charge from Zunia
+        Lab is a commission of 0.5% on each swap you make in the Zunia wallet. The commission is
+        taken in the same transaction as the swap, in the token you sell, and sent to Zunia Lab.
+        The client shows it before you sign.
+      </P>
+      <P>
+        When your funds start on another chain and the swap runs on Osmosis, the commission is
+        taken on that starting chain when the transfer is sent. If the swap then fails on
+        Osmosis, the amount swapped comes back. The commission does not.
+      </P>
+      <P>
+        Sends, IBC transfers, and staking carry no Zunia commission. You pay only the network
+        fee. Chains charge network fees, and staking has commission set by the validator you
+        pick. Those amounts are not ours. Fiat prices shown in a client are indicative, from
+        third-party feeds, and can be wrong. Nothing on the site is a quote, an offer, or
+        investment advice.
       </P>
 
       <H2>Chains and endpoints</H2>

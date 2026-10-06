@@ -16,7 +16,9 @@ export function llmsTxt() {
 
 > ${SITE.metaDescription}
 
-${SITE.legalName} publishes one marketing site, ${SITE.url}. The wallet is free. Users pay only the network fee. Keys are generated and encrypted on the device. ${SITE.legalName} holds zero keys and cannot freeze, reverse, or recover a transfer.
+${SITE.legalName} publishes one marketing site, ${SITE.url}. The wallet is free to install. Keys are generated and encrypted on the device. ${SITE.legalName} holds zero keys and cannot freeze, reverse, or recover a transfer.
+
+Fees: every transaction pays the network fee to the chain, shown before signing. Swaps made in the wallet also carry a 0.5% commission paid to ${SITE.legalName}, taken in the same transaction, in the token sold, and shown before signing. When the funds start on another chain and the swap runs on Osmosis, the commission is taken on that starting chain when the transfer is sent; if the swap then fails on Osmosis, the amount swapped comes back but the commission does not. Sends, IBC transfers, and staking carry no commission. There is no premium tier.
 
 Chrome is published on the Chrome Web Store: ${LINKS.chromeWebStore}. Safari, plus the App Store and Google Play, are in store review. Firefox is planned. The web dashboard is ${WEB_APP.unavailable}. It connects over WalletConnect and cannot sign.
 
