@@ -30,7 +30,8 @@ export const SITE = {
 
 /**
  * Public docs host. Pages live under `/docs/` (Docusaurus). Paths are the
- * current pages, not the old addresses that now redirect.
+ * current pages, not the old addresses that now redirect. The host answers a
+ * page path without its trailing slash with a 301, so the links carry it.
  */
 const DOCS_HOME = "https://docs.zunialab.com";
 const DOCS = `${DOCS_HOME}/docs`;
@@ -42,15 +43,15 @@ const DOCS = `${DOCS_HOME}/docs`;
  */
 export const LINKS = {
   docs: DOCS_HOME,
-  docsChains: `${DOCS}/chain-registry/overview`,
-  docsIntegrate: `${DOCS}/integrate/extension`,
+  docsChains: `${DOCS}/chain-registry/overview/`,
+  docsIntegrate: `${DOCS}/integrate/extension/`,
   /* Backing up and restoring a phrase is the keys page. */
-  docsRecovery: `${DOCS}/use-wallet/keys`,
+  docsRecovery: `${DOCS}/use-wallet/keys/`,
   /* Network fees are a section of the networks page. */
-  docsFees: `${DOCS}/use-wallet/networks`,
-  docsReproducible: `${DOCS}/developers/reproducible-builds`,
+  docsFees: `${DOCS}/use-wallet/networks/`,
+  docsReproducible: `${DOCS}/developers/reproducible-builds/`,
   /* Custom RPC endpoints are explained on the networks page. */
-  docsRpc: `${DOCS}/use-wallet/networks`,
+  docsRpc: `${DOCS}/use-wallet/networks/`,
   github: "https://github.com/Zunia-Lab",
   x: "https://x.com/ZuniaLab",
   githubExtension: "https://github.com/Zunia-Lab/zunia-extension",
