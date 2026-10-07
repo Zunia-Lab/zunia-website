@@ -1,8 +1,7 @@
-import { Mark, cn } from "@zunialab/ui";
-import { ComingSoonButton } from "@/components/site/ComingSoon";
+import { Button, Mark, cn } from "@zunialab/ui";
 import { DownloadControl } from "@/components/site/DownloadControl";
 import { HeroPhone } from "@/components/mocks/PhoneMocks";
-import { DOWNLOADS, SITE, WEB_APP } from "@/content/site";
+import { DOWNLOADS, LINKS, SITE, WEB_APP } from "@/content/site";
 
 export function Hero() {
   const browsers = DOWNLOADS.filter((target) => target.kind === "browser");
@@ -42,19 +41,27 @@ export function Hero() {
             {stores.map((target) => (
               <DownloadControl key={target.id} target={target} />
             ))}
-            <ComingSoonButton
-              size="lg"
-              variant="secondary"
-              className="h-[54px] px-6"
-              label={WEB_APP.label}
-            >
-              <Mark size={17} />
-              {WEB_APP.label}
-              <span aria-hidden className="text-[13px] opacity-70">
-                ↗
-              </span>
-            </ComingSoonButton>
+            <Button asChild size="lg" variant="secondary" className="h-[54px] px-6">
+              <a href={WEB_APP.href} rel="noreferrer">
+                <Mark size={17} />
+                {WEB_APP.label}
+                <span aria-hidden className="text-[13px] opacity-70">
+                  ↗
+                </span>
+              </a>
+            </Button>
           </div>
+          <a
+            href={LINKS.appConnect}
+            rel="noreferrer"
+            className={cn(
+              "mt-2 font-mono text-[12px] text-fg-muted underline decoration-[var(--z-line-strong)] underline-offset-4",
+              "transition-colors duration-[var(--z-duration-base)] hover:text-fg hover:decoration-current",
+              "rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--z-focus-ring)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--z-bg)]",
+            )}
+          >
+            Have the extension? Connect it to the web dashboard <span aria-hidden>↗</span>
+          </a>
         </div>
       </div>
 

@@ -24,7 +24,7 @@ export const SITE = {
   metaDescription:
     "Self-custody wallet for the Cosmos ecosystem. Hold, send, and stake from a browser extension and a phone that share the same keys. No account, no token.",
   /** Date the factual claims below were last reviewed. Shown next to the stats. */
-  claimsReviewedAt: "2026-09-29",
+  claimsReviewedAt: "2026-10-07",
   releaseChannel: "1.0 release candidate",
 } as const;
 
@@ -60,8 +60,15 @@ export const LINKS = {
   githubMobile: "https://github.com/Zunia-Lab/zunia-mobile",
   githubRegistry: "https://github.com/Zunia-Lab/zunia-chain-registry",
   githubUi: "https://github.com/Zunia-Lab/zunia-ui",
-  /* wallet.zunialab.com is not provisioned either, so the only public thing
-     to point at for the web portfolio is the repository it is built from. */
+  /* The web dashboard. app.zunialab.com is its only address;
+     wallet.zunialab.com, where it ran before launch, and dashboard.zunialab.com
+     answer with a permanent redirect to the same path here. */
+  app: "https://app.zunialab.com",
+  /* Opens the dashboard's Connect wallet list on arrival, with the Zunia
+     extension first on a computer. The dashboard drops the parameter once it
+     has acted on it. */
+  appConnect: "https://app.zunialab.com/?connect=wallets",
+  appOverview: "https://app.zunialab.com/overview",
   githubDashboard: "https://github.com/Zunia-Lab/zunia-dashboard",
   githubIssues: "https://github.com/Zunia-Lab/zunia-extension/issues",
   brand: "https://github.com/Zunia-Lab/zunia-brand",
@@ -189,22 +196,20 @@ export const DOWNLOADS: DownloadTarget[] = [
  * describe only things you install. Named the way the docs name it, so the
  * header, the hero and the documentation do not each invent a label.
  *
- * `href` is the repository, not wallet.zunialab.com: that host has no DNS
- * record, so the hero and header buttons were sending every visitor who clicked
- * them to a browser error page. The repository at least exists and says what
- * the surface is. It is still the wrong promise for a button labelled "Open" —
- * see `unavailable`, which the two controls that render this should show
- * instead of behaving like a live product.
+ * It holds no key. It reads public chain data, and anything that moves funds
+ * is prepared there and signed in the wallet the visitor connected: the Zunia
+ * extension, Keplr, or Zunia Mobile by QR code.
  */
 export const WEB_APP = {
   label: "Web dashboard",
-  href: LINKS.githubDashboard,
-  availability: "development" as Availability,
-  /** Visible reason for a control that cannot open anything yet. */
-  unavailable: "in development, not deployed yet",
+  /** The header's call to action. */
+  cta: "Launch app",
+  href: LINKS.app,
+  host: "app.zunialab.com",
+  availability: "available" as Availability,
   requirement: "Nothing to install",
   blurb:
-    "Balances, activity and staking in the browser. It connects to the extension or the phone over WalletConnect, so the keys never reach it.",
+    "Balances, staking, governance and swaps for every Cosmos chain, in the browser. It connects the Zunia extension, Keplr, or Zunia Mobile by QR code, and every transaction is signed there, so the keys never reach it.",
 } as const;
 
 /* -------------------------------------------------------------------------- */
@@ -254,6 +259,9 @@ export interface Capability {
   title: string;
   body: string;
   featured?: boolean;
+  /** Where the card leads, for a capability with a page of its own. */
+  href?: string;
+  linkLabel?: string;
 }
 
 export const CAPABILITIES: Capability[] = [
@@ -286,7 +294,9 @@ export const CAPABILITIES: Capability[] = [
   {
     id: "dashboard",
     title: "Dashboard",
-    body: "Portfolio, rewards and activity for every chain in one view.",
+    body: "Portfolio, rewards and activity for every Cosmos chain in one view.",
+    href: LINKS.appOverview,
+    linkLabel: "Open the dashboard",
   },
 ];
 
@@ -449,15 +459,15 @@ export interface ProvenanceItem {
 }
 
 /*
- * The block only protects anyone if the statuses are true. The two subdomains
- * below do not resolve yet, and the Firefox add-on is not published, so they
- * carry the planned badge: an identifier marked available that does not exist
- * teaches the reader to trust whatever turns up at that name first.
+ * The block only protects anyone if the statuses are true. The Firefox add-on
+ * is not published and the APK checksum is not posted yet, so they carry the
+ * planned badge: an identifier marked available that does not exist teaches
+ * the reader to trust whatever turns up at that name first.
  */
 export const PROVENANCE: ProvenanceItem[] = [
   { label: "Only official domain", value: "zunialab.com", status: "available", mono: true },
-  { label: "Web portfolio", value: "wallet.zunialab.com", status: "planned", mono: true },
-  { label: "Documentation", value: "docs.zunialab.com", status: "planned", mono: true },
+  { label: "Web dashboard", value: "app.zunialab.com", status: "available", mono: true, href: LINKS.app },
+  { label: "Documentation", value: "docs.zunialab.com", status: "available", mono: true, href: LINKS.docs },
   { label: "Android package", value: "com.zuniawallet.zunia_mobile", status: "available", mono: true },
   { label: "iOS bundle", value: "com.zuniawallet.zuniaMobile", status: "available", mono: true },
   { label: "Firefox add-on id", value: "wallet@zunialab.com", status: "planned", mono: true },
@@ -616,12 +626,16 @@ export const FAQ: FaqItem[] = [
     a: "Yes. Import the same recovery phrase, or pair the two by QR code. Accounts and names sync; the key itself stays on each device.",
   },
   {
+    q: "Is there a web version?",
+    a: "Yes, the web dashboard at app.zunialab.com. It shows balances, staking, governance and swaps for every Cosmos chain you follow. It holds no key: connect the Zunia extension, Keplr, or Zunia Mobile by QR code, and every transaction it prepares opens in that wallet to be signed.",
+  },
+  {
     q: "Which chains are supported?",
     a: `${CHAIN_COVERAGE.total} chains from the Zunia chain registry: ${CHAIN_COVERAGE.breakdown.replace(/\.$/, "")}, including Safrochain. The list updates without an app release. Custom chains can be added by RPC endpoint.`,
   },
   {
     q: "What does it cost?",
-    a: "The wallet is free. You pay only the network fee for each transaction, shown before you sign. Zunia takes no cut of transfers or staking rewards, and there is no premium tier.",
+    a: "The wallet is free to install, and there is no premium tier. You pay the network fee for each transaction, shown before you sign. Swaps made with the Swap screen of the web dashboard also carry a commission of 0.5% of the amount sold, paid to Zunia in the same transaction, in the token you sell, and shown in the swap review before you sign. A swap you make on a dApp and only sign with Zunia carries no Zunia commission. Sends, IBC transfers, staking and votes carry no commission, and Zunia takes no cut of staking rewards.",
   },
   {
     q: "Is the code public?",
@@ -683,10 +697,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Chrome", href: LINKS.chromeWebStore },
       { label: "Browser extension", href: "/#platforms" },
       { label: "Mobile wallet", href: "/#platforms" },
-      /* wallet.zunialab.com does not resolve and the surface is still in
-         development, so there is nothing to open. The footer prints the reason
-         instead of shipping a link to a host with no DNS record. */
-      { label: "Web portfolio", pending: WEB_APP.unavailable },
+      { label: "Web dashboard", href: LINKS.app },
       { label: "Supported chains", href: "/#chains" },
       { label: "Map Zone", href: LINKS.mapZone },
     ],

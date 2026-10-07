@@ -14,7 +14,7 @@ import { FaqSection } from "@/components/sections/Faq";
 import { Support } from "@/components/sections/Support";
 import { Download } from "@/components/sections/Download";
 import type { Metadata } from "next";
-import { FAQ, LINKS, SITE } from "@/content/site";
+import { FAQ, LINKS, SITE, WEB_APP } from "@/content/site";
 
 /** Only the home page is this URL. A missing page must not inherit it. */
 export const metadata: Metadata = {
@@ -114,6 +114,24 @@ function StructuredData() {
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         publisher: { "@id": `${SITE.url}/#organization` },
         author: { "@id": `${SITE.url}/#organization` },
+      },
+      {
+        "@type": "WebApplication",
+        "@id": `${SITE.url}/#webapp`,
+        name: `${SITE.name} web dashboard`,
+        url: WEB_APP.href,
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "Any modern browser",
+        description: WEB_APP.blurb,
+        isAccessibleForFree: true,
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          description:
+            "Free to use. Swaps made with the Swap screen carry a commission of 0.5% of the amount sold, taken in the token sold and shown before signing. Sends, IBC transfers, staking, and votes carry no commission.",
+        },
+        publisher: { "@id": `${SITE.url}/#organization` },
       },
       {
         "@type": "FAQPage",

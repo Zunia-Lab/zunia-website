@@ -96,6 +96,7 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {SITE.legalName} · not custodial, not an exchange
           </p>
           <div className="flex flex-wrap gap-5 md:ml-auto">
+            <FooterLink href={LINKS.app}>app.zunialab.com</FooterLink>
             <FooterLink href={LINKS.mapZone}>ibcmap.zunialab.com</FooterLink>
             <FooterLink href={LINKS.updates}>updates.zunialab.com</FooterLink>
             <FooterLink href={LINKS.securityEmail}>security@zunialab.com</FooterLink>

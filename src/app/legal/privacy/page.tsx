@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <DocumentPage eyebrow="Privacy" title="Privacy Policy" updated="19 September 2026">
+    <DocumentPage eyebrow="Privacy" title="Privacy Policy" updated="7 October 2026">
       <Note>
         Zunia is a self-custody wallet. We do not create an account for you, we do not hold your
         keys, and we do not sell data. This policy describes what actually happens when you visit
@@ -24,7 +24,7 @@ export default function PrivacyPage() {
       <P>
         Zunia Lab publishes the website at zunialab.com, the documentation at docs.zunialab.com,
         and the open-source clients: the browser extension, the phone app, and the web dashboard
-        that is still in development. Support mail is{" "}
+        at app.zunialab.com. Support mail is{" "}
         <a href={LINKS.supportEmail}>dev@zunialab.com</a>. Security reports go to{" "}
         <a href={LINKS.securityEmail}>security@zunialab.com</a>.
       </P>
@@ -51,10 +51,11 @@ export default function PrivacyPage() {
         broker personal information, because we do not hold a marketing database to sell.
       </P>
       <P>
-        We do not run a hosted wallet. There is no server that can list your addresses, your
-        balances, or your transaction history on your behalf. If a page, an extension, or a
-        person claims that Zunia Lab can recover a phrase, freeze a transfer, or look up an
-        account, that claim is false.
+        We do not run a hosted wallet. There is no Zunia account that ties your addresses
+        together, and no server keeps your balances or your transaction history, apart from
+        the accounts you ask the web dashboard to watch for notifications, described below. If
+        a page, an extension, or a person claims that Zunia Lab can recover a phrase, freeze a
+        transfer, or look up an account, that claim is false.
       </P>
 
       <H2>Keys, phrases, and what never reaches us</H2>
@@ -71,10 +72,10 @@ export default function PrivacyPage() {
         them, and we will refuse any message that tries to send them.
       </P>
       <P>
-        The web dashboard, when it ships, is a reader. It pairs with the extension or the phone.
-        Those devices sign. The browser that shows the dashboard does not receive a signing key.
-        The dashboard is not deployed as a public product today. Until it is, the repository is
-        the only public artifact, and it is not a place to paste a phrase.
+        The web dashboard at app.zunialab.com never holds a key. It connects to the Zunia
+        extension, to Keplr, or to Zunia Mobile, and those wallets sign. The browser that shows
+        the dashboard does not receive a signing key, and the dashboard never asks for a
+        phrase. Do not paste one into it, or into any page.
       </P>
       <H3>What you store, and only you can lose</H3>
       <P>
@@ -125,6 +126,25 @@ export default function PrivacyPage() {
       <P>
         The documentation site at docs.zunialab.com is the same kind of surface: published
         pages, no account, no analytics product embedded by us.
+      </P>
+
+      <H2>The web dashboard</H2>
+      <P>
+        The dashboard at app.zunialab.com runs on our own server. To show a balance, a staking
+        position, or a transaction, the page asks that server, and the server asks public nodes
+        of the chains. Those requests carry the addresses of the accounts you connected, so our
+        server and the chain endpoints it asks can see which addresses were looked up. The
+        server&apos;s request logs keep them for about 14 days, then roll off. They are not
+        joined to a name or an email, because there is none. The dashboard runs no analytics
+        and sets no tracking cookie.
+      </P>
+      <P>
+        Notifications are off until you turn them on. When you do, the server keeps the push
+        address your browser gives it, the accounts to watch, and your notification settings,
+        language, and time zone, so it can tell you about an incoming transfer, a finished
+        unbonding, or a vote about to close. Turning notifications off removes that record, and
+        so does disconnecting the wallet. A record your browser has not renewed for 90 days is
+        removed as well.
       </P>
 
       <H2>What the extension does on the network</H2>
@@ -199,9 +219,11 @@ export default function PrivacyPage() {
       <H2>Retention</H2>
       <P>
         Chain data lives on the chains, not in a Zunia database. Local caches live until you
-        clear them. Server logs for the website live for the short period our host keeps request
-        logs for operations, then they roll off. Mail lives in the mailbox until we delete it.
-        We do not run a data lake of wallet activity.
+        clear them. Request logs on our server, for the website and the web dashboard alike,
+        roll off after about 14 days. The accounts you ask the web dashboard to watch stay until
+        you turn notifications off or disconnect the wallet, and no longer than 90 days after
+        your browser last renewed them. Mail lives in the mailbox until we delete it. We do not
+        run a data lake of wallet activity.
       </P>
 
       <H2>Requests</H2>

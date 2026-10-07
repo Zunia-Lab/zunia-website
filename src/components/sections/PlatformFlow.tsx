@@ -21,18 +21,18 @@ const STEPS = [
     exchange: "QR · expires in 60s · nothing exported",
   },
   {
-    verb: "Read",
+    verb: "Track",
     surface: "Web",
-    title: "The web only watches",
-    body: "Balances and activity update in the dashboard. It connects over WalletConnect, so it can show the result and cannot move funds.",
-    exchange: "Read only · in development",
-    quiet: true,
+    title: "The web never signs",
+    body: "Balances, staking and activity update in the dashboard. When you swap, stake or vote there, the request opens in the extension or on the phone, and is signed there.",
+    exchange: "app.zunialab.com · nothing signed in the browser",
   },
 ] as const;
 
 /**
  * How the three clients share one key. The extension starts a signature, the
- * phone can finish it, and the web view is not allowed to sign.
+ * phone can finish it, and the web dashboard never signs: it asks one of the
+ * other two.
  */
 export function PlatformFlow() {
   const reduced = usePrefersReducedMotion();
@@ -57,7 +57,7 @@ export function PlatformFlow() {
         </h3>
         <Lede className="mt-6">
           Pair once, by QR or with the same recovery phrase. The extension starts a transaction,
-          the phone can confirm it, and the web dashboard is only allowed to look.
+          the phone can confirm it, and the web dashboard can only ask one of them to sign.
         </Lede>
       </div>
 
@@ -104,11 +104,6 @@ export function PlatformFlow() {
                     >
                       {item.verb}
                     </span>
-                    {"quiet" in item && item.quiet ? (
-                      <span className="ml-auto font-mono text-[10px] uppercase tracking-[0.12em] text-fg-dim">
-                        Soon
-                      </span>
-                    ) : null}
                   </span>
 
                   <span className="mt-10 block font-mono text-[11px] uppercase tracking-[0.16em] text-fg-dim">

@@ -67,7 +67,7 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
     summary: "Nothing to sign up for, and nothing called a Zunia token, airdrop, or presale.",
     body: [
       "You do not create a Zunia login. The wallet is the keys on your device.",
-      "The wallet is free. You pay only the network fee, and that fee is shown before you sign. Zunia takes no cut of a transfer or of staking rewards.",
+      "The wallet is free to install. You pay the network fee, shown before you sign. Swaps made with the web dashboard's Swap screen also carry a commission of 0.5% of the amount sold, shown before you sign. Zunia takes no cut of a transfer or of staking rewards.",
       "Anything selling a Zunia token is a scam, whoever it appears to come from.",
     ],
   },
@@ -111,6 +111,20 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
     body: [
       "A Cosmos site can ask to connect an account or request a signature. Nothing is signed until you confirm that request in Zunia.",
       "Read the prompt. A page cannot read the recovery phrase through the connection, but it can still spend if you approve a transaction you did not mean to sign.",
+    ],
+  },
+  {
+    id: "web-dashboard",
+    topic: "chrome",
+    title: "Connect the extension to the web dashboard",
+    summary: "Open app.zunialab.com, choose Connect wallet, then Zunia extension. Every transaction still opens in the extension.",
+    href: LINKS.appConnect,
+    linkLabel: "Open the web dashboard",
+    body: [
+      "Open app.zunialab.com in the browser where Zunia is installed. Choose Connect wallet, then Zunia extension, and approve the connection in the extension.",
+      "The dashboard sees your addresses, never your recovery phrase or your keys. It reads balances, staking and governance from public chain data.",
+      "Anything that moves funds, a send, a swap, a stake or a vote, opens in the extension first. Nothing is signed until you approve it there.",
+      "The dashboard also connects Keplr, and Zunia Mobile by QR code. Its only address is app.zunialab.com.",
     ],
   },
   {

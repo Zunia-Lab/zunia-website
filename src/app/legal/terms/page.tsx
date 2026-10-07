@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <DocumentPage eyebrow="Terms" title="Terms of Service" updated="29 September 2026">
+    <DocumentPage eyebrow="Terms" title="Terms of Service" updated="7 October 2026">
       <Note>
         These terms cover the website, the documentation, and the Zunia clients published by
         Zunia Lab. They do not make Zunia a custodian, an exchange, or a bank. If you need a
@@ -24,8 +24,9 @@ export default function TermsPage() {
         Zunia is self-custody wallet software for the Cosmos ecosystem, with support for chains
         the registry lists, including EVM and Solana networks that the clients know how to
         speak to. The clients that exist today are a browser extension and a phone app that can
-        share the same keys. A web dashboard is in development. It is not deployed, and when it
-        is, it will read and request signatures. It will not hold the signing key in the browser.
+        share the same keys, and a web dashboard at app.zunialab.com. The dashboard reads chain
+        data and asks a wallet you connect to sign. It does not hold the signing key in the
+        browser.
       </P>
       <P>
         The source is published under the Apache License 2.0, except where a file says
@@ -92,8 +93,8 @@ export default function TermsPage() {
         the only official Chrome download. Safari on macOS and iOS is in review. Firefox
         support is planned, not shipped. Mobile builds for the Apple App Store and Google
         Play are in review. Until those stores list them, a link that claims to be an
-        official Safari, Firefox, or phone download is not ours. The web dashboard is not a
-        public URL.
+        official Safari, Firefox, or phone download is not ours. The web dashboard is published
+        only at app.zunialab.com.
       </P>
       <P>
         A store can reject, delay, or remove a build under its own rules. We do not control
@@ -103,10 +104,26 @@ export default function TermsPage() {
 
       <H2>Fees</H2>
       <P>
-        Zunia Lab does not charge a wallet fee on this site. Chains charge fees, and staking
-        has commission set by the validator you pick. Those amounts are not ours. Fiat prices
-        shown in a client are indicative, from third-party feeds, and can be wrong. Nothing on
-        the site is a quote, an offer, or investment advice.
+        The wallet is free to install, and there is no premium tier. The only charge from Zunia
+        Lab is a commission of 0.5% of the amount you sell, on each swap you make with the Swap
+        screen of the web dashboard at app.zunialab.com. The commission is paid in the same
+        transaction as the swap, in the token you sell, to Zunia Lab. The swap review shows it
+        before you sign. A swap you make on another website or dApp and only sign with Zunia
+        carries no Zunia commission.
+      </P>
+      <P>
+        When your funds are already on Osmosis, the swap and the commission are one
+        transaction: if the swap fails, no commission is taken. When your funds start on another
+        chain and the swap runs on Osmosis, the commission is taken on that starting chain when
+        the transfer is sent. If the swap then fails on Osmosis, the amount swapped comes back.
+        The commission does not.
+      </P>
+      <P>
+        Sends, IBC transfers, staking, and votes carry no Zunia commission. You pay only the
+        network fee. Chains charge network fees, and staking has commission set by the
+        validator you pick. Those amounts are not ours. Fiat prices shown in a client are
+        indicative, from third-party feeds, and can be wrong. Nothing on the site is a quote,
+        an offer, or investment advice.
       </P>
 
       <H2>Chains and endpoints</H2>

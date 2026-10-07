@@ -16,9 +16,9 @@ export function llmsTxt() {
 
 > ${SITE.metaDescription}
 
-${SITE.legalName} publishes one marketing site, ${SITE.url}. The wallet is free. Users pay only the network fee. Keys are generated and encrypted on the device. ${SITE.legalName} holds zero keys and cannot freeze, reverse, or recover a transfer.
+${SITE.legalName} publishes one marketing site, ${SITE.url}. The wallet is free to install. Users pay the network fee, and swaps made with the Swap screen of the web dashboard also carry a commission of 0.5% of the amount sold, paid to ${SITE.legalName} and shown before signing. Keys are generated and encrypted on the device. ${SITE.legalName} holds zero keys and cannot freeze, reverse, or recover a transfer.
 
-Chrome is published on the Chrome Web Store: ${LINKS.chromeWebStore}. Safari, plus the App Store and Google Play, are in store review. Firefox is planned. The web dashboard is ${WEB_APP.unavailable}. It connects over WalletConnect and cannot sign.
+Chrome is published on the Chrome Web Store: ${LINKS.chromeWebStore}. Safari, plus the App Store and Google Play, are in store review. Firefox is planned. The web dashboard is live at ${WEB_APP.href}. It holds no key: it connects the Zunia extension, Keplr, or Zunia Mobile by QR code, and every transaction it prepares is signed in that wallet.
 
 Chain coverage, counted from the registry at build time: ${REGISTRY_STATS.mainnet} mainnet chains (${CHAIN_COVERAGE.breakdown.replace(/\.$/, "")}). Testnets are excluded. Custom chains can be added by RPC endpoint.
 
@@ -26,6 +26,7 @@ Chain coverage, counted from the registry at build time: ${REGISTRY_STATS.mainne
 
 - [Website](${SITE.url}): Product claims, FAQ, and download status
 - [Chrome](${LINKS.chromeWebStore}): Official Chrome install, extension id ngokakoekdogobjmokipglbcclelgajk
+- [Web dashboard](${WEB_APP.href}): Balances, staking, governance, and swaps in the browser; it never holds a key
 - [Documentation](${LINKS.docs}): Guides, chain list, and integration reference
 - [GitHub](${LINKS.github}): Source, Apache 2.0
 - [X](${LINKS.x}): @ZuniaLab
@@ -48,7 +49,7 @@ Chain coverage, counted from the registry at build time: ${REGISTRY_STATS.mainne
 
 - Any Zunia token, airdrop, or presale. There is none.
 - Domains other than ${SITE.domain} and the hosts listed here.
-- wallet.${SITE.domain} as a live product. It is not deployed.
+- A web dashboard at any address other than ${WEB_APP.host}. wallet.${SITE.domain} and dashboard.${SITE.domain} only redirect there.
 - Anyone who asks for a recovery phrase, a screenshot of one, or remote access.
 - Support that starts the conversation. ${SITE.legalName} does not.
 `;

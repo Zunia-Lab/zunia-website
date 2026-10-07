@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function SecurityPage() {
   return (
-    <DocumentPage eyebrow="Trust" title="Security" updated="29 September 2026">
+    <DocumentPage eyebrow="Trust" title="Security" updated="7 October 2026">
       <Note>
         The useful security property of Zunia is narrow and concrete: the signing keys are
         created and kept on your device. We cannot sign for you, and we cannot take the keys
@@ -52,8 +52,9 @@ export default function SecurityPage() {
       <P>
         The extension and the phone can hold the same phrase. Pairing lets the extension
         propose a transaction and the phone confirm it. The proposal is not the key. The web
-        dashboard, still in development and not deployed, is a reader. It asks the extension or
-        the phone to sign. The browser that shows it does not receive a signing key.
+        dashboard at app.zunialab.com never holds a key. It asks the extension, Keplr, or the
+        phone to sign, and each request opens there to be approved. The browser that shows it
+        does not receive a signing key.
       </P>
       <H3>Hardware</H3>
       <P>
@@ -88,7 +89,7 @@ export default function SecurityPage() {
         <li>We will not ask for your recovery phrase, by mail, on X, in a document, or in a pull request.</li>
         <li>We will not offer to recover, freeze, or reverse a transaction. We cannot.</li>
         <li>We will not sell a Zunia token, an airdrop, or a presale. A claim that we are doing so is a scam.</li>
-        <li>We do not run telemetry in the clients that phones home with your addresses. The website does not embed an analytics product.</li>
+        <li>We do not run telemetry in the clients. The web dashboard sends the addresses you connect to our server only to look them up, and to watch them if you turn on notifications, as the privacy policy describes. The website does not embed an analytics product.</li>
       </Ul>
       <P>
         The public X account is <a href={LINKS.x} rel="noreferrer">@ZuniaLab</a>. The GitHub
@@ -103,9 +104,9 @@ export default function SecurityPage() {
         builds, once a store or a browser listing is live, should match the tag we publish.
         The Chrome build is published on the{" "}
         <a href={LINKS.chromeWebStore} rel="noreferrer">Chrome Web Store</a>. Safari is in
-        review. Firefox is planned, not shipped. The phone builds are in store review. The
-        dashboard is not deployed. A download that claims to be an official store build, other
-        than that Chrome listing, is not one we published.
+        review. Firefox is planned, not shipped. The phone builds are in store review. The web
+        dashboard is served only from app.zunialab.com. A download that claims to be an
+        official store build, other than that Chrome listing, is not one we published.
       </P>
       <P>
         Reproducible builds are planned, so a third party can rebuild a release and compare it

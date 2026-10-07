@@ -20,11 +20,15 @@ function CapabilityFace({
   id,
   title,
   body,
+  href,
+  linkLabel,
   children,
 }: {
   id: string;
   title: string;
   body: string;
+  href?: string;
+  linkLabel?: string;
   children: ReactNode;
 }) {
   if (id === "hold") {
@@ -70,6 +74,20 @@ function CapabilityFace({
           <span className="mt-4 block max-w-[36ch] text-[15px] leading-[1.55] text-fg-muted">
             {body}
           </span>
+          {href && linkLabel ? (
+            <a
+              href={href}
+              rel="noreferrer"
+              className={cn(
+                "mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-fg",
+                "transition-opacity duration-[var(--z-duration-base)] hover:opacity-70",
+                "rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--z-focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--z-bg)]",
+              )}
+            >
+              {linkLabel}
+              <span aria-hidden>↗</span>
+            </a>
+          ) : null}
         </span>
         <span className="text-fg-dim sm:mb-1">{children}</span>
       </span>
@@ -116,7 +134,13 @@ export function Capabilities() {
                     "transition-colors duration-300 hover:bg-[var(--z-surface-raised)]",
                   )}
                 >
-                  <CapabilityFace id={capability.id} title={capability.title} body={capability.body}>
+                  <CapabilityFace
+                    id={capability.id}
+                    title={capability.title}
+                    body={capability.body}
+                    href={capability.href}
+                    linkLabel={capability.linkLabel}
+                  >
                     {Glyph ? (
                       <Glyph
                         size={capability.id === "stake" ? 112 : capability.id === "dashboard" ? 96 : 28}

@@ -2,11 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Mark, cn } from "@zunialab/ui";
-import { ComingSoonButton } from "@/components/site/ComingSoon";
+import { Button, Mark, cn } from "@zunialab/ui";
 import { IconGitHub, IconX } from "@/components/site/Icons";
 import { SocialLinks } from "@/components/site/SocialLinks";
-import { LINKS, NAV } from "@/content/site";
+import { LINKS, NAV, WEB_APP } from "@/content/site";
 
 /**
  * Top bar.
@@ -75,15 +74,11 @@ export function SiteHeader() {
 
         <div className="ml-auto flex items-center gap-3">
           <SocialLinks className="hidden sm:flex" />
-          <ComingSoonButton
-            size="sm"
-            variant="primary"
-            className="h-11 px-6 text-[15px]"
-            label="Developers"
-            description="Developer tools and docs access from here are coming very soon."
-          >
-            Developers
-          </ComingSoonButton>
+          <Button asChild size="sm" variant="primary" className="h-11 px-6 text-[15px]">
+            <a href={WEB_APP.href} rel="noreferrer">
+              {WEB_APP.cta}
+            </a>
+          </Button>
 
           <div className="relative xl:hidden">
             <button
@@ -161,15 +156,16 @@ export function SiteHeader() {
                 GitHub
               </a>
               <div className="mt-1.5 border-t border-[var(--z-line)] pt-2">
-                <ComingSoonButton
+                <Button
+                  asChild
                   size="sm"
-                  variant="secondary"
+                  variant="primary"
                   className="h-auto w-full justify-start rounded-[11px] px-3.5 py-3 text-[15px]"
-                  label="Developers"
-                  description="Developer tools and docs access from here are coming very soon."
                 >
-                  Developers
-                </ComingSoonButton>
+                  <a href={WEB_APP.href} rel="noreferrer" onClick={() => setMenuOpen(false)}>
+                    {WEB_APP.cta}
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
