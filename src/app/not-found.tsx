@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 
@@ -16,9 +17,9 @@ export default function NotFound() {
         <p className="mt-3 max-w-md text-[15px] leading-relaxed text-fg-muted">
           The address does not match a page. The rest of the site is unchanged.
         </p>
-        <a href="/" className="mt-6 text-[15px] underline underline-offset-4">
+        <Link href="/" className="mt-6 text-[15px] underline underline-offset-4">
           Back to Zunia
-        </a>
+        </Link>
       </main>
       <SiteFooter />
     </>

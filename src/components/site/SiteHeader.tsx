@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Mark, cn } from "@zunialab/ui";
 import { ComingSoonButton } from "@/components/site/ComingSoon";
@@ -58,7 +59,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <a
+        <Link
           href="/"
           aria-label="Zunia home"
           className={cn(
@@ -70,7 +71,7 @@ export function SiteHeader() {
           <span className="text-[25px] font-medium leading-none tracking-[-0.055em] text-fg">
             zunia
           </span>
-        </a>
+        </Link>
 
         <div className="ml-auto flex items-center gap-3">
           <SocialLinks className="hidden sm:flex" />

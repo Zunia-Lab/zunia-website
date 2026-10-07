@@ -4,22 +4,58 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
 
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: zunia-website
     steps:
+      # @zunialab/* resolve through `link:../zunia-ui/...` (pnpm.overrides), so
+      # the two repositories are checked out side by side, the same layout as a
+      # developer machine and /srv/zunia/repos on the Hetzner host.
       - uses: actions/checkout@v4
+        with:
+          path: zunia-website
+      - uses: actions/checkout@v4
+        with:
+          repository: Zunia-Lab/zunia-ui
+          path: zunia-ui
+
+      # No `version:` here: pnpm comes from "packageManager" in package.json.
+      # Giving both is the "Multiple versions of pnpm specified" error that has
+      # failed every push since 2026-09-26.
       - uses: pnpm/action-setup@v4
         with:
-          version: 9
+          package_json_file: zunia-website/package.json
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
+          cache-dependency-path: |
+            zunia-website/pnpm-lock.yaml
+            zunia-ui/pnpm-lock.yaml
+
+      # The linked packages export only their dist/ output.
+      - name: Build zunia-ui
+        working-directory: zunia-ui
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+
       - run: pnpm install --frozen-lockfile
       - run: pnpm typecheck
       - run: pnpm lint
