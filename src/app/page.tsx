@@ -13,7 +13,13 @@ import { Developers } from "@/components/sections/Developers";
 import { FaqSection } from "@/components/sections/Faq";
 import { Support } from "@/components/sections/Support";
 import { Download } from "@/components/sections/Download";
+import type { Metadata } from "next";
 import { FAQ, LINKS, SITE } from "@/content/site";
+
+/** Only the home page is this URL. A missing page must not inherit it. */
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 /**
  * Structured data. The FAQ and the application entry are the two things search

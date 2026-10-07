@@ -28,7 +28,6 @@ export const metadata: Metadata = {
   creator: SITE.legalName,
   publisher: SITE.legalName,
   alternates: {
-    canonical: "/",
     types: {
       "text/plain": [
         { url: "/llms.txt", title: "LLM guidance" },
