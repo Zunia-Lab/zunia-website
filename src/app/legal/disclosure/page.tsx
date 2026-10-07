@@ -5,16 +5,16 @@ import { LINKS } from "@/content/site";
 export const metadata: Metadata = {
   title: "Disclosure policy",
   description:
-    "How to report a vulnerability in Zunia. Write to security@zunialab.com. Do not send a recovery phrase. We ask for 90 days before public detail.",
+    "How to report a vulnerability in Zunia. Write to dev@zunialab.com. Do not send a recovery phrase. We ask for 90 days before public detail.",
   alternates: { canonical: "/legal/disclosure" },
   robots: { index: true, follow: true },
 };
 
 export default function DisclosurePage() {
   return (
-    <DocumentPage eyebrow="Trust" title="Disclosure policy" updated="19 September 2026">
+    <DocumentPage eyebrow="Trust" title="Disclosure policy" updated="7 October 2026">
       <Note>
-        Send vulnerability reports to <a href={LINKS.securityEmail}>security@zunialab.com</a>.
+        Send vulnerability reports to <a href={LINKS.supportEmail}>dev@zunialab.com</a>.
         Do not include a recovery phrase, a private key, or a live exploit against someone
         else&apos;s funds. We would rather have a partial report today than a complete one that
         puts a user at risk.
@@ -44,7 +44,7 @@ export default function DisclosurePage() {
 
       <H2>How to send a report</H2>
       <P>
-        Email <a href={LINKS.securityEmail}>security@zunialab.com</a>. Put &quot;vulnerability&quot; in
+        Email <a href={LINKS.supportEmail}>dev@zunialab.com</a>. Put &quot;vulnerability&quot; in
         the subject. Include:
       </P>
       <Ul>
@@ -111,8 +111,9 @@ export default function DisclosurePage() {
 
       <H2>Official channels</H2>
       <P>
-        Reports and follow-ups stay on security@zunialab.com. General product questions go to{" "}
-        <a href={LINKS.supportEmail}>dev@zunialab.com</a>. We do not take vulnerability reports
+        The only addresses are <a href={LINKS.supportEmail}>dev@zunialab.com</a> and{" "}
+        <a href={LINKS.gmail}>zunialab@gmail.com</a>. Vulnerability reports go to dev@zunialab.com.
+        General product questions can go to either address. We do not take vulnerability reports
         in social-media direct messages. The X account{" "}
         <a href={LINKS.x} rel="noreferrer">@ZuniaLab</a> can point you here. It is not the
         inbox.

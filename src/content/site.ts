@@ -87,10 +87,7 @@ export const LINKS = {
   updatesRequests: "https://updates.zunialab.com/requests",
   updatesReport: "https://updates.zunialab.com/requests/new",
   supportEmail: "mailto:dev@zunialab.com",
-  helloEmail: "mailto:hello@zunialab.com",
   gmail: "mailto:zunialab@gmail.com",
-  securityEmail: "mailto:security@zunialab.com",
-  brandEmail: "mailto:brand@zunialab.com",
 } as const;
 
 /**
@@ -433,7 +430,7 @@ export const TRANSPARENCY: TransparencyItem[] = [
   },
   {
     label: "Responsible disclosure",
-    value: "security@zunialab.com, 90-day coordinated window, acknowledgements page.",
+    value: "dev@zunialab.com, 90-day coordinated window, acknowledgements page.",
     status: "available",
     href: LINKS.securityPolicy,
   },
@@ -657,8 +654,8 @@ export const FAQ: FaqItem[] = [
 
 export const SUPPORT_CHANNELS = [
   { label: "Documentation", value: "Guides, chain list and integration reference", href: LINKS.docs },
-  { label: "Support", value: "dev@zunialab.com, one business day", href: LINKS.supportEmail },
-  { label: "Security", value: "security@zunialab.com, coordinated disclosure", href: LINKS.securityEmail },
+  { label: "Support", value: "dev@zunialab.com, wallet help and security reports", href: LINKS.supportEmail },
+  { label: "General", value: "zunialab@gmail.com", href: LINKS.gmail },
   { label: "Bugs", value: "GitHub issues, public triage", href: LINKS.githubIssues },
   /* There was a "Network status" card here pointing at status.zunialab.com.
      No status page exists on any host, so the card was claiming a channel we do

@@ -53,8 +53,8 @@ export default function BrandPage() {
             >
               Source repository
             </a>
-            <a href={LINKS.brandEmail} className="inline-flex h-11 items-center px-2 text-[14px] text-fg-muted">
-              brand@zunialab.com
+            <a href={LINKS.gmail} className="inline-flex h-11 items-center px-2 text-[14px] text-fg-muted">
+              zunialab@gmail.com
             </a>
           </div>
 
@@ -145,7 +145,7 @@ export default function BrandPage() {
               Sub-brand files in the source repository, for products that are not shipping, are
               not on this page on purpose. Do not invent a Zunia Pay or Zunia Explorer lockup
               for a public page. If you need a use that this page does not cover, write to{" "}
-              <a href={LINKS.brandEmail}>brand@zunialab.com</a> before you publish it.
+              <a href={LINKS.gmail}>zunialab@gmail.com</a> before you publish it.
             </p>
             <h3 className="m-0 mt-8 text-[18px] font-medium text-fg">The zip</h3>
             <p className="m-0 mt-3">

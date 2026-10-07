@@ -201,7 +201,8 @@ export default function TermsPage() {
 
       <H3>Contact</H3>
       <P>
-        Questions about these terms: <a href={LINKS.supportEmail}>dev@zunialab.com</a>. The
+        Questions about these terms: <a href={LINKS.supportEmail}>dev@zunialab.com</a> or{" "}
+        <a href={LINKS.gmail}>zunialab@gmail.com</a>. The
         Apache 2.0 license for the extension is <a href={LINKS.license}>in the repository</a>.
       </P>
     </DocumentPage>

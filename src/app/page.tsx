@@ -29,7 +29,7 @@ function StructuredData() {
   const logoUrl = `${SITE.url}/apple-icon`;
   const imageUrl = `${SITE.url}/opengraph-image`;
   const support = LINKS.supportEmail.replace(/^mailto:/, "");
-  const security = LINKS.securityEmail.replace(/^mailto:/, "");
+  const general = LINKS.gmail.replace(/^mailto:/, "");
 
   const organization = {
     "@type": "Organization",
@@ -42,7 +42,7 @@ function StructuredData() {
       width: 180,
       height: 180,
     },
-    email: support,
+    email: [support, general],
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -53,8 +53,9 @@ function StructuredData() {
       },
       {
         "@type": "ContactPoint",
-        contactType: "security",
-        email: security,
+        contactType: "customer support",
+        email: general,
+        url: `${SITE.url}${LINKS.supportPage}`,
         availableLanguage: ["en"],
       },
     ],

@@ -117,7 +117,7 @@ export default function SecurityPage() {
       <P>
         Dependencies are pinned in the repositories. A review of a release is a review of that
         lockfile as well as the wallet code. If you find a dependency we should not be shipping,
-        write to security@zunialab.com.
+        write to dev@zunialab.com.
       </P>
 
       <H2>What is planned, and not done</H2>
@@ -130,7 +130,7 @@ export default function SecurityPage() {
       <P>
         Until those programs exist, the way to report a vulnerability is the{" "}
         <a href={LINKS.disclosure}>disclosure policy</a>. We acknowledge reports sent to{" "}
-        <a href={LINKS.securityEmail}>security@zunialab.com</a>. We aim to answer inside the
+        <a href={LINKS.supportEmail}>dev@zunialab.com</a>. We aim to answer inside the
         window that policy describes. We do not pay a bounty we have not published.
       </P>
 

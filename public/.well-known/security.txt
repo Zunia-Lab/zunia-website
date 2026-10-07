@@ -1,4 +1,4 @@
-# Contact: security@zunialab.com
+# Contact: dev@zunialab.com
 # Prefers-Encryption: (add OpenPGP key URL when issued)
 # Canonical: https://zunialab.com/.well-known/security.txt
 # Expires: 2027-08-31T00:00:00.000Z
@@ -6,7 +6,8 @@
 # Policy: https://github.com/Zunia-Lab/.github/blob/main/SECURITY.md
 # Hiring: https://zunialab.com
 
-Contact: mailto:security@zunialab.com
+Contact: mailto:dev@zunialab.com
+Contact: mailto:zunialab@gmail.com
 Expires: 2027-08-31T00:00:00.000Z
 Canonical: https://zunialab.com/.well-known/security.txt
 Policy: https://github.com/Zunia-Lab/.github/blob/main/SECURITY.md

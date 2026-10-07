@@ -20,10 +20,10 @@ export function Transparency() {
           <p className="m-0 mt-8 text-[14px] leading-relaxed text-fg-dim">
             Found something? Write to{" "}
             <a
-              href={LINKS.securityEmail}
+              href={LINKS.supportEmail}
               className="text-fg underline decoration-[var(--z-line-strong)] underline-offset-4 hover:decoration-current"
             >
-              security@zunialab.com
+              dev@zunialab.com
             </a>
             , or read the{" "}
             <a

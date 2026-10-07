@@ -10,7 +10,7 @@ function address(mailto: string) {
  */
 export function llmsTxt() {
   const support = address(LINKS.supportEmail);
-  const security = address(LINKS.securityEmail);
+  const general = address(LINKS.gmail);
 
   return `# ${SITE.name}
 
@@ -38,8 +38,8 @@ Chain coverage, counted from the registry at build time: ${REGISTRY_STATS.mainne
 
 ## Contact
 
-- Support: ${support}
-- Security: ${security}
+- Wallet help and security reports: ${support}
+- General: ${general}
 - [security.txt](${SITE.url}${LINKS.securityTxt})
 - [Security policy](${LINKS.securityPolicy})
 - [Privacy](${SITE.url}${LINKS.privacy})

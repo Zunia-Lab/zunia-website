@@ -47,7 +47,7 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
     body: [
       "The recovery phrase is created on your device and never leaves it. Zunia Lab has no copy, so a support reply cannot use one.",
       "We also do not start the conversation. If a message arrives first, in email, in a group chat, or from an account that looks like Zunia, it is not from us.",
-      "The only support address is dev@zunialab.com. The only security address is security@zunialab.com. Both use the domain zunialab.com.",
+      "The only addresses are zunialab@gmail.com and dev@zunialab.com.",
     ],
   },
   {
@@ -151,10 +151,10 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
     id: "report",
     topic: "safety",
     title: "Where to write",
-    summary: "Support, security, and bugs each have one address. They are not interchangeable.",
+    summary: "Two addresses. Wallet help and security reports share one of them.",
     body: [
-      "Wallet help goes to dev@zunialab.com. We aim to answer within one business day.",
-      "A vulnerability goes to security@zunialab.com, not the support inbox. The disclosure page describes that process.",
+      "Wallet help and vulnerability reports go to dev@zunialab.com. We aim to answer within one business day. The disclosure page describes the vulnerability process.",
+      "Everything else goes to zunialab@gmail.com.",
       "A public bug can also be filed on the extension's GitHub issues.",
     ],
   },
@@ -164,14 +164,14 @@ export const SUPPORT_CONTACTS = [
   {
     label: "Support",
     value: "dev@zunialab.com",
-    detail: "Wallet help. We aim to answer within one business day.",
+    detail: "Wallet help and vulnerability reports. We aim to answer within one business day.",
     href: LINKS.supportEmail,
   },
   {
-    label: "Security",
-    value: "security@zunialab.com",
-    detail: "Vulnerabilities and coordinated disclosure only.",
-    href: LINKS.securityEmail,
+    label: "General",
+    value: "zunialab@gmail.com",
+    detail: "Everything else, including brand questions.",
+    href: LINKS.gmail,
   },
   {
     label: "Documentation",

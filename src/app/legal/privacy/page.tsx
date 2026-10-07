@@ -24,9 +24,9 @@ export default function PrivacyPage() {
       <P>
         Zunia Lab publishes the website at zunialab.com, the documentation at docs.zunialab.com,
         and the open-source clients: the browser extension, the phone app, and the web dashboard
-        at app.zunialab.com. Support mail is{" "}
-        <a href={LINKS.supportEmail}>dev@zunialab.com</a>. Security reports go to{" "}
-        <a href={LINKS.securityEmail}>security@zunialab.com</a>.
+        at app.zunialab.com. The only addresses are{" "}
+        <a href={LINKS.supportEmail}>dev@zunialab.com</a> and{" "}
+        <a href={LINKS.gmail}>zunialab@gmail.com</a>. Security reports go to dev@zunialab.com.
       </P>
       <P>
         This policy covers those surfaces. It does not cover a chain you connect to, a validator
@@ -196,7 +196,7 @@ export default function PrivacyPage() {
 
       <H2>Mail you send us</H2>
       <P>
-        If you write to dev@zunialab.com or security@zunialab.com, we receive whatever you put
+        If you write to dev@zunialab.com or zunialab@gmail.com, we receive whatever you put
         in the message: your address, the text, and any attachment. We use that to answer the
         request or to investigate a vulnerability. Do not include a recovery phrase, a private
         key, or a password. If you do, delete is the only safe handling, and we still cannot
@@ -249,8 +249,9 @@ export default function PrivacyPage() {
 
       <H2>Contact</H2>
       <P>
-        Privacy questions: <a href={LINKS.supportEmail}>dev@zunialab.com</a>. Security reports:{" "}
-        <a href={LINKS.securityEmail}>security@zunialab.com</a>, under the{" "}
+        Privacy questions: <a href={LINKS.supportEmail}>dev@zunialab.com</a> or{" "}
+        <a href={LINKS.gmail}>zunialab@gmail.com</a>. Security reports:{" "}
+        <a href={LINKS.supportEmail}>dev@zunialab.com</a>, under the{" "}
         <a href={LINKS.disclosure}>disclosure policy</a>.
       </P>
     </DocumentPage>

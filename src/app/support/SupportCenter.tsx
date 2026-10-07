@@ -86,6 +86,10 @@ export function SupportCenter() {
           <a href="mailto:dev@zunialab.com" className="text-fg underline underline-offset-4">
             dev@zunialab.com
           </a>{" "}
+          or{" "}
+          <a href="mailto:zunialab@gmail.com" className="text-fg underline underline-offset-4">
+            zunialab@gmail.com
+          </a>{" "}
           and include the browser, the chain, and what you expected to happen. Do not include a
           recovery phrase.
         </p>
@@ -142,8 +146,8 @@ export function SupportCenter() {
 
       <h2 className="m-0 mt-16 text-[28px] font-medium tracking-[-0.03em] text-fg">Contact</h2>
       <p className="m-0 mt-3 max-w-[520px] text-[14.5px] leading-relaxed text-fg-muted">
-        These are the only addresses we answer. Support is for the wallet. Security is for a
-        vulnerability. A report sent to the wrong one waits longer.
+        These are the only two addresses we answer. Wallet help and vulnerability reports go to
+        dev@zunialab.com. Everything else goes to zunialab@gmail.com.
       </p>
       <ul className="mt-6 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-4">
         {SUPPORT_CONTACTS.map((contact) => (
