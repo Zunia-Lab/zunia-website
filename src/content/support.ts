@@ -67,7 +67,6 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
     summary: "Nothing to sign up for, and nothing called a Zunia token, airdrop, or presale.",
     body: [
       "You do not create a Zunia login. The wallet is the keys on your device.",
-      "The wallet is free to install. You pay the network fee, shown before you sign. Swaps made with the web dashboard's Swap screen also carry a commission of 0.5% of the amount sold, shown before you sign. Zunia takes no cut of a transfer or of staking rewards.",
       "Anything selling a Zunia token is a scam, whoever it appears to come from.",
     ],
   },
@@ -125,6 +124,20 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
       "The dashboard sees your addresses, never your recovery phrase or your keys. It reads balances, staking and governance from public chain data.",
       "Anything that moves funds, a send, a swap, a stake or a vote, opens in the extension first. Nothing is signed until you approve it there.",
       "The dashboard also connects Keplr, and Zunia Mobile by QR code. Its only address is app.zunialab.com.",
+    ],
+  },
+  {
+    id: "fees",
+    topic: "transactions",
+    title: "Only Zunia's own Swap screens carry a Zunia commission",
+    summary: "Swaps made with the Swap screen of the extension or the web dashboard carry 0.5%, shown before you sign. Sends, IBC transfers, and staking pay only the network fee.",
+    href: LINKS.docsFees,
+    linkLabel: "Fees in the documentation",
+    body: [
+      "The wallet is free to install, and there is no premium tier. Network fees go to the chain, not to Zunia, and each one is shown before you sign.",
+      "A swap made with the Swap screen of the Zunia browser extension, or of the web dashboard at app.zunialab.com, also carries a 0.5% commission paid to Zunia. It is taken in the same transaction as the swap, in the token you sell, and shown before you sign. A swap you make on another site or dApp and only sign with Zunia carries no Zunia commission.",
+      "When the funds start on another chain and the swap runs on Osmosis, the commission is taken on that chain when the transfer is sent. If the swap then fails on Osmosis, the amount swapped comes back. The commission does not.",
+      "Sends, IBC transfers, staking, and votes carry no commission. You pay only the network fee, and Zunia takes no cut of staking rewards.",
     ],
   },
   {

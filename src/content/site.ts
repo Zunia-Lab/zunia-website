@@ -47,9 +47,14 @@ export const LINKS = {
   docsIntegrate: `${DOCS}/integrate/extension/`,
   /* Backing up and restoring a phrase is the keys page. */
   docsRecovery: `${DOCS}/use-wallet/keys/`,
-  /* Network fees are a section of the networks page. */
-  docsFees: `${DOCS}/use-wallet/networks/`,
+  /* Network fees and the swap commission have their own page. */
+  docsFees: `${DOCS}/use-wallet/fees/`,
   docsReproducible: `${DOCS}/developers/reproducible-builds/`,
+  /* For coding assistants: the docs as llms.txt (every page also as Markdown),
+     and the Zunia MCP server, served from the docs host. */
+  docsLlms: `${DOCS_HOME}/llms.txt`,
+  docsAi: `${DOCS}/get-started/ai/`,
+  mcp: `${DOCS_HOME}/mcp`,
   /* Custom RPC endpoints are explained on the networks page. */
   docsRpc: `${DOCS}/use-wallet/networks/`,
   github: "https://github.com/Zunia-Lab",
@@ -632,7 +637,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "What does it cost?",
-    a: "The wallet is free to install, and there is no premium tier. You pay the network fee for each transaction, shown before you sign. Swaps made with the Swap screen of the web dashboard also carry a commission of 0.5% of the amount sold, paid to Zunia in the same transaction, in the token you sell, and shown in the swap review before you sign. A swap you make on a dApp and only sign with Zunia carries no Zunia commission. Sends, IBC transfers, staking and votes carry no commission, and Zunia takes no cut of staking rewards.",
+    a: "The wallet is free to install, and there is no premium tier. You pay the network fee for each transaction, shown before you sign. Swaps made with the Swap screen of the Zunia browser extension or of the web dashboard also carry a commission of 0.5% of the amount sold, paid to Zunia in the same transaction, in the token you sell, and shown before you sign. When the funds start on another chain and the swap runs on Osmosis, the commission is taken on that chain when the transfer is sent. If the swap then fails on Osmosis, the amount swapped comes back but the commission does not. A swap you make on another site or dApp and only sign with Zunia carries no Zunia commission. Sends, IBC transfers, staking and votes carry no commission, and Zunia takes no cut of staking rewards.",
   },
   {
     q: "Is the code public?",

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <DocumentPage eyebrow="Terms" title="Terms of Service" updated="7 October 2026">
+    <DocumentPage eyebrow="Terms" title="Terms of Service" updated="14 October 2026">
       <Note>
         These terms cover the website, the documentation, and the Zunia clients published by
         Zunia Lab. They do not make Zunia a custodian, an exchange, or a bank. If you need a
@@ -106,7 +106,7 @@ export default function TermsPage() {
       <P>
         The wallet is free to install, and there is no premium tier. The only charge from Zunia
         Lab is a commission of 0.5% of the amount you sell, on each swap you make with the Swap
-        screen of the web dashboard at app.zunialab.com. The commission is paid in the same
+        screen of the Zunia browser extension or of the web dashboard at app.zunialab.com. The commission is paid in the same
         transaction as the swap, in the token you sell, to Zunia Lab. The swap review shows it
         before you sign. A swap you make on another website or dApp and only sign with Zunia
         carries no Zunia commission.

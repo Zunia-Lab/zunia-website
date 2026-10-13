@@ -16,7 +16,9 @@ export function llmsTxt() {
 
 > ${SITE.metaDescription}
 
-${SITE.legalName} publishes one marketing site, ${SITE.url}. The wallet is free to install. Users pay the network fee, and swaps made with the Swap screen of the web dashboard also carry a commission of 0.5% of the amount sold, paid to ${SITE.legalName} and shown before signing. Keys are generated and encrypted on the device. ${SITE.legalName} holds zero keys and cannot freeze, reverse, or recover a transfer.
+${SITE.legalName} publishes one marketing site, ${SITE.url}. The wallet is free to install. Keys are generated and encrypted on the device. ${SITE.legalName} holds zero keys and cannot freeze, reverse, or recover a transfer.
+
+Fees: every transaction pays the network fee to the chain, shown before signing. Swaps made with the Swap screen of the Zunia browser extension or of the web dashboard also carry a commission of 0.5% of the amount sold, paid to ${SITE.legalName}, taken in the same transaction, in the token sold, and shown before signing. When the funds start on another chain and the swap runs on Osmosis, the commission is taken on that starting chain when the transfer is sent; if the swap then fails on Osmosis, the amount swapped comes back but the commission does not. Swaps made on another site or dApp and only signed with Zunia carry no Zunia commission. Sends, IBC transfers, staking, and votes carry no commission. There is no premium tier.
 
 Chrome is published on the Chrome Web Store: ${LINKS.chromeWebStore}. Safari, plus the App Store and Google Play, are in store review. Firefox is planned. The web dashboard is live at ${WEB_APP.href}. It holds no key: it connects the Zunia extension, Keplr, or Zunia Mobile by QR code, and every transaction it prepares is signed in that wallet.
 
@@ -35,6 +37,12 @@ Chain coverage, counted from the registry at build time: ${REGISTRY_STATS.mainne
 - [Disclosure](${SITE.url}${LINKS.disclosure}): How to report a vulnerability
 - [Brand](${SITE.url}${LINKS.brandPage}): Marks, lockups, and the zip
 - [Chain registry](${LINKS.githubRegistry}): Open chain metadata
+
+## Developers
+
+- [Integration docs](${LINKS.docsIntegrate}): Connect a dApp with @zunialab/sdk-web, @zunialab/sdk-react, @zunialab/sdk-core and @zunialab/interchain, on npm
+- [Docs llms.txt](${LINKS.docsLlms}): Every docs page, also as Markdown at its address plus .md
+- [Zunia MCP server](${LINKS.docsAi}): ${LINKS.mcp}, Streamable HTTP, no key. Searches the docs and returns integration guides, package versions and chain data to a coding assistant
 
 ## Contact
 
