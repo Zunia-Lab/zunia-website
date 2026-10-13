@@ -112,7 +112,13 @@ function StructuredData() {
         installUrl: LINKS.chromeWebStore,
         isAccessibleForFree: true,
         license: "https://www.apache.org/licenses/LICENSE-2.0",
-        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          description:
+            "Free to install. Swaps made with the Swap screen of the Zunia browser extension carry a 0.5% commission, taken in the token sold and shown before signing. Sends, IBC transfers, and staking carry no commission.",
+        },
         publisher: { "@id": `${SITE.url}/#organization` },
         author: { "@id": `${SITE.url}/#organization` },
       },
