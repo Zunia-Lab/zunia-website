@@ -50,6 +50,11 @@ export const LINKS = {
   /* Network fees are a section of the networks page. */
   docsFees: `${DOCS}/use-wallet/networks/`,
   docsReproducible: `${DOCS}/developers/reproducible-builds/`,
+  /* For coding assistants: the docs as llms.txt (every page also as Markdown),
+     and the Zunia MCP server, served from the docs host. */
+  docsLlms: `${DOCS_HOME}/llms.txt`,
+  docsAi: `${DOCS}/get-started/ai/`,
+  mcp: `${DOCS_HOME}/mcp`,
   /* Custom RPC endpoints are explained on the networks page. */
   docsRpc: `${DOCS}/use-wallet/networks/`,
   github: "https://github.com/Zunia-Lab",

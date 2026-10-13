@@ -36,6 +36,12 @@ Chain coverage, counted from the registry at build time: ${REGISTRY_STATS.mainne
 - [Brand](${SITE.url}${LINKS.brandPage}): Marks, lockups, and the zip
 - [Chain registry](${LINKS.githubRegistry}): Open chain metadata
 
+## Developers
+
+- [Integration docs](${LINKS.docsIntegrate}): Connect a dApp with @zunialab/sdk-web, @zunialab/sdk-react, @zunialab/sdk-core and @zunialab/interchain, on npm
+- [Docs llms.txt](${LINKS.docsLlms}): Every docs page, also as Markdown at its address plus .md
+- [Zunia MCP server](${LINKS.docsAi}): ${LINKS.mcp}, Streamable HTTP, no key. Searches the docs and returns integration guides, package versions and chain data to a coding assistant
+
 ## Contact
 
 - Wallet help and security reports: ${support}
