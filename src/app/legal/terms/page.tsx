@@ -93,9 +93,10 @@ export default function TermsPage() {
         the only official Chrome download. Safari on Mac is published on the{" "}
         <a href={LINKS.macAppStore} rel="noreferrer">Mac App Store</a>. That listing is the
         only official Safari download, and it requires macOS 13. Safari on iPhone and iPad is
-        in review. Firefox support is planned, not shipped. The iPhone, iPad, and Google Play
-        builds are in review. Until those stores list them, a link that claims to be an
-        official iPhone, iPad, Firefox, or Android download is not ours. The web dashboard is
+        in review. Firefox support is planned, not shipped. Zunia Mobile, the wallet app for
+        iPhone and Android, is not on the App Store or Google Play yet: it is built from its
+        public source. Until those stores list it, a link that claims to be an official
+        iPhone, iPad, Firefox, or Android download is not ours. The web dashboard is
         published only at app.zunialab.com.
       </P>
       <P>
@@ -108,7 +109,8 @@ export default function TermsPage() {
       <P>
         The wallet is free to install, and there is no premium tier. The only charge from Zunia
         Lab is a commission of 0.5% of the amount you sell, on each swap you make with the Swap
-        screen of the Zunia browser extension or of the web dashboard at app.zunialab.com. The commission is paid in the same
+        screen of the Zunia browser extension, of the Zunia Mobile app, or of the web dashboard
+        at app.zunialab.com. The commission is paid in the same
         transaction as the swap, in the token you sell, to Zunia Lab. The swap review shows it
         before you sign. A swap you make on another website or dApp and only sign with Zunia
         carries no Zunia commission.

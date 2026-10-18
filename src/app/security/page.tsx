@@ -106,7 +106,7 @@ export default function SecurityPage() {
         <a href={LINKS.chromeWebStore} rel="noreferrer">Chrome Web Store</a>. The Mac build,
         which installs the Safari extension, is published on the{" "}
         <a href={LINKS.macAppStore} rel="noreferrer">Mac App Store</a>. Firefox is planned,
-        not shipped. The iPhone, iPad, and Android builds are in store review. The web
+        not shipped. Zunia Mobile is not on the App Store or Google Play yet. The web
         dashboard is served only from app.zunialab.com. A download that claims to be an
         official store build, other than those two listings, is not one we published.
       </P>
