@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { Hero } from "@/components/sections/Hero";
 import { Overview } from "@/components/sections/Overview";
 import { Chains } from "@/components/sections/Chains";
+import { MapZone } from "@/components/sections/MapZone";
 import { Capabilities } from "@/components/sections/Capabilities";
 import { Platforms } from "@/components/sections/Platforms";
 import { Security } from "@/components/sections/Security";
@@ -178,6 +179,8 @@ export default function Home() {
         <Overview />
         <Rule />
         <Chains />
+        <Rule />
+        <MapZone />
         <Rule />
         <Capabilities />
         <Rule />

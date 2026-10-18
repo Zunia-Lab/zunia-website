@@ -90,11 +90,13 @@ export default function TermsPage() {
       <P>
         The Chrome extension is published on the{" "}
         <a href={LINKS.chromeWebStore} rel="noreferrer">Chrome Web Store</a>. That listing is
-        the only official Chrome download. Safari on macOS and iOS is in review. Firefox
-        support is planned, not shipped. Mobile builds for the Apple App Store and Google
-        Play are in review. Until those stores list them, a link that claims to be an
-        official Safari, Firefox, or phone download is not ours. The web dashboard is published
-        only at app.zunialab.com.
+        the only official Chrome download. Safari on Mac is published on the{" "}
+        <a href={LINKS.macAppStore} rel="noreferrer">Mac App Store</a>. That listing is the
+        only official Safari download, and it requires macOS 13. Safari on iPhone and iPad is
+        in review. Firefox support is planned, not shipped. The iPhone, iPad, and Google Play
+        builds are in review. Until those stores list them, a link that claims to be an
+        official iPhone, iPad, Firefox, or Android download is not ours. The web dashboard is
+        published only at app.zunialab.com.
       </P>
       <P>
         A store can reject, delay, or remove a build under its own rules. We do not control

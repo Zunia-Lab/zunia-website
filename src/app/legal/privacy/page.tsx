@@ -176,8 +176,10 @@ export default function PrivacyPage() {
       <P>
         Store listings, if a store approves the build, are operated by Apple or Google. A store
         can see the download, the device class, and whatever that store&apos;s own privacy policy
-        describes. We do not receive your store account password. The apps are in review. Until
-        a store publishes them, there is no store listing to download.
+        describes. We do not receive your store account password. The Mac app is published on
+        the <a href={LINKS.macAppStore} rel="noreferrer">Mac App Store</a>. The iPhone, iPad,
+        and Android builds are still in review. Until those stores publish them, there is no
+        phone listing to download.
       </P>
 
       <H2>Hardware wallets</H2>

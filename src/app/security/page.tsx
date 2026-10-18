@@ -103,10 +103,12 @@ export default function SecurityPage() {
         The clients are open source under Apache 2.0. You can read the repositories. Official
         builds, once a store or a browser listing is live, should match the tag we publish.
         The Chrome build is published on the{" "}
-        <a href={LINKS.chromeWebStore} rel="noreferrer">Chrome Web Store</a>. Safari is in
-        review. Firefox is planned, not shipped. The phone builds are in store review. The web
+        <a href={LINKS.chromeWebStore} rel="noreferrer">Chrome Web Store</a>. The Mac build,
+        which installs the Safari extension, is published on the{" "}
+        <a href={LINKS.macAppStore} rel="noreferrer">Mac App Store</a>. Firefox is planned,
+        not shipped. The iPhone, iPad, and Android builds are in store review. The web
         dashboard is served only from app.zunialab.com. A download that claims to be an
-        official store build, other than that Chrome listing, is not one we published.
+        official store build, other than those two listings, is not one we published.
       </P>
       <P>
         Reproducible builds are planned, so a third party can rebuild a release and compare it

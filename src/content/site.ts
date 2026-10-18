@@ -24,7 +24,7 @@ export const SITE = {
   metaDescription:
     "Self-custody wallet for the Cosmos ecosystem. Hold, send, and stake from a browser extension and a phone that share the same keys. No account, no token.",
   /** Date the factual claims below were last reviewed. Shown next to the stats. */
-  claimsReviewedAt: "2026-10-07",
+  claimsReviewedAt: "2026-10-18",
   releaseChannel: "1.0 release candidate",
 } as const;
 
@@ -62,6 +62,9 @@ export const LINKS = {
   githubExtension: "https://github.com/Zunia-Lab/zunia-extension",
   chromeWebStore:
     "https://chromewebstore.google.com/detail/zunia/ngokakoekdogobjmokipglbcclelgajk",
+  /* Mac App Store listing for the Safari extension. mt=12 keeps the link on
+     Mac. The iPhone and iPad build is a separate review and is not this URL. */
+  macAppStore: "https://apps.apple.com/app/zunia/id6816604128?mt=12",
   githubMobile: "https://github.com/Zunia-Lab/zunia-mobile",
   githubRegistry: "https://github.com/Zunia-Lab/zunia-chain-registry",
   githubUi: "https://github.com/Zunia-Lab/zunia-ui",
@@ -109,6 +112,7 @@ export const LINKS = {
 export const NAV = [
   { label: "Wallet", href: "/#wallet" },
   { label: "Chains", href: "/#chains" },
+  { label: "Map", href: "/#map" },
   { label: "Platforms", href: "/#platforms" },
   { label: "Security", href: "/#security" },
   { label: "Developers", href: "/#developers" },
@@ -141,8 +145,8 @@ export interface DownloadTarget {
 
 /**
  * One button per install surface. Chrome is the Chrome Web Store listing.
- * Safari is the same extension, for macOS and iOS, and is still in review.
- * Firefox ships as its own add-on and is still planned.
+ * Safari on Mac is the Mac App Store app. Safari on iPhone and iPad is still
+ * in review, so that button stays with the phone stores. Firefox is planned.
  */
 export const DOWNLOADS: DownloadTarget[] = [
   {
@@ -157,11 +161,11 @@ export const DOWNLOADS: DownloadTarget[] = [
   {
     id: "safari",
     label: "Safari",
-    href: LINKS.githubExtension,
-    availability: "review",
+    href: LINKS.macAppStore,
+    availability: "available",
     kind: "browser",
-    requirement: "Safari on macOS and iOS",
-    requirementShort: "Safari",
+    requirement: "Safari on macOS 13 and later. iPhone and iPad are still in review.",
+    requirementShort: "macOS 13+",
   },
   {
     id: "firefox",
@@ -357,14 +361,14 @@ export const PLATFORMS: Platform[] = [
     title: "Browser extension",
     meta: "Manifest V3",
     body: "Signs where you work. Every transaction is decoded into plain language before you approve it, with the exact chain, fee and destination.",
-    availability: "review",
+    availability: "available",
     targets: [
       { label: "Chrome", availability: "available", href: LINKS.chromeWebStore },
-      { label: "Safari", availability: "review" },
+      { label: "Safari", availability: "available", href: LINKS.macAppStore },
       { label: "Firefox", availability: "planned" },
     ],
     specs: [
-      { label: "Minimum browser", value: "Chrome 120, Safari, Firefox" },
+      { label: "Minimum browser", value: "Chrome 120, Safari on macOS 13" },
       { label: "Permissions", value: "Storage and active tab, per-site approval" },
       { label: "Package", value: "Reproducible build, checksum published per release" },
     ],
@@ -479,6 +483,13 @@ export const PROVENANCE: ProvenanceItem[] = [
     status: "available",
     mono: true,
     href: LINKS.chromeWebStore,
+  },
+  {
+    label: "Mac App Store",
+    value: "id6816604128",
+    status: "available",
+    mono: true,
+    href: LINKS.macAppStore,
   },
   { label: "APK SHA-256", value: "Published in each GitHub release, signed", status: "planned" },
 ];
@@ -697,11 +708,12 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     title: "Product",
     links: [
       { label: "Chrome", href: LINKS.chromeWebStore },
+      { label: "Safari on Mac", href: LINKS.macAppStore },
       { label: "Browser extension", href: "/#platforms" },
       { label: "Mobile wallet", href: "/#platforms" },
       { label: "Web dashboard", href: LINKS.app },
       { label: "Supported chains", href: "/#chains" },
-      { label: "Map Zone", href: LINKS.mapZone },
+      { label: "IBC Map", href: LINKS.mapZone },
     ],
   },
   {

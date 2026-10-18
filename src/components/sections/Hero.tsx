@@ -4,8 +4,8 @@ import { HeroPhone } from "@/components/mocks/PhoneMocks";
 import { DOWNLOADS, LINKS, SITE, WEB_APP } from "@/content/site";
 
 export function Hero() {
-  const browsers = DOWNLOADS.filter((target) => target.kind === "browser");
-  const stores = DOWNLOADS.filter((target) => target.kind === "store");
+  const live = DOWNLOADS.filter((target) => target.availability === "available");
+  const waiting = DOWNLOADS.filter((target) => target.availability !== "available");
 
   return (
     <section
@@ -33,12 +33,7 @@ export function Hero() {
           style={{ animationDelay: "0.18s" }}
         >
           <div className="flex flex-wrap items-center justify-center gap-3">
-            {browsers.map((target) => (
-              <DownloadControl key={target.id} target={target} />
-            ))}
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            {stores.map((target) => (
+            {live.map((target) => (
               <DownloadControl key={target.id} target={target} />
             ))}
             <Button asChild size="lg" variant="secondary" className="h-[54px] px-6">
@@ -50,6 +45,19 @@ export function Hero() {
                 </span>
               </a>
             </Button>
+            <Button asChild size="lg" variant="secondary" className="h-[54px] px-6">
+              <a href={LINKS.mapZone} rel="noreferrer">
+                IBC Map
+                <span aria-hidden className="text-[13px] opacity-70">
+                  ↗
+                </span>
+              </a>
+            </Button>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {waiting.map((target) => (
+              <DownloadControl key={target.id} target={target} />
+            ))}
           </div>
           <a
             href={LINKS.appConnect}
