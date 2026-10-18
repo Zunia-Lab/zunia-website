@@ -75,7 +75,8 @@ export function Developers() {
           </Reveal>
           <Lede className="mt-6 max-w-[500px]">
             Zunia implements the standard Cosmos wallet interface, so an existing integration
-            works unchanged. On mobile the same calls arrive over WalletConnect.
+            works unchanged. On a phone, Zunia Mobile connects by QR code or by a link on the same
+            phone, and over WalletConnect in builds made with a project id.
           </Lede>
 
           <ol className="m-0 mt-8 flex list-none flex-col gap-3.5 p-0">

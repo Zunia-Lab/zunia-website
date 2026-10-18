@@ -168,8 +168,9 @@ export default function PrivacyPage() {
 
       <H2>What the phone does on the network</H2>
       <P>
-        The phone holds the same keys as the extension when you restore the same phrase or pair
-        the two. It submits transactions the same way: your device signs, an endpoint broadcasts.
+        The phone holds the same keys as the extension when you restore the same phrase on it.
+        Pairing it with a site or the dashboard by QR code shares no key. It submits
+        transactions the same way: your device signs, an endpoint broadcasts.
         Biometric unlock stays on the phone. We do not receive the biometric template. The
         operating system does, under its own policy, and only to answer yes or no to the app.
       </P>
@@ -177,9 +178,9 @@ export default function PrivacyPage() {
         Store listings, if a store approves the build, are operated by Apple or Google. A store
         can see the download, the device class, and whatever that store&apos;s own privacy policy
         describes. We do not receive your store account password. The Mac app is published on
-        the <a href={LINKS.macAppStore} rel="noreferrer">Mac App Store</a>. The iPhone, iPad,
-        and Android builds are still in review. Until those stores publish them, there is no
-        phone listing to download.
+        the <a href={LINKS.macAppStore} rel="noreferrer">Mac App Store</a>. Zunia Mobile, the
+        wallet app for iPhone and Android, is not on the App Store or Google Play yet. Until a
+        store publishes it, there is no phone listing to download.
       </P>
 
       <H2>Hardware wallets</H2>

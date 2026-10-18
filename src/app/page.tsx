@@ -97,7 +97,7 @@ function StructuredData() {
         "@id": `${SITE.url}/#app`,
         name: SITE.name,
         applicationCategory: "FinanceApplication",
-        operatingSystem: "Chrome, Safari, Firefox, iOS 15+, Android 8+",
+        operatingSystem: "Chrome, Safari, Firefox, iOS 13+, Android 7.0+",
         url: SITE.url,
         description: SITE.metaDescription,
         image: imageUrl,
@@ -118,7 +118,7 @@ function StructuredData() {
           price: "0",
           priceCurrency: "USD",
           description:
-            "Free to install. Swaps made with the Swap screen of the Zunia browser extension carry a 0.5% commission, taken in the token sold and shown before signing. Sends, IBC transfers, and staking carry no commission.",
+            "Free to install. Swaps made with the Swap screen of the Zunia browser extension or of the Zunia mobile app carry a 0.5% commission, taken in the token sold and shown before signing. Sends, IBC transfers, and staking carry no commission.",
         },
         publisher: { "@id": `${SITE.url}/#organization` },
         author: { "@id": `${SITE.url}/#organization` },

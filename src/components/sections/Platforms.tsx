@@ -58,6 +58,7 @@ export function Platforms() {
                           "size-1.5 rounded-full",
                           target.availability === "available" && "bg-[var(--z-success)]",
                           target.availability === "review" && "bg-[var(--z-warning)]",
+                          target.availability === "development" && "bg-[var(--z-fg-dim)]",
                           target.availability === "planned" && "bg-[var(--z-fg-faint)]",
                         )}
                       />

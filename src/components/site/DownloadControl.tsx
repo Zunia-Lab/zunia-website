@@ -32,7 +32,7 @@ export function DownloadControl({ target }: { target: DownloadTarget }) {
         "hover:text-fg",
       )}
       label={target.label}
-      description={`${target.label} is ${status.toLowerCase()}. The button opens when that listing is live.`}
+      description={`${target.label}: ${status}. The button opens when that listing is live.`}
       aria-label={`${target.label}, ${status}`}
     >
       {Icon ? <Icon size={16} /> : null}

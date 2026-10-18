@@ -180,19 +180,19 @@ export const DOWNLOADS: DownloadTarget[] = [
     id: "ios",
     label: "App Store",
     href: LINKS.githubMobile,
-    availability: "review",
+    availability: "development",
     kind: "store",
-    requirement: "iOS 15 and later",
-    requirementShort: "iOS 15+",
+    requirement: "iOS 13 and later. Not on the App Store yet: build it from source.",
+    requirementShort: "iOS 13+",
   },
   {
     id: "android",
     label: "Play Store",
     href: LINKS.githubMobile,
-    availability: "review",
+    availability: "development",
     kind: "store",
-    requirement: "Android 8.0 and later",
-    requirementShort: "Android 8+",
+    requirement: "Android 7.0 and later. Not on Google Play yet: build it from source.",
+    requirementShort: "Android 7+",
   },
 ];
 
@@ -378,17 +378,20 @@ export const PLATFORMS: Platform[] = [
     id: "mobile",
     title: "Mobile wallet",
     meta: "iOS and Android",
-    body: "The same accounts in your pocket, unlocked with Face ID or fingerprint. Scan a QR code to approve a desktop transaction without exporting anything.",
-    availability: "review",
+    body: "The same accounts in your pocket, unlocked with Face ID or fingerprint. Scan a site's QR code and approve its transactions on the phone, without exporting anything.",
+    availability: "development",
     targets: [
-      { label: "App Store", availability: "review" },
-      { label: "Google Play", availability: "review" },
-      { label: "Direct APK", availability: "available" },
+      { label: "App Store", availability: "development" },
+      { label: "Google Play", availability: "development" },
+      { label: "Build from source", availability: "available", href: LINKS.githubMobile },
     ],
     specs: [
-      { label: "Minimum OS", value: "iOS 15, Android 8.0" },
-      { label: "Unlock", value: "Face ID, Touch ID, fingerprint or passcode" },
-      { label: "Air-gapped signing", value: "QR approval, no key ever leaves the phone" },
+      { label: "Minimum OS", value: "iOS 13, Android 7.0" },
+      { label: "Unlock", value: "Wallet password, or Face ID, Touch ID or fingerprint" },
+      {
+        label: "Connect",
+        value: "QR code or a link on the same phone, end-to-end encrypted through Zunia's relay",
+      },
     ],
     href: LINKS.githubMobile,
   },
@@ -519,7 +522,7 @@ export const DEVELOPER_POINTS = [
   "Drop-in support for existing Cosmos dApps",
   "Amino and Direct signing, arbitrary messages",
   "Suggest a chain at runtime, testnets included",
-  "WalletConnect v2 for the same calls on mobile",
+  "Zunia Mobile by QR code or a same-phone link; WalletConnect in builds with a project id",
 ] as const;
 
 export type CodeTokenKind =
@@ -547,7 +550,7 @@ export interface CodeLine {
 export const CONNECT_SNIPPET: CodeLine[] = [
   {
     n: 1,
-    tokens: [{ t: "// same call in the extension and over WalletConnect", k: "comment" }],
+    tokens: [{ t: "// same call in the extension and in Zunia Mobile's browser", k: "comment" }],
   },
   {
     n: 2,
@@ -636,7 +639,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "Can I use the same wallet on desktop and phone?",
-    a: "Yes. Import the same recovery phrase, or pair the two by QR code. Accounts and names sync; the key itself stays on each device.",
+    a: "Yes. Import the same recovery phrase on each device. Each one keeps its own encrypted copy and nothing syncs between them, so import the phrase of every account you want on both.",
   },
   {
     q: "Is there a web version?",
@@ -648,7 +651,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "What does it cost?",
-    a: "The wallet is free to install, and there is no premium tier. You pay the network fee for each transaction, shown before you sign. Swaps made with the Swap screen of the Zunia browser extension or of the web dashboard also carry a commission of 0.5% of the amount sold, paid to Zunia in the same transaction, in the token you sell, and shown before you sign. When the funds start on another chain and the swap runs on Osmosis, the commission is taken on that chain when the transfer is sent. If the swap then fails on Osmosis, the amount swapped comes back but the commission does not. A swap you make on another site or dApp and only sign with Zunia carries no Zunia commission. Sends, IBC transfers, staking and votes carry no commission, and Zunia takes no cut of staking rewards.",
+    a: "The wallet is free to install, and there is no premium tier. You pay the network fee for each transaction, shown before you sign. Swaps made with the Swap screen of the Zunia browser extension, of the Zunia Mobile app or of the web dashboard also carry a commission of 0.5% of the amount sold, paid to Zunia in the same transaction, in the token you sell, and shown before you sign. When the funds start on another chain and the swap runs on Osmosis, the commission is taken on that chain when the transfer is sent. If the swap then fails on Osmosis, the amount swapped comes back but the commission does not. A swap you make on another site or dApp and only sign with Zunia carries no Zunia commission. Sends, IBC transfers, staking and votes carry no commission, and Zunia takes no cut of staking rewards.",
   },
   {
     q: "Is the code public?",

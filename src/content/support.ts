@@ -133,12 +133,12 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
     id: "fees",
     topic: "transactions",
     title: "Only Zunia's own Swap screens carry a Zunia commission",
-    summary: "Swaps made with the Swap screen of the extension or the web dashboard carry 0.5%, shown before you sign. Sends, IBC transfers, and staking pay only the network fee.",
+    summary: "Swaps made with the Swap screen of the extension, the mobile app or the web dashboard carry 0.5%, shown before you sign. Sends, IBC transfers, and staking pay only the network fee.",
     href: LINKS.docsFees,
     linkLabel: "Fees in the documentation",
     body: [
       "The wallet is free to install, and there is no premium tier. Network fees go to the chain, not to Zunia, and each one is shown before you sign.",
-      "A swap made with the Swap screen of the Zunia browser extension, or of the web dashboard at app.zunialab.com, also carries a 0.5% commission paid to Zunia. It is taken in the same transaction as the swap, in the token you sell, and shown before you sign. A swap you make on another site or dApp and only sign with Zunia carries no Zunia commission.",
+      "A swap made with the Swap screen of the Zunia browser extension, of the Zunia Mobile app, or of the web dashboard at app.zunialab.com, also carries a 0.5% commission paid to Zunia. It is taken in the same transaction as the swap, in the token you sell, and shown before you sign. A swap you make on another site or dApp and only sign with Zunia carries no Zunia commission.",
       "When the funds start on another chain and the swap runs on Osmosis, the commission is taken on that chain when the transfer is sent. If the swap then fails on Osmosis, the amount swapped comes back. The commission does not.",
       "Sends, IBC transfers, staking, and votes carry no commission. You pay only the network fee, and Zunia takes no cut of staking rewards.",
     ],
@@ -147,10 +147,10 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
     id: "same-keys",
     topic: "keys",
     title: "The same phrase works on the extension and the phone",
-    summary: "Import the phrase, or pair the two by QR. The key stays on each device.",
+    summary: "Import the same phrase on each device. The key stays on each device.",
     body: [
-      "Importing the same recovery phrase gives you the same accounts. Pairing by QR syncs accounts and names. The signing key is not copied to a server.",
-      "A desktop transaction can also be approved by scanning it with the phone, so that computer does not have to hold the key.",
+      "Importing the same recovery phrase gives you the same accounts. Each account you add has its own phrase, so import each one you want on both. Nothing syncs between the two, and the signing key is not copied to a server.",
+      "A site open on a computer can also send its transactions to the phone: scan the site's Zunia QR code once, then approve each one on the phone, so that computer does not have to hold the key.",
     ],
   },
   {
