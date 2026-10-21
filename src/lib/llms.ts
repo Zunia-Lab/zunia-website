@@ -35,6 +35,7 @@ Chain coverage, counted from the registry at build time: ${REGISTRY_STATS.mainne
 - [Documentation](${LINKS.docs}): Guides, chain list, and integration reference
 - [GitHub](${LINKS.github}): Source, Apache 2.0
 - [X](${LINKS.x}): @ZuniaLab
+- [YouTube](${LINKS.youtube}): @ZuniaLab
 - [Support](${SITE.url}${LINKS.supportPage}): Guides and the only contact addresses
 - [Security](${SITE.url}${LINKS.securityPage}): Keys, threat model, and what is still planned
 - [Disclosure](${SITE.url}${LINKS.disclosure}): How to report a vulnerability

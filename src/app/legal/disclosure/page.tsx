@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function DisclosurePage() {
   return (
-    <DocumentPage eyebrow="Trust" title="Disclosure policy" updated="7 October 2026">
+    <DocumentPage eyebrow="Trust" title="Disclosure policy" updated="22 October 2026">
       <Note>
         Send vulnerability reports to <a href={LINKS.supportEmail}>dev@zunialab.com</a>.
         Do not include a recovery phrase, a private key, or a live exploit against someone
@@ -115,8 +115,9 @@ export default function DisclosurePage() {
         <a href={LINKS.gmail}>zunialab@gmail.com</a>. Vulnerability reports go to dev@zunialab.com.
         General product questions can go to either address. We do not take vulnerability reports
         in social-media direct messages. The X account{" "}
-        <a href={LINKS.x} rel="noreferrer">@ZuniaLab</a> can point you here. It is not the
-        inbox.
+        <a href={LINKS.x} rel="noreferrer">@ZuniaLab</a> and the YouTube channel{" "}
+        <a href={LINKS.youtube} rel="noreferrer">@ZuniaLab</a> can point you here. Neither is
+        the inbox.
       </P>
     </DocumentPage>
   );

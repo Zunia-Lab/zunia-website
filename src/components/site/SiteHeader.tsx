@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button, Mark, cn } from "@zunialab/ui";
-import { IconGitHub, IconX } from "@/components/site/Icons";
+import { IconGitHub, IconX, IconYouTube } from "@/components/site/Icons";
 import { SocialLinks } from "@/components/site/SocialLinks";
 import { LINKS, NAV, WEB_APP } from "@/content/site";
 
@@ -145,6 +145,15 @@ export function SiteHeader() {
               >
                 <IconX size={15} />
                 X
+              </a>
+              <a
+                href={LINKS.youtube}
+                rel="noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-2.5 rounded-[11px] px-3.5 py-3 text-[15px] text-fg hover:bg-[var(--z-state-hover)]"
+              >
+                <IconYouTube size={15} />
+                YouTube
               </a>
               <a
                 href={LINKS.github}

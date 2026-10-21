@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <DocumentPage eyebrow="Terms" title="Terms of Service" updated="21 October 2026">
+    <DocumentPage eyebrow="Terms" title="Terms of Service" updated="22 October 2026">
       <Note>
         These terms cover the website, the documentation, and the Zunia clients published by
         Zunia Lab. They do not make Zunia a custodian, an exchange, or a bank. If you need a
@@ -56,7 +56,8 @@ export default function TermsPage() {
       </P>
       <P>
         The only public X account we operate for the lab is{" "}
-        <a href={LINKS.x} rel="noreferrer">@ZuniaLab</a>. The only GitHub organisation is{" "}
+        <a href={LINKS.x} rel="noreferrer">@ZuniaLab</a>. The only YouTube channel is{" "}
+        <a href={LINKS.youtube} rel="noreferrer">@ZuniaLab</a>. The only GitHub organisation is{" "}
         <a href={LINKS.github} rel="noreferrer">Zunia-Lab</a>. Mail from us about the product
         comes from zunialab.com addresses. We will not ask for your phrase.
       </P>

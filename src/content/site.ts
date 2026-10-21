@@ -24,7 +24,7 @@ export const SITE = {
   metaDescription:
     "Self-custody wallet for the Cosmos ecosystem. Hold, send, and stake from a browser extension and a phone that share the same keys. No account, no token.",
   /** Date the factual claims below were last reviewed. Shown next to the stats. */
-  claimsReviewedAt: "2026-10-21",
+  claimsReviewedAt: "2026-10-22",
   releaseChannel: "1.0 release candidate",
 } as const;
 
@@ -59,6 +59,7 @@ export const LINKS = {
   docsRpc: `${DOCS}/use-wallet/networks/`,
   github: "https://github.com/Zunia-Lab",
   x: "https://x.com/ZuniaLab",
+  youtube: "https://www.youtube.com/@ZuniaLab",
   githubExtension: "https://github.com/Zunia-Lab/zunia-extension",
   chromeWebStore:
     "https://chromewebstore.google.com/detail/zunia/ngokakoekdogobjmokipglbcclelgajk",

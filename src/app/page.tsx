@@ -60,7 +60,7 @@ function StructuredData() {
         availableLanguage: ["en"],
       },
     ],
-    sameAs: [LINKS.github, LINKS.x],
+    sameAs: [LINKS.github, LINKS.x, LINKS.youtube],
   };
 
   const website = {

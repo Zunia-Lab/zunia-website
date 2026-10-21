@@ -1,5 +1,5 @@
 import { cn } from "@zunialab/ui";
-import { IconGitHub, IconX } from "@/components/site/Icons";
+import { IconGitHub, IconX, IconYouTube } from "@/components/site/Icons";
 import { LINKS } from "@/content/site";
 
 const itemClass =
@@ -10,6 +10,9 @@ export function SocialLinks({ className }: { className?: string }) {
     <div className={cn("flex items-center gap-2", className)}>
       <a href={LINKS.x} aria-label="Zunia Lab on X" rel="noreferrer" className={itemClass}>
         <IconX size={16} />
+      </a>
+      <a href={LINKS.youtube} aria-label="Zunia Lab on YouTube" rel="noreferrer" className={itemClass}>
+        <IconYouTube size={16} />
       </a>
       <a href={LINKS.github} aria-label="Zunia Lab on GitHub" rel="noreferrer" className={itemClass}>
         <IconGitHub size={16} />

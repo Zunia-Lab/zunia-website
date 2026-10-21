@@ -7,6 +7,7 @@ import {
   siGoogleplay,
   siSafari,
   siX,
+  siYoutube,
   type SimpleIcon,
 } from "simple-icons";
 
@@ -108,6 +109,10 @@ export function IconX(props: IconProps) {
 
 export function IconGitHub(props: IconProps) {
   return <BrandIcon icon={siGithub} title="GitHub" {...props} />;
+}
+
+export function IconYouTube(props: IconProps) {
+  return <BrandIcon icon={siYoutube} title="YouTube" {...props} />;
 }
 
 export function IconChrome(props: IconProps) {

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function SecurityPage() {
   return (
-    <DocumentPage eyebrow="Trust" title="Security" updated="21 October 2026">
+    <DocumentPage eyebrow="Trust" title="Security" updated="22 October 2026">
       <Note>
         The useful security property of Zunia is narrow and concrete: the signing keys are
         created and kept on your device. We cannot sign for you, and we cannot take the keys
@@ -92,7 +92,8 @@ export default function SecurityPage() {
         <li>We do not run telemetry in the clients. The web dashboard sends the addresses you connect to our server only to look them up, and to watch them if you turn on notifications, as the privacy policy describes. The website does not embed an analytics product.</li>
       </Ul>
       <P>
-        The public X account is <a href={LINKS.x} rel="noreferrer">@ZuniaLab</a>. The GitHub
+        The public X account is <a href={LINKS.x} rel="noreferrer">@ZuniaLab</a>. The YouTube
+        channel is <a href={LINKS.youtube} rel="noreferrer">@ZuniaLab</a>. The GitHub
         organisation is <a href={LINKS.github} rel="noreferrer">Zunia-Lab</a>. Official mail
         uses zunialab.com. Anything else that asks for a secret is not us, even if the avatar
         matches.
