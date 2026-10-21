@@ -124,6 +124,23 @@ function StructuredData() {
         author: { "@id": `${SITE.url}/#organization` },
       },
       {
+        "@type": "MobileApplication",
+        "@id": `${SITE.url}/#android`,
+        name: "Zunia",
+        operatingSystem: "Android 8.0",
+        applicationCategory: "FinanceApplication",
+        installUrl: LINKS.playStore,
+        downloadUrl: LINKS.playStore,
+        identifier: "com.zunialab.wallet",
+        isAccessibleForFree: true,
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+        },
+        publisher: { "@id": `${SITE.url}/#organization` },
+      },
+      {
         "@type": "WebApplication",
         "@id": `${SITE.url}/#webapp`,
         name: `${SITE.name} web dashboard`,

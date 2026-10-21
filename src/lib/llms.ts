@@ -20,7 +20,7 @@ ${SITE.legalName} publishes one marketing site, ${SITE.url}. The wallet is free 
 
 Fees: every transaction pays the network fee to the chain, shown before signing. Swaps made with the Swap screen of the Zunia browser extension or of the web dashboard also carry a commission of 0.5% of the amount sold, paid to ${SITE.legalName}, taken in the same transaction, in the token sold, and shown before signing. When the funds start on another chain and the swap runs on Osmosis, the commission is taken on that starting chain when the transfer is sent; if the swap then fails on Osmosis, the amount swapped comes back but the commission does not. Swaps made on another site or dApp and only signed with Zunia carry no Zunia commission. Sends, IBC transfers, staking, and votes carry no commission. There is no premium tier.
 
-Chrome is published on the Chrome Web Store: ${LINKS.chromeWebStore}. Safari on Mac is published on the Mac App Store: ${LINKS.macAppStore}. Safari on iPhone and iPad, and Google Play, are in store review. Firefox is planned. The web dashboard is live at ${WEB_APP.href}. It holds no key: it connects the Zunia extension, Keplr, or Zunia Mobile by QR code, and every transaction it prepares is signed in that wallet. IBC Map Cosmos is live at ${LINKS.mapZone}. It shows public IBC transfers and holds no keys.
+Chrome is published on the Chrome Web Store: ${LINKS.chromeWebStore}. Safari on Mac is published on the Mac App Store: ${LINKS.macAppStore}. The Android app is published on Google Play: ${LINKS.playStore}. Safari on iPhone and iPad, and the iPhone wallet, are in store review. Firefox is planned. The web dashboard is live at ${WEB_APP.href}. It holds no key: it connects the Zunia extension, Keplr, or Zunia Mobile by QR code, and every transaction it prepares is signed in that wallet. IBC Map Cosmos is live at ${LINKS.mapZone}. It shows public IBC transfers and holds no keys.
 
 Chain coverage, counted from the registry at build time: ${REGISTRY_STATS.mainnet} mainnet chains (${CHAIN_COVERAGE.breakdown.replace(/\.$/, "")}). Testnets are excluded. Custom chains can be added by RPC endpoint.
 
@@ -29,6 +29,7 @@ Chain coverage, counted from the registry at build time: ${REGISTRY_STATS.mainne
 - [Website](${SITE.url}): Product claims, FAQ, and download status
 - [Chrome](${LINKS.chromeWebStore}): Official Chrome install, extension id ngokakoekdogobjmokipglbcclelgajk
 - [Safari on Mac](${LINKS.macAppStore}): Official Mac App Store install, Apple id 6816604128. Requires macOS 13. iPhone and iPad are not this listing.
+- [Google Play](${LINKS.playStore}): Official Android install, package com.zunialab.wallet. The iPhone wallet is not this listing.
 - [IBC Map Cosmos](${LINKS.mapZone}): Live map of IBC transfers between Cosmos zones. It holds no keys.
 - [Web dashboard](${WEB_APP.href}): Balances, staking, governance, and swaps in the browser; it never holds a key
 - [Documentation](${LINKS.docs}): Guides, chain list, and integration reference

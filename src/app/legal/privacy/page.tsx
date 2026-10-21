@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <DocumentPage eyebrow="Privacy" title="Privacy Policy" updated="7 October 2026">
+    <DocumentPage eyebrow="Privacy" title="Privacy Policy" updated="21 October 2026">
       <Note>
         Zunia is a self-custody wallet. We do not create an account for you, we do not hold your
         keys, and we do not sell data. This policy describes what actually happens when you visit
@@ -177,9 +177,10 @@ export default function PrivacyPage() {
         Store listings, if a store approves the build, are operated by Apple or Google. A store
         can see the download, the device class, and whatever that store&apos;s own privacy policy
         describes. We do not receive your store account password. The Mac app is published on
-        the <a href={LINKS.macAppStore} rel="noreferrer">Mac App Store</a>. The iPhone, iPad,
-        and Android builds are still in review. Until those stores publish them, there is no
-        phone listing to download.
+        the <a href={LINKS.macAppStore} rel="noreferrer">Mac App Store</a>. The Android app
+        is published on <a href={LINKS.playStore} rel="noreferrer">Google Play</a>. The
+        iPhone and iPad builds are still in review. Until the App Store publishes them,
+        there is no iPhone or iPad listing to download.
       </P>
 
       <H2>Hardware wallets</H2>

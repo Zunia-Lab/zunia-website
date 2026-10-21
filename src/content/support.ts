@@ -1,6 +1,6 @@
 import { LINKS } from "@/content/site";
 
-export type SupportTopic = "keys" | "chrome" | "safari" | "transactions" | "safety";
+export type SupportTopic = "keys" | "chrome" | "android" | "safari" | "transactions" | "safety";
 
 export interface SupportArticle {
   id: string;
@@ -16,6 +16,7 @@ export const SUPPORT_TOPICS: { id: SupportTopic | "all"; label: string }[] = [
   { id: "all", label: "All" },
   { id: "keys", label: "Keys" },
   { id: "chrome", label: "Chrome" },
+  { id: "android", label: "Android" },
   { id: "safari", label: "Safari" },
   { id: "transactions", label: "Transactions" },
   { id: "safety", label: "Safety" },
@@ -37,6 +38,18 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
     body: [
       "Add Zunia from the Chrome Web Store. That listing is the only official Chrome download.",
       "The extension id on the listing is ngokakoekdogobjmokipglbcclelgajk. If an install shows a different id, it is not this release.",
+    ],
+  },
+  {
+    id: "android-install",
+    topic: "android",
+    title: "Install Zunia from Google Play",
+    summary: "The official Android build is the Google Play listing.",
+    href: LINKS.playStore,
+    linkLabel: "Get it on Google Play",
+    body: [
+      "Install Zunia from Google Play. That listing is the only official Android download. The package name is com.zunialab.wallet. If an install shows a different package, it is not this release.",
+      "The iPhone build is still in review. The Mac App Store listing does not install the Android app.",
     ],
   },
   {
