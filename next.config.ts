@@ -31,6 +31,13 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: workspaceRoot,
   },
+  async redirects() {
+    return [
+      // The docs live on their own host. /docs on the marketing site was a 404.
+      { source: "/docs", destination: "https://docs.zunialab.com/", permanent: true },
+      { source: "/docs/:path*", destination: "https://docs.zunialab.com/docs/:path*", permanent: true },
+    ];
+  },
   async headers() {
     return [
       { source: "/:path*", headers: SECURITY_HEADERS },
