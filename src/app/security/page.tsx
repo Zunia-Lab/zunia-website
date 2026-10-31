@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function SecurityPage() {
   return (
-    <DocumentPage eyebrow="Trust" title="Security" updated="22 October 2026">
+    <DocumentPage eyebrow="Trust" title="Security" updated="1 November 2026">
       <Note>
         The useful security property of Zunia is narrow and concrete: the signing keys are
         created and kept on your device. We cannot sign for you, and we cannot take the keys
@@ -107,10 +107,11 @@ export default function SecurityPage() {
         <a href={LINKS.chromeWebStore} rel="noreferrer">Chrome Web Store</a>. The Mac build,
         which installs the Safari extension, is published on the{" "}
         <a href={LINKS.macAppStore} rel="noreferrer">Mac App Store</a>. The Android app is
-        published on <a href={LINKS.playStore} rel="noreferrer">Google Play</a>. Firefox is
-        planned, not shipped. The iPhone and iPad builds are in store review. The web
-        dashboard is served only from app.zunialab.com. A download that claims to be an
-        official store build, other than those three listings, is not one we published.
+        published on <a href={LINKS.playStore} rel="noreferrer">Google Play</a>. The iPhone
+        wallet is published on the <a href={LINKS.appStore} rel="noreferrer">App Store</a> as
+        Zunia Wallet. Firefox is planned, not shipped. Safari on iPhone and iPad is in store
+        review. The web dashboard is served only from app.zunialab.com. A download that claims
+        to be an official store build, other than those four listings, is not one we published.
       </P>
       <P>
         Reproducible builds are planned, so a third party can rebuild a release and compare it

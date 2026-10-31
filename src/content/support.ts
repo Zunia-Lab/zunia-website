@@ -1,6 +1,6 @@
 import { LINKS } from "@/content/site";
 
-export type SupportTopic = "keys" | "chrome" | "android" | "safari" | "transactions" | "safety";
+export type SupportTopic = "keys" | "chrome" | "android" | "ios" | "safari" | "transactions" | "safety";
 
 export interface SupportArticle {
   id: string;
@@ -17,6 +17,7 @@ export const SUPPORT_TOPICS: { id: SupportTopic | "all"; label: string }[] = [
   { id: "keys", label: "Keys" },
   { id: "chrome", label: "Chrome" },
   { id: "android", label: "Android" },
+  { id: "ios", label: "iPhone" },
   { id: "safari", label: "Safari" },
   { id: "transactions", label: "Transactions" },
   { id: "safety", label: "Safety" },
@@ -49,7 +50,7 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
     linkLabel: "Get it on Google Play",
     body: [
       "Install Zunia from Google Play. That listing is the only official Android download. The package name is com.zunialab.wallet. If an install shows a different package, it is not this release.",
-      "The iPhone build is still in review. The Mac App Store listing does not install the Android app.",
+      "The iPhone wallet is a different listing, Zunia Wallet on the App Store. The Mac App Store listing does not install the Android app.",
     ],
   },
   {
@@ -84,6 +85,18 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
     ],
   },
   {
+    id: "ios-install",
+    topic: "ios",
+    title: "Install Zunia Wallet from the App Store",
+    summary: "The official iPhone wallet is the App Store listing named Zunia Wallet.",
+    href: LINKS.appStore,
+    linkLabel: "Get it on the App Store",
+    body: [
+      "Install Zunia Wallet from the App Store. That listing is the only official iPhone download. The bundle id is com.zuniawallet.zuniaMobile. If an install shows a different bundle, it is not this release.",
+      "It requires iOS 13 or later. The Mac App Store listing is Safari on Mac, and it does not install this app. Safari on iPhone and iPad is still in review.",
+    ],
+  },
+  {
     id: "safari-mac",
     topic: "safari",
     title: "Turn Zunia on in Safari on a Mac",
@@ -99,12 +112,11 @@ export const SUPPORT_ARTICLES: SupportArticle[] = [
   {
     id: "safari-ios",
     topic: "safari",
-    title: "Turn Zunia on in Safari on iPhone or iPad",
-    summary: "The iPhone and iPad app is still in review. These steps apply once that listing is live.",
+    title: "Safari on iPhone and iPad is not listed yet",
+    summary: "Safari on iPhone and iPad is still in review. The phone wallet is a separate App Store app.",
     body: [
-      "The Mac App Store listing does not install Zunia on iPhone or iPad. That build is still in review.",
-      "Open Settings, then Apps, then Safari, then Extensions, and turn Zunia on.",
-      "The wallet opens from the Safari toolbar. The Zunia app is the switch that installs that extension. It is not a second wallet.",
+      "The Mac App Store listing does not install Zunia on iPhone or iPad. Safari on iPhone and iPad is still in review.",
+      "The phone wallet you can install today is Zunia Wallet on the App Store. It is a separate app. It does not turn on a Safari extension.",
     ],
   },
   {

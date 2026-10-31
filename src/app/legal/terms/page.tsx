@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <DocumentPage eyebrow="Terms" title="Terms of Service" updated="22 October 2026">
+    <DocumentPage eyebrow="Terms" title="Terms of Service" updated="1 November 2026">
       <Note>
         These terms cover the website, the documentation, and the Zunia clients published by
         Zunia Lab. They do not make Zunia a custodian, an exchange, or a bank. If you need a
@@ -95,11 +95,12 @@ export default function TermsPage() {
         <a href={LINKS.macAppStore} rel="noreferrer">Mac App Store</a>. That listing is the
         only official Safari download, and it requires macOS 13. The Android app is published
         on <a href={LINKS.playStore} rel="noreferrer">Google Play</a>. That listing is the
-        only official Android download, package com.zunialab.wallet. Safari on iPhone and
-        iPad is in review. Firefox support is planned, not shipped. The iPhone and iPad
-        wallet builds are in review. Until the App Store lists them, a link that claims to
-        be an official iPhone, iPad, or Firefox download is not ours. The web dashboard is
-        published only at app.zunialab.com.
+        only official Android download, package com.zunialab.wallet. The iPhone wallet is
+        published on the <a href={LINKS.appStore} rel="noreferrer">App Store</a> as Zunia
+        Wallet, bundle com.zuniawallet.zuniaMobile. Safari on iPhone and iPad is in review.
+        Firefox support is planned, not shipped. Until those are listed, a link that claims
+        to be an official iPhone or iPad Safari download, or a Firefox download, is not ours.
+        The web dashboard is published only at app.zunialab.com.
       </P>
       <P>
         A store can reject, delay, or remove a build under its own rules. We do not control

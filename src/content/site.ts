@@ -24,7 +24,7 @@ export const SITE = {
   metaDescription:
     "Self-custody wallet for the Cosmos ecosystem. Hold, send, and stake from a browser extension and a phone that share the same keys. No account, no token.",
   /** Date the factual claims below were last reviewed. Shown next to the stats. */
-  claimsReviewedAt: "2026-10-22",
+  claimsReviewedAt: "2026-11-01",
   releaseChannel: "1.0 release candidate",
 } as const;
 
@@ -64,10 +64,13 @@ export const LINKS = {
   chromeWebStore:
     "https://chromewebstore.google.com/detail/zunia/ngokakoekdogobjmokipglbcclelgajk",
   /* Mac App Store listing for the Safari extension. mt=12 keeps the link on
-     Mac. The iPhone and iPad build is a separate review and is not this URL. */
+     Mac. The iPhone wallet is a different listing and is not this URL. */
   macAppStore: "https://apps.apple.com/app/zunia/id6816604128?mt=12",
-  /* Google Play listing for the Android wallet. The iPhone build is a separate
-     review and is not this URL. */
+  /* App Store listing for the iPhone wallet, Zunia Wallet. Safari on iPhone
+     and iPad is a separate extension and is not this URL. */
+  appStore: "https://apps.apple.com/app/zunia-wallet/id6824444063",
+  /* Google Play listing for the Android wallet. The iPhone wallet is a
+     separate listing and is not this URL. */
   playStore: "https://play.google.com/store/apps/details?id=com.zunialab.wallet",
   githubMobile: "https://github.com/Zunia-Lab/zunia-mobile",
   githubRegistry: "https://github.com/Zunia-Lab/zunia-chain-registry",
@@ -149,9 +152,9 @@ export interface DownloadTarget {
 
 /**
  * One button per install surface. Chrome is the Chrome Web Store listing.
- * Safari on Mac is the Mac App Store app. Android is the Google Play listing.
- * The iPhone wallet, and Safari on iPhone and iPad, are still in review.
- * Firefox is planned.
+ * Safari on Mac is the Mac App Store app. The iPhone wallet is the App Store
+ * listing. Android is the Google Play listing. Safari on iPhone and iPad is
+ * still in review. Firefox is planned.
  */
 export const DOWNLOADS: DownloadTarget[] = [
   {
@@ -169,7 +172,7 @@ export const DOWNLOADS: DownloadTarget[] = [
     href: LINKS.macAppStore,
     availability: "available",
     kind: "browser",
-    requirement: "Safari on macOS 13 and later. iPhone and iPad are still in review.",
+    requirement: "Safari on macOS 13 and later. Safari on iPhone and iPad is still in review.",
     requirementShort: "macOS 13+",
   },
   {
@@ -184,11 +187,11 @@ export const DOWNLOADS: DownloadTarget[] = [
   {
     id: "ios",
     label: "App Store",
-    href: LINKS.githubMobile,
-    availability: "review",
+    href: LINKS.appStore,
+    availability: "available",
     kind: "store",
-    requirement: "iOS 15 and later",
-    requirementShort: "iOS 15+",
+    requirement: "iOS 13 and later",
+    requirementShort: "iOS 13+",
   },
   {
     id: "android",
@@ -386,12 +389,12 @@ export const PLATFORMS: Platform[] = [
     body: "The same accounts in your pocket, unlocked with Face ID or fingerprint. Scan a QR code to approve a desktop transaction without exporting anything.",
     availability: "available",
     targets: [
-      { label: "App Store", availability: "review" },
+      { label: "App Store", availability: "available", href: LINKS.appStore },
       { label: "Google Play", availability: "available", href: LINKS.playStore },
       { label: "Direct APK", availability: "available" },
     ],
     specs: [
-      { label: "Minimum OS", value: "iOS 15, Android 8.0" },
+      { label: "Minimum OS", value: "iOS 13, Android 8.0" },
       { label: "Unlock", value: "Face ID, Touch ID, fingerprint or passcode" },
       { label: "Air-gapped signing", value: "QR approval, no key ever leaves the phone" },
     ],
@@ -486,7 +489,20 @@ export const PROVENANCE: ProvenanceItem[] = [
     mono: true,
     href: LINKS.playStore,
   },
-  { label: "iOS bundle", value: "com.zuniawallet.zuniaMobile", status: "available", mono: true },
+  {
+    label: "iOS bundle",
+    value: "com.zuniawallet.zuniaMobile",
+    status: "available",
+    mono: true,
+    href: LINKS.appStore,
+  },
+  {
+    label: "App Store",
+    value: "id6824444063",
+    status: "available",
+    mono: true,
+    href: LINKS.appStore,
+  },
   { label: "Firefox add-on id", value: "wallet@zunialab.com", status: "planned", mono: true },
   {
     label: "Chrome extension id",
@@ -720,6 +736,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: "Chrome", href: LINKS.chromeWebStore },
       { label: "Safari on Mac", href: LINKS.macAppStore },
+      { label: "App Store", href: LINKS.appStore },
       { label: "Google Play", href: LINKS.playStore },
       { label: "Browser extension", href: "/#platforms" },
       { label: "Mobile wallet", href: "/#platforms" },
