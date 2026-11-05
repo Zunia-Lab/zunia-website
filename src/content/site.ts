@@ -182,8 +182,8 @@ export const DOWNLOADS: DownloadTarget[] = [
     href: LINKS.githubMobile,
     availability: "development",
     kind: "store",
-    requirement: "iOS 13 and later. Not on the App Store yet: build it from source.",
-    requirementShort: "iOS 13+",
+    requirement: "iOS 15 and later. Not on the App Store yet: build it from source.",
+    requirementShort: "iOS 15+",
   },
   {
     id: "android",
@@ -386,7 +386,7 @@ export const PLATFORMS: Platform[] = [
       { label: "Build from source", availability: "available", href: LINKS.githubMobile },
     ],
     specs: [
-      { label: "Minimum OS", value: "iOS 13, Android 7.0" },
+      { label: "Minimum OS", value: "iOS 15, Android 7.0" },
       { label: "Unlock", value: "Wallet password, or Face ID, Touch ID or fingerprint" },
       {
         label: "Connect",
