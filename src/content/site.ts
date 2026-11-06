@@ -533,7 +533,7 @@ export const PROVENANCE_WARNINGS = [
 
 export const PRIVACY_POINTS = [
   { label: "No account", value: "No email, no sign-up, no profile to leak." },
-  { label: "No analytics", value: "No tracking scripts and no cookies on this site." },
+  { label: "Analytics only if you agree", value: "The site counts page visits with Google Analytics after you allow it, with no advertising features. The apps collect nothing." },
   { label: "Self-hosted assets", value: "Fonts and icons are served from our origin, so no third party sees your IP." },
   { label: "Your endpoints", value: "Default RPC endpoints are listed in the docs and every one can be replaced." },
 ] as const;

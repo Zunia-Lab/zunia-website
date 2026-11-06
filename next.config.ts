@@ -14,7 +14,11 @@ const workspaceRoot = path.join(process.cwd(), "..");
  * X-Frame-Options for browsers that ignore frame-ancestors), no plugins, no
  * <base> rewrite. A script-src allowlist waits until Cloudflare stops
  * injecting its Web Analytics beacon, which such a policy would block on
- * every page.
+ * every page. Google Analytics loads only after consent, so it needs no
+ * allowance today; when a script-src is added it must include
+ * https://www.googletagmanager.com, and connect-src must include
+ * https://*.google-analytics.com https://*.analytics.google.com
+ * https://*.googletagmanager.com.
  */
 const SECURITY_HEADERS = [
   { key: "X-Content-Type-Options", value: "nosniff" },

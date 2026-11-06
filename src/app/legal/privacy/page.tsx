@@ -5,14 +5,14 @@ import { LINKS } from "@/content/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Zunia handles data. Keys stay on your device. The website does not run analytics, and we do not hold an account for you.",
+    "How Zunia handles data. Keys stay on your device. The website uses Google Analytics only if you allow it, and we do not hold an account for you.",
   alternates: { canonical: "/legal/privacy" },
   robots: { index: true, follow: true },
 };
 
 export default function PrivacyPage() {
   return (
-    <DocumentPage eyebrow="Privacy" title="Privacy Policy" updated="1 November 2026">
+    <DocumentPage eyebrow="Privacy" title="Privacy Policy" updated="6 November 2026">
       <Note>
         Zunia is a self-custody wallet. We do not create an account for you, we do not hold your
         keys, and we do not sell data. This policy describes what actually happens when you visit
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
       <Ul>
         <li>There is no Zunia account, no sign-in, and no profile.</li>
         <li>Your recovery phrase and private keys are generated and stored on your device. They are not sent to us.</li>
-        <li>This website does not run third-party analytics, advertising pixels, or a tag manager.</li>
+        <li>This website uses Google Analytics only after you allow it. It runs no advertising pixels and no tag manager, and the wallet apps collect nothing.</li>
         <li>Fonts, scripts, and images on this site are served from our own origin.</li>
         <li>The clients talk to chain endpoints you can replace. Those endpoints can see the requests your device makes.</li>
         <li>There is no Zunia token, airdrop, or presale. We will never ask for your phrase by email or on X.</li>
@@ -107,8 +107,8 @@ export default function PrivacyPage() {
       <H2>This website</H2>
       <P>
         zunialab.com is a static marketing site. Pages are rendered by our own Next.js process.
-        We do not embed analytics scripts, session-replay tools, advertising networks, or fonts
-        loaded from a third-party CDN. Icons for stores and social accounts are drawn as inline
+        We do not embed session-replay tools, advertising networks, or fonts
+        loaded from a third-party CDN. The one exception is Google Analytics, described below. Icons for stores and social accounts are drawn as inline
         SVG from a library that ships with the site, not fetched at view time.
       </P>
       <P>
@@ -119,9 +119,33 @@ export default function PrivacyPage() {
         which chains you hold.
       </P>
       <P>
-        The site sets no tracking cookie and no advertising cookie. A technical cookie or
-        similar stored value may appear only if a browser feature or the TLS terminator requires
-        it to complete a request. You can use the site with cookies blocked.
+        Until you choose, the site sets no cookie and sends nothing to Google. A bar at the
+        bottom of the page asks whether we may use Google Analytics to count which pages are
+        read. Your choice is kept in your browser, in local storage, and nowhere else.
+      </P>
+      <P>
+        If you press Allow analytics, the page loads Google&apos;s analytics script and sends
+        Google the pages you visit. We remove the query string and the fragment from each
+        address, and we replace anything that looks like an account address or a transaction
+        hash with a placeholder before it is sent. Google also derives coarse device and
+        location data from the request, such as browser, screen size, language, and an
+        approximate region, and sets its _ga cookies to tell visits apart. We do not turn on
+        advertising features, Google signals, or ad personalisation, and the advertising
+        consent signals stay denied. No account address, key, or phrase is sent, because the
+        site never sees one.
+      </P>
+      <P>
+        If you press No thanks, nothing is loaded and nothing is sent. To change your mind
+        later, use Analytics settings in the footer. Choosing No thanks there stops the
+        sending at once and deletes the analytics cookies this site can reach. Google&apos;s
+        own policy describes what it does with the data it receives. The wallet apps, the
+        extension, the phone app, and the web dashboard collect no analytics at all.
+      </P>
+      <P>
+        Apart from analytics, the site sets no tracking cookie and no advertising cookie. A
+        technical cookie or similar stored value may appear only if a browser feature or the
+        TLS terminator requires it to complete a request. You can use the site with cookies
+        blocked.
       </P>
       <P>
         The documentation site at docs.zunialab.com is the same kind of surface: published
@@ -245,7 +269,7 @@ export default function PrivacyPage() {
       <H2>Changes</H2>
       <P>
         If we start collecting something this policy says we do not, we will change the policy
-        first and change the date at the top. A new analytics tool, a new account system, or a
+        first and change the date at the top. A new analytics tool beyond Google Analytics with consent, a new account system, or a
         new hosted service would be a change of that kind. Adding a sentence to the website is
         not. The date on this page is the date the text was last revised.
       </P>
