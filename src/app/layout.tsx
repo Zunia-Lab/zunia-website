@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SameDocumentFragments } from "./_components/SameDocumentFragments";
+import { Analytics } from "@/components/site/Analytics";
 import { SITE } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -80,6 +81,7 @@ export default function RootLayout({
       <body className="zunia-root flex min-h-full flex-col">
         <SameDocumentFragments />
         {children}
+        <Analytics />
       </body>
     </html>
   );

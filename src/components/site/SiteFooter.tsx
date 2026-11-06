@@ -1,6 +1,12 @@
 import { Mark, cn } from "@zunialab/ui";
+import { AnalyticsSettingsLink } from "@/components/site/Analytics";
 import { SocialLinks } from "@/components/site/SocialLinks";
 import { FOOTER_COLUMNS, LINKS, RISK_DISCLOSURE, SITE } from "@/content/site";
+
+const FOOTER_LINK_CLASS = cn(
+  "text-[13px] text-fg-muted transition-colors duration-[var(--z-duration-base)] hover:text-fg",
+  "rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--z-focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--z-bg)]",
+);
 
 function FooterLink({ href, children }: { href: string; children: string }) {
   const external = href.startsWith("http") || href.startsWith("mailto:");
@@ -101,6 +107,7 @@ export function SiteFooter() {
             <FooterLink href={LINKS.updates}>updates.zunialab.com</FooterLink>
             <FooterLink href={LINKS.supportEmail}>dev@zunialab.com</FooterLink>
             <FooterLink href={LINKS.gmail}>zunialab@gmail.com</FooterLink>
+            <AnalyticsSettingsLink className={FOOTER_LINK_CLASS} />
             <SocialLinks />
           </div>
         </div>
