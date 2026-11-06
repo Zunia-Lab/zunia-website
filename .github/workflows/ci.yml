@@ -38,7 +38,7 @@ jobs:
       # No `version:` here: pnpm comes from "packageManager" in package.json.
       # Giving both is the "Multiple versions of pnpm specified" error that has
       # failed every push since 2026-09-26.
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
         with:
           package_json_file: zunia-website/package.json
       - uses: actions/setup-node@v4
