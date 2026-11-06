@@ -38,7 +38,7 @@ export default function PrivacyPage() {
       <Ul>
         <li>There is no Zunia account, no sign-in, and no profile.</li>
         <li>Your recovery phrase and private keys are generated and stored on your device. They are not sent to us.</li>
-        <li>This website uses Google Analytics only after you allow it. It runs no advertising pixels and no tag manager, and the wallet apps collect nothing.</li>
+        <li>This website, the web dashboard, and IBC Map use Google Analytics only after you allow it. They run no advertising pixels and no tag manager. The extension and the phone app collect nothing.</li>
         <li>Fonts, scripts, and images on this site are served from our own origin.</li>
         <li>The clients talk to chain endpoints you can replace. Those endpoints can see the requests your device makes.</li>
         <li>There is no Zunia token, airdrop, or presale. We will never ask for your phrase by email or on X.</li>
@@ -138,8 +138,9 @@ export default function PrivacyPage() {
         If you press No thanks, nothing is loaded and nothing is sent. To change your mind
         later, use Analytics settings in the footer. Choosing No thanks there stops the
         sending at once and deletes the analytics cookies this site can reach. Google&apos;s
-        own policy describes what it does with the data it receives. The wallet apps, the
-        extension, the phone app, and the web dashboard collect no analytics at all.
+        own policy describes what it does with the data it receives. The web dashboard and IBC
+        Map ask the same question and work the same way, as described below. The extension and
+        the phone app collect no analytics at all.
       </P>
       <P>
         Apart from analytics, the site sets no tracking cookie and no advertising cookie. A
@@ -151,6 +152,11 @@ export default function PrivacyPage() {
         The documentation site at docs.zunialab.com is the same kind of surface: published
         pages, no account, no analytics product embedded by us.
       </P>
+      <P>
+        IBC Map at ibcmap.zunialab.com shows public IBC transfers and holds no keys. It asks the
+        same question before it uses Google Analytics, on the same terms as this website, and
+        its Analytics settings link sits in its footer.
+      </P>
 
       <H2>The web dashboard</H2>
       <P>
@@ -159,8 +165,15 @@ export default function PrivacyPage() {
         of the chains. Those requests carry the addresses of the accounts you connected, so our
         server and the chain endpoints it asks can see which addresses were looked up. The
         server&apos;s request logs keep them for about 14 days, then roll off. They are not
-        joined to a name or an email, because there is none. The dashboard runs no analytics
-        and sets no tracking cookie.
+        joined to a name or an email, because there is none.
+      </P>
+      <P>
+        The dashboard uses Google Analytics on the same terms as this website: nothing is
+        loaded or sent until you allow it. Before a page is reported, it also replaces asset,
+        validator, transaction, and NFT identifiers in the address with the route&apos;s name,
+        so no account or holding can be read from it. You can change your choice at any time
+        in its Settings, under Privacy. Apart from analytics, the dashboard sets no tracking
+        cookie.
       </P>
       <P>
         Notifications are off until you turn them on. When you do, the server keeps the push

@@ -89,7 +89,7 @@ export default function SecurityPage() {
         <li>We will not ask for your recovery phrase, by mail, on X, in a document, or in a pull request.</li>
         <li>We will not offer to recover, freeze, or reverse a transaction. We cannot.</li>
         <li>We will not sell a Zunia token, an airdrop, or a presale. A claim that we are doing so is a scam.</li>
-        <li>We do not run telemetry in the clients. The web dashboard sends the addresses you connect to our server only to look them up, and to watch them if you turn on notifications, as the privacy policy describes. The website uses Google Analytics only if you allow it, with addresses and hashes removed from the pages it reports and no advertising features; you can withdraw in the footer.</li>
+        <li>We do not run telemetry in the clients. The web dashboard sends the addresses you connect to our server only to look them up, and to watch them if you turn on notifications, as the privacy policy describes. The website, the web dashboard, and IBC Map use Google Analytics only if you allow it, with addresses and hashes removed from the pages they report and no advertising features; you can withdraw from their footer or Settings. The extension and the phone app collect nothing.</li>
       </Ul>
       <P>
         The public X account is <a href={LINKS.x} rel="noreferrer">@ZuniaLab</a>. The YouTube
